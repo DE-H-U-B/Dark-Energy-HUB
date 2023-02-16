@@ -13638,9 +13638,9 @@ mouse.Button1Down:Connect(function()
 	end 
 end)
 
---
+---
 
-getgenv().ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/ErenYeaker/SaveScript/main/ESP.lua"))();
+----getgenv().ESP=loadstring(game:HttpGet(""))()
 
 Page_Combat.Toggle({
 	Title = "ESP",
