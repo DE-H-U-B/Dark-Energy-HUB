@@ -10537,7 +10537,7 @@ Page_Configs.Slider({
 	Title = "Hitbox Transparency",
 	Dec = true,
 	Min = 0,
-	Default = 0.5,
+	Default = 1,
 	Max = 1,
 	callback = function(value)
 		_G.Hitbox_LocalTransparency = value
