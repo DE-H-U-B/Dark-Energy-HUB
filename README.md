@@ -19,7 +19,7 @@ repeat wait() until game:GetService("ReplicatedStorage").Effect.Container
 
 _G.SettingsUI = {
 	Configs = {
-		ColorUI = Color3.fromRGB(255, 0, 127),
+		ColorUI = Color3.fromRGB(153, 51, 255),
 		Key = Enum.KeyCode.RightControl
 	}
 }
@@ -720,7 +720,7 @@ function LoadFunction()
 					TweenInfo.new(.5, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut),
 					{TextTransparency = 0.2}
 				):Play()
-				TitleLoad.Text = "Get Patch Unique Script Version : 1.0.0"
+				TitleLoad.Text = "Get Patch Dark-Energy Script Version : 1.0.0"
 				wait(0.35)
 				TweenService:Create(
 					TitleLoad,
@@ -733,7 +733,7 @@ function LoadFunction()
 					TweenInfo.new(.45, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut),
 					{TextTransparency = 0.2}
 				):Play()
-				TitleLoad.Text = "Welcome to Unique Script | Premium Edition"
+				TitleLoad.Text = "Welcome to Dark-Energy Script | Premium Edition"
 				TitleLoad.Font = Enum.Font.GothamBold
 				TitleLoad.TextTransparency = 0
 				wait(3)
