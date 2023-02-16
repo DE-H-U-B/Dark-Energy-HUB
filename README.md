@@ -3019,48 +3019,6 @@ function Library.new()
 	return LibraryTab
 end
 
--- [Save Settings]
-
-function LoadSettings()
-	if readfile and writefile and isfile and isfolder then
-		if not isfolder("Unique Hub Premium Scripts") then
-			makefolder("Unique Hub Premium Scripts")
-		end
-		if not isfolder("Unique Hub Premium Scripts/Blox Fruits/") then
-			makefolder("Unique Hub Premium Scripts/Blox Fruits/")
-		end
-		if not isfile("Unique Hub Premium Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json") then
-			writefile("Unique Hub Premium Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json", game:GetService("HttpService"):JSONEncode(_G.Settings))
-		else
-			local Decode = game:GetService("HttpService"):JSONDecode(readfile("Unique Hub Premium Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json"))
-			for i,v in pairs(Decode) do
-				_G.Settings[i] = v
-			end
-		end
-	else
-		return warn("Status : Undetected Executor")
-	end
-end
-
-function SaveSettings()
-	if readfile and writefile and isfile and isfolder then
-		if not isfile("Unique Hub Premium Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json") then
-			LoadSettings()
-		else
-			local Decode = game:GetService("HttpService"):JSONDecode(readfile("Unique Hub Premium Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json"))
-			local Array = {}
-			for i,v in pairs(_G.Settings) do
-				Array[i] = v
-			end
-			writefile("Unique Hub Premium Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json", game:GetService("HttpService"):JSONEncode(Array))
-		end
-	else
-		return warn("Status : Undetected Executor")
-	end
-end
-
-LoadSettings()
-
 if not game:IsLoaded() then
 	local Loaded = Instance.new("Message",workspace)
 	Loaded.Text = 'Wait Game Loading'
