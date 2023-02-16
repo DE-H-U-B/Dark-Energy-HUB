@@ -10385,8 +10385,8 @@ Page_Configs.Toggle({
 local Module = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
 local CombatFramework = debug.getupvalues(Module)[2]
 local CameraShakerR = require(game.ReplicatedStorage.Util.CameraShaker)
-spawn(function()
-    while true do
+task.spawn(function()
+    while task.wait() do
         if _G.Settings.Configs["FastAttackFix"] then
             pcall(function()
                 CameraShakerR:Stop()
@@ -10402,7 +10402,7 @@ spawn(function()
         end
         task.wait()
     end
-end)()
+end)
 
 Page_Configs.Toggle({
 	Title = "Fast Attack",
