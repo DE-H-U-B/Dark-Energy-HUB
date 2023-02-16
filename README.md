@@ -10383,7 +10383,7 @@ Page_Configs.Toggle({
 })
 
 Page_Configs.Dropdown({
-	Title = "Fast Attack Type",
+	Title = "Fast Attack Test",
 	Item = {"Mobile","Pc"},
 	callback = function(value)
 		_G.Settings.Configs["Fast Attack Type"] = value
@@ -10398,11 +10398,11 @@ coroutine.wrap(function()
 			if FastAttack and _G.Settings.Configs["Fast Attack"] then
 				AttackFunction()
 				if _G.Settings.Configs["Fast Attack Type"] == "Mobile" then
-					if tick() - cooldownfastattack > .15 then wait(.15) cooldownfastattack = tick() end
+					if tick() - cooldownfastattack > 5 then wait(.9) cooldownfastattack = tick() end
 				elseif _G.Settings.Configs["Fast Attack Type"] == "Pc" then
 					if tick() - cooldownfastattack > 1.5 then wait(.01) cooldownfastattack = tick() end
 				end
-			elseif FastAttack and _G.Settings.Configs["Fast Attack"] == false then
+			elseif FastAttack and _G.Settings.Configs["Fast Attack"] == true then
 				if ac.hitboxMagnitude ~= 55 then
 					ac.hitboxMagnitude = 55
 				end
