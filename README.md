@@ -1,4 +1,3 @@
-
   
 repeat wait() until game.Players.LocalPlayer
 
@@ -456,7 +455,7 @@ local SoundClick = Instance.new("Sound")
 
 SoundClick.Name = "Sound Effect"
 SoundClick.Parent = Load
-SoundClick.SoundId = "rbxassetid://130785805"
+SoundClick.SoundId = "rbxassetid://452267918"
 SoundClick.Volume = 1
 
 local Blur = Instance.new("BlurEffect")
@@ -1049,7 +1048,7 @@ function Library.new()
 
 		local Logo = options.Logo or 6034687957
 		local ColorUI = options.ColorUI or _G.Settings.ConfigsUI.Color
-		local Sound = options.SoundEffect or 130785805
+		local Sound = options.SoundEffect or 452267918
 
 		PageOrder = PageOrder + 1
 
