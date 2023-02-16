@@ -10402,7 +10402,7 @@ coroutine.wrap(function()
 				elseif _G.Settings.Configs["Fast Attack Type"] == "Fast" then
 					if tick() - cooldownfastattack > 1.5 then wait(.01) cooldownfastattack = tick() end
 				elseif _G.Settings.Configs["Fast Attack Type"] == "Slow" then
-					if tick() - cooldownfastattack > .3 then wait(.7) cooldownfastattack = tick() end
+					if tick() - cooldownfastattack > .3 then wait(.15) cooldownfastattack = tick() end
 				end
 			elseif FastAttack and _G.Settings.Configs["Fast Attack"] == false then
 				if ac.hitboxMagnitude ~= 55 then
