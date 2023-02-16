@@ -10402,19 +10402,8 @@ coroutine.wrap(function()
 			if FastAttack and _G.Settings.Configs["Fast Attack"] then
 				AttackFunction()
 				if _G.Settings.Configs["Fast Attack Type"] == "Mobile" then
-				                CameraShakerR:Stop()
-                CombatFramework.activeController.attacking = false
-                CombatFramework.activeController.timeToNextAttack = 0 --0
-                CombatFramework.activeController.increment = 5.8  --3
-                CombatFramework.activeController.hitboxMagnitude = 60
-                CombatFramework.activeController.blocking = false
-                CombatFramework.activeController.timeToNextBlock = 0 --0
-                CombatFramework.activeController.focusStart = 0
-                CombatFramework.activeController.humanoid.AutoRotate = true
-            end)
-        end
-        task.wait()
-    end
+				   _G.FastMobile = value
+                end
 				elseif _G.Settings.Configs["Fast Attack Type"] == "Pc" then
 					if tick() - cooldownfastattack > 1.5 then wait(.01) cooldownfastattack = tick() end
 				end
@@ -10427,6 +10416,28 @@ coroutine.wrap(function()
 		end
 	end
 end)()
+
+local Module = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
+local CombatFramework = debug.getupvalues(Module)[2]
+local CameraShakerR = require(game.ReplicatedStorage.Util.CameraShaker)
+spawn(function()
+    while true do
+        if _G.FastMobile then
+            pcall(function()
+                CameraShakerR:Stop()
+                CombatFramework.activeController.attacking = false
+                CombatFramework.activeController.timeToNextAttack = 0 --0
+                CombatFramework.activeController.increment = 5.8  --3
+                CombatFramework.activeController.hitboxMagnitude = 80
+                CombatFramework.activeController.blocking = false
+                CombatFramework.activeController.timeToNextBlock = 0 --0
+                CombatFramework.activeController.focusStart = 0
+                CombatFramework.activeController.humanoid.AutoRotate = true
+            end)
+        end
+        task.wait()
+    end
+end)
 
 Page_Configs.Line()
 
