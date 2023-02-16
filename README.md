@@ -191,7 +191,7 @@ _G.Settings = {
 		['White Screen'] = false,
 	},
 	ConfigsUI = {
-		ColorUI = Color3.fromRGB(255, 0, 127), --{Color UI}
+		ColorUI = Color3.fromRGB(153, 51, 255), --{Color UI}
 	}
 }
 
