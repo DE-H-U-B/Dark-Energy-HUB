@@ -10383,12 +10383,16 @@ Page_Configs.Toggle({
 })
 
 Page_Configs.Dropdown({
-	Title = "Fast Attack Test",
+	Title = "Fast Attack Type",
 	Item = {"Mobile","Pc"},
 	callback = function(value)
 		_G.Settings.Configs["Fast Attack Type"] = value
 	end,
 })
+
+local Module = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
+local CombatFramework = debug.getupvalues(Module)[2]
+local CameraShakerR = require(game.ReplicatedStorage.Util.CameraShaker)
 
 coroutine.wrap(function()
 	while task.wait() do
@@ -10398,11 +10402,23 @@ coroutine.wrap(function()
 			if FastAttack and _G.Settings.Configs["Fast Attack"] then
 				AttackFunction()
 				if _G.Settings.Configs["Fast Attack Type"] == "Mobile" then
-					if tick() - cooldownfastattack > 5 then wait(.9) cooldownfastattack = tick() end
+				                CameraShakerR:Stop()
+                CombatFramework.activeController.attacking = false
+                CombatFramework.activeController.timeToNextAttack = 0 --0
+                CombatFramework.activeController.increment = 5.8  --3
+                CombatFramework.activeController.hitboxMagnitude = 60
+                CombatFramework.activeController.blocking = false
+                CombatFramework.activeController.timeToNextBlock = 0 --0
+                CombatFramework.activeController.focusStart = 0
+                CombatFramework.activeController.humanoid.AutoRotate = true
+            end)
+        end
+        task.wait()
+    end
 				elseif _G.Settings.Configs["Fast Attack Type"] == "Pc" then
 					if tick() - cooldownfastattack > 1.5 then wait(.01) cooldownfastattack = tick() end
 				end
-			elseif FastAttack and _G.Settings.Configs["Fast Attack"] == true then
+			elseif FastAttack and _G.Settings.Configs["Fast Attack"] == false then
 				if ac.hitboxMagnitude ~= 55 then
 					ac.hitboxMagnitude = 55
 				end
