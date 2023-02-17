@@ -6045,11 +6045,6 @@ function AutoFarmLevel()
 											if not _G.Settings.Configs["Fast Attack"] then
 												ClickCamera()
 											end
-											if game.Players.LocalPlayer.Data.Level.Value >= 20 and game.Players.LocalPlayer.Data.Level.Value <= 90 then
-												_G.Settings.Configs["Fast Attack Type"] = "Slow"
-											else
-												_G.Settings.Configs["Fast Attack Type"] = "Fast"
-											end
 											if AttackRandomType == 1 then
 												game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0, _G.Settings.Configs["Distance Auto Farm"], 1)
 											elseif AttackRandomType == 2 then
@@ -6096,11 +6091,6 @@ function AutoFarmLevel()
 											end
 											if not _G.Settings.Configs["Fast Attack"] then
 												ClickCamera()
-											end
-											if game.Players.LocalPlayer.Data.Level.Value >= 20 and game.Players.LocalPlayer.Data.Level.Value <= 90 then
-												_G.Settings.Configs["Fast Attack Type"] = "Slow"
-											else
-												_G.Settings.Configs["Fast Attack Type"] = "Fast"
 											end
 											if AttackRandomType == 1 then
 												game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0, _G.Settings.Configs["Distance Auto Farm"], 1)
@@ -6343,9 +6333,6 @@ function AutoFarmLevel()
 										StartMagnet = true
 										FastAttack = true
 										if game.Players.LocalPlayer.Data.Level.Value >= 20 and game.Players.LocalPlayer.Data.Level.Value <= 90 then
-											_G.Settings.Configs["Fast Attack Type"] = "Slow"
-										else
-											_G.Settings.Configs["Fast Attack Type"] = "Fast"
 										end
 										if not _G.Settings.Configs["Fast Attack"] then
 											game:GetService'VirtualUser':CaptureController()
@@ -6445,9 +6432,6 @@ function AutoFarmLevel()
 									StartMagnet = true
 									FastAttack = true
 									if game.Players.LocalPlayer.Data.Level.Value >= 20 and game.Players.LocalPlayer.Data.Level.Value <= 90 then
-										_G.Settings.Configs["Fast Attack Type"] = "Slow"
-									else
-										_G.Settings.Configs["Fast Attack Type"] = "Fast"
 									end
 									if not _G.Settings.Configs["Fast Attack"] then
 										game:GetService'VirtualUser':CaptureController()
@@ -10379,10 +10363,10 @@ end
 Page_Configs.Line()
 
 Page_Configs.Toggle({
-	Title = "Fast Attack",
-	Default = _G.Settings.Configs["Fast Attack"],
+	Title = "Fast Attack Mobile",
+	Default = _G.FastAttack,
 	callback = function(value)
-		_G.Settings.Configs["Fast Attack"] = value
+		_G.FastAttack = value
 	end,
 })
 
@@ -10395,7 +10379,7 @@ spawn(function()
     end
 end)local b= require(game.ReplicatedStorage.Util.CameraShaker)for a,a in pairs(getreg())do if typeof(a)=="function"and getfenv(a).script==game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework then for a,a in pairs(debug.getupvalues(a))do if typeof(a)=="table"then spawn(function()
                         game:GetService("RunService").RenderStepped:Connect(function()
-                            if _G.Settings.Configs["Fast Attack"] then
+                            if _G.FastAttack then
                                 pcall(function()
                                     if game.Players.LocalPlayer.Character:FindFirstChild("Combat") or game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") or game.Players.LocalPlayer.Character:FindFirstChild("Electro") or game.Players.LocalPlayer.Character:FindFirstChild("Fishman Karate") or game.Players.LocalPlayer.Character:FindFirstChild("Dragon Claw") or game.Players.LocalPlayer.Character:FindFirstChild("Superhuman") or game.Players.LocalPlayer.Character:FindFirstChild("Sharkman Karate") then
                                         a.activeController.increment = 3
@@ -10422,30 +10406,6 @@ end)local b= require(game.ReplicatedStorage.Util.CameraShaker)for a,a in pairs(g
                 end 
               end 
             end
-
-coroutine.wrap(function()
-	while task.wait() do
-		local ac = CombatFrameworkR.activeController
-		if ac and ac.equipped then
-			wait(.1)
-			if FastAttack and _G.Settings.Configs["Fast Attack"] then
-				AttackFunction()
-				if _G.Settings.Configs["Fast Attack Type"] == "Normal" then
-					if tick() - cooldownfastattack > .9 then wait(.1) cooldownfastattack = tick() end
-				elseif _G.Settings.Configs["Fast Attack Type"] == "Fast" then
-					if tick() - cooldownfastattack > 1.5 then wait(.01) cooldownfastattack = tick() end
-				elseif _G.Settings.Configs["Fast Attack Type"] == "Slow" then
-					if tick() - cooldownfastattack > .3 then wait(.7) cooldownfastattack = tick() end
-				end
-			elseif FastAttack and _G.Settings.Configs["Fast Attack"] == false then
-				if ac.hitboxMagnitude ~= 55 then
-					ac.hitboxMagnitude = 55
-				end
-				ac:attack()
-			end
-		end
-	end
-end)()
 
 Page_Configs.Line()
 
