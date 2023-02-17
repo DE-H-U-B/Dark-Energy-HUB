@@ -108,8 +108,8 @@ _G.Settings = {
 		["Bypass TP"] = false,
 		["Select Team"] = {"Pirate"}, --{Pirate,Marine}
 
-        ["Fast Attack Mobile"] = true,
-		["Fast Attack Pc Select"] = false,
+
+		["Fast Attack"] = true,
 		["Fast Attack Type"] = {"Normal"}, --{Normal,Fast,Slow}
 
 		["Select Weapon"] = {},
@@ -720,7 +720,7 @@ function LoadFunction()
 					TweenInfo.new(.5, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut),
 					{TextTransparency = 0.2}
 				):Play()
-				TitleLoad.Text = "Get Patch Dark-Energy HUB Script Version : 1.0.0"
+				TitleLoad.Text = "Get Patch Dark-Energy HUB Script Version : 2.0.0"
 				wait(0.35)
 				TweenService:Create(
 					TitleLoad,
@@ -733,7 +733,7 @@ function LoadFunction()
 					TweenInfo.new(.45, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut),
 					{TextTransparency = 0.2}
 				):Play()
-				TitleLoad.Text = "Welcome to Dark-Energy HUB Script | Free Bata"
+				TitleLoad.Text = "Welcome to Dark-Energy HUB Script | Premium Edition"
 				TitleLoad.Font = Enum.Font.GothamBold
 				TitleLoad.TextTransparency = 0
 				wait(3)
@@ -3044,15 +3044,15 @@ end
 
 function SaveSettings()
 	if readfile and writefile and isfile and isfolder then
-		if not isfile("Dark-Energy HUB Free Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json") then
+		if not isfile("Unique Hub Premium Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json") then
 			LoadSettings()
 		else
-			local Decode = game:GetService("HttpService"):JSONDecode(readfile("Dark-Energy HUB Free Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json"))
+			local Decode = game:GetService("HttpService"):JSONDecode(readfile("Unique Hub Premium Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json"))
 			local Array = {}
 			for i,v in pairs(_G.Settings) do
 				Array[i] = v
 			end
-			writefile("Dark-Energy HUB Free Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json", game:GetService("HttpService"):JSONEncode(Array))
+			writefile("Unique Hub Premium Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json", game:GetService("HttpService"):JSONEncode(Array))
 		end
 	else
 		return warn("Status : Undetected Executor")
@@ -10453,10 +10453,10 @@ end
 Page_Configs.Line()
 
 Page_Configs.Toggle({
-	Title = "Fast Attack Mobile",
-	Default = _G.Settings.Configs["FastAttackFix"],
+	Title = "Fast Attack No Bug",
+	Default = _G.Settings.Configs["FastAttackMobile"],
 	callback = function(value)
-		_G.Settings.Configs["FastAttackFix"] = value
+		_G.Settings.Configs["FastAttackMobile"] = value
 		SaveSettings()
 	end,
 })
@@ -10465,8 +10465,8 @@ local Module = require(game:GetService("Players").LocalPlayer.PlayerScripts.Comb
 local CombatFramework = debug.getupvalues(Module)[2]
 local CameraShakerR = require(game.ReplicatedStorage.Util.CameraShaker)
 spawn(function()
-    while wait() do
-        if _G.Settings.Configs["FastAttackFix"] then
+    while true do
+        if _G.Settings.Configs["FastAttackMobile"] then
             pcall(function()
                 CameraShakerR:Stop()
                 CombatFramework.activeController.attacking = false
@@ -10479,50 +10479,16 @@ spawn(function()
                 CombatFramework.activeController.humanoid.AutoRotate = true
             end)
         end
+        task.wait()
     end
 end)
 
-Page_Configs.Toggle({
-	Title = "Fast Attack Pc Select",
-	Default = _G.Settings.Configs["Fast Attack"],
-	callback = function(value)
-		_G.Settings.Configs["Fast Attack"] = value
-		SaveSettings()
-	end,
-})
-
-Page_Configs.Dropdown({
-	Title = "Fast Attack Type",
-	Item = {"Fast","Normal","Slow"},
-	callback = function(value)
-		_G.Settings.Configs["Fast Attack Type"] = value
-		SaveSettings()
-	end,
-})
-
-coroutine.wrap(function()
-	while task.wait() do
-		local ac = CombatFrameworkR.activeController
-		if ac and ac.equipped then
-			wait(.1)
-			if FastAttack and _G.Settings.Configs["Fast Attack"] then
-				AttackFunction()
-				if _G.Settings.Configs["Fast Attack Type"] == "Normal" then
-					if tick() - cooldownfastattack > .9 then wait(.1) cooldownfastattack = tick() end
-				elseif _G.Settings.Configs["Fast Attack Type"] == "Fast" then
-					if tick() - cooldownfastattack > 1.5 then wait(.01) cooldownfastattack = tick() end
-				elseif _G.Settings.Configs["Fast Attack Type"] == "Slow" then
-					if tick() - cooldownfastattack > .3 then wait(.7) cooldownfastattack = tick() end
-				end
-			elseif FastAttack and _G.Settings.Configs["Fast Attack"] == false then
-				if ac.hitboxMagnitude ~= 55 then
-					ac.hitboxMagnitude = 55
-				end
-				ac:attack()
-			end
-		end
-	end
-end)()
+game:GetService("RunService").Heartbeat:Connect(function()
+    if _G.Settings.Configs["FastAttackMobile"] then
+        game:GetService'VirtualUser':Button1Down(Vector2.new(0.9,0.9))
+        game:GetService'VirtualUser':Button1Up(Vector2.new(0.9,0.9))
+    end
+end)
 
 Page_Configs.Line()
 
@@ -11968,6 +11934,7 @@ Page_FightingStyle.Toggle({
 		SaveSettings()
 	end
 })
+
 	local Boss = UI.tab({
 	Logo = 11162907620,
 	ColorUI = Color3.fromRGB(153, 51, 255)
@@ -11988,7 +11955,6 @@ Page_Boss.Toggle({
 		SaveSettings()
 	end,
 })
-]]
 
 spawn(function()
 	while wait() do
@@ -12026,7 +11992,6 @@ spawn(function()
 	end
 end)
 
---[[
 Page_Boss.Line()
 
 Page_Boss.Toggle({
@@ -12058,7 +12023,6 @@ Page_Boss.Toggle({
 		SaveSettings()
 	end,
 })
-]]
 
 local Mastery = UI.tab({
 	Logo = 11162915345,
