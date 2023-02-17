@@ -5962,42 +5962,6 @@ local MainLabel =Page_Main.Label({
 })
 MainLabel.Color(Color3.fromRGB(153, 51, 255))
 
-Moon = Page_Main.Label({
-	Title = "",
-})
-
-task.spawn(function()
-            while task.wait() do
-                pcall(function()
-                    if game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149431" then
-                        Moon.SetText({
-                        Title = "🌑 : Full Moon 100%",
-                        })
-                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149052" then
-                        Moon.SetText({
-                        Title = "🌒 : Full Moon 75%",
-                        })
-                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709143733" then
-                        Moon.SetText({
-                        Title = "🌓 : Full Moon 50%",
-                        })
-                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709150401" then
-                        Moon.SetText({
-                        Title = "🌗 : Full Moon 25%",
-                        })
-                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149680" then
-                        Moon.SetText({
-                        Title = "🌖 : Full Moon 15%",
-                        })
-                    else
-                        Moon.SetText({
-                        Title = "🌕 : Full Moon 0%",
-                        })
-                    end
-                end)
-            end
-        end)
-
 Page_Main.Toggle({
 	Title = "Auto Farm Level",
 	Default = _G.Settings.Main["Auto Farm Level"],
@@ -10412,9 +10376,9 @@ Page_Configs.Line()
 
 Page_Configs.Toggle({
 	Title = "Fast Attack Fix No Bug",
-	Default = _G.Settings.Configs["FastAttackFix"],
+	Default = _G.Settings.Configs["Fast Attack"],
 	callback = function(value)
-		_G.Settings.Configs["FastAttackFix"] = value
+		_G.Settings.Configs["Fast Attack"] = value
 	end,
 })
 
@@ -10422,61 +10386,23 @@ local Module = require(game:GetService("Players").LocalPlayer.PlayerScripts.Comb
 local CombatFramework = debug.getupvalues(Module)[2]
 local CameraShakerR = require(game.ReplicatedStorage.Util.CameraShaker)
 task.spawn(function()
-    while task.wait() do
-        if _G.Settings.Configs["FastAttackFix"] then
+    while task.wait(0) do
+        if _G.Settings.Configs["Fast Attack"] then
             pcall(function()
                 CameraShakerR:Stop()
                 CombatFramework.activeController.attacking = false
                 CombatFramework.activeController.timeToNextAttack = 0 --0
-                CombatFramework.activeController.increment = 4  --3
+                CombatFramework.activeController.increment = 1 + 1 / 1  --3
                 CombatFramework.activeController.hitboxMagnitude = 55
                 CombatFramework.activeController.blocking = false
+                CombatFramework.activeController.increment = 3
                 CombatFramework.activeController.timeToNextBlock = 0 --0
                 CombatFramework.activeController.focusStart = 0
                 CombatFramework.activeController.humanoid.AutoRotate = true
             end)
         end
-        task.wait()
     end
 end)
-
-Page_Configs.Toggle({
-	Title = "Fast Attack",
-	Default = _G.Settings.Configs["Fast Attack"],
-	callback = function(value)
-		_G.Settings.Configs["Fast Attack"] = value
-	end,
-})
-
-Page_Configs.Dropdown({
-	Title = "Fast Attack Type",
-	Item = {"Mobile","Pc"},
-	callback = function(value)
-		_G.Settings.Configs["Fast Attack Type"] = value
-	end,
-})
-
-coroutine.wrap(function()
-	while task.wait() do
-		local ac = CombatFrameworkR.activeController
-		if ac and ac.equipped then
-			wait(.1)
-			if FastAttack and _G.Settings.Configs["Fast Attack"] then
-				AttackFunction()
-				if _G.Settings.Configs["Fast Attack Type"] == "Mobile" then
-					if tick() - cooldownfastattack > .9 then wait(.1) cooldownfastattack = tick() end
-				elseif _G.Settings.Configs["Fast Attack Type"] == "Pc" then
-					if tick() - cooldownfastattack > 1.5 then wait(.01) cooldownfastattack = tick() end
-				end
-			elseif FastAttack and _G.Settings.Configs["Fast Attack"] == false then
-				if ac.hitboxMagnitude ~= 55 then
-					ac.hitboxMagnitude = 55
-				end
-				ac:attack()
-			end
-		end
-	end
-end)()
 
 Page_Configs.Line()
 
