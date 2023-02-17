@@ -3021,46 +3021,6 @@ end
 
 -- [Save Settings]
 
-function LoadSettings()
-	if readfile and writefile and isfile and isfolder then
-		if not isfolder("Unique Hub Premium Scripts") then
-			makefolder("Unique Hub Premium Scripts")
-		end
-		if not isfolder("Unique Hub Premium Scripts/Blox Fruits/") then
-			makefolder("Unique Hub Premium Scripts/Blox Fruits/")
-		end
-		if not isfile("Unique Hub Premium Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json") then
-			writefile("Unique Hub Premium Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json", game:GetService("HttpService"):JSONEncode(_G.Settings))
-		else
-			local Decode = game:GetService("HttpService"):JSONDecode(readfile("Unique Hub Premium Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json"))
-			for i,v in pairs(Decode) do
-				_G.Settings[i] = v
-			end
-		end
-	else
-		return warn("Status : Undetected Executor")
-	end
-end
-
-function SaveSettings()
-	if readfile and writefile and isfile and isfolder then
-		if not isfile("Unique Hub Premium Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json") then
-			LoadSettings()
-		else
-			local Decode = game:GetService("HttpService"):JSONDecode(readfile("Unique Hub Premium Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json"))
-			local Array = {}
-			for i,v in pairs(_G.Settings) do
-				Array[i] = v
-			end
-			writefile("Unique Hub Premium Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json", game:GetService("HttpService"):JSONEncode(Array))
-		end
-	else
-		return warn("Status : Undetected Executor")
-	end
-end
-
-LoadSettings()
-
 if not game:IsLoaded() then
 	local Loaded = Instance.new("Message",workspace)
 	Loaded.Text = 'Wait Game Loading'
@@ -6667,7 +6627,6 @@ if World1 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
-			SaveSettings()
 
 			task.spawn(function()
 				while wait() do
@@ -6742,7 +6701,6 @@ if World1 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
-			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -6895,7 +6853,6 @@ if World1 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
-			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -6972,7 +6929,6 @@ if World1 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
-			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -7129,7 +7085,6 @@ elseif World2 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
-			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -7429,7 +7384,6 @@ elseif World2 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
-			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -7597,7 +7551,6 @@ elseif World2 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
-			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -7658,7 +7611,6 @@ elseif World2 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
-			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -7722,7 +7674,6 @@ elseif World2 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
-			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -7746,7 +7697,6 @@ elseif World2 then
 			if value == false then
 				toTarget(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
 			end
-			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -7810,7 +7760,6 @@ elseif World2 then
 			if value == false then
 				toTarget(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
 			end
-			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -7880,7 +7829,6 @@ elseif World2 then
 		Default = _G.Settings.Main["Auto Buy Legendary Sword"],
 		callback = function(value)
 			_G.Settings.Main["Auto Buy Legendary Sword"] = value
-			SaveSettings()
 
 			task.spawn(function()
 				while wait() do
@@ -7901,7 +7849,6 @@ elseif World2 then
 		Default = _G.Settings.Main["Auto Buy Enchanment Haki"],
 		callback = function(value)
 			_G.Settings.Main["Auto Buy Enchanment Haki"] = value
-			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -8013,7 +7960,6 @@ elseif World3 then
 			if value == false then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 			end
-			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					if _G.Settings.Main["Auto Holy Torch"] then
@@ -8043,7 +7989,6 @@ elseif World3 then
 			if value == false then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 			end
-			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -8102,7 +8047,6 @@ elseif World3 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
-			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -8163,7 +8107,6 @@ elseif World3 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
-			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -8396,7 +8339,6 @@ elseif World3 then
 			if value == false then
 				toTarget(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
 			end
-			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -8542,7 +8484,6 @@ elseif World3 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
-			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -8664,7 +8605,6 @@ elseif World3 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
-			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -8727,7 +8667,6 @@ elseif World3 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
-			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -8872,7 +8811,6 @@ elseif World3 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
-			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -8928,7 +8866,6 @@ elseif World3 then
 		Default = _G.Settings.Main["Auto Yama Sword"],
 		callback = function(value)
 			_G.Settings.Main["Auto Yama Sword"] = value
-			SaveSettings()
 			spawn(function()
 				while wait() do
 					if _G.Settings.Main["Auto Yama Sword"] then
@@ -8953,7 +8890,6 @@ elseif World3 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
-			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					if _G.Settings.Main["Auto Tushita Sword"] then
@@ -9012,7 +8948,6 @@ elseif World3 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
-			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					if _G.Settings.Main["Auto Serpent Bow"] then
@@ -9071,7 +9006,6 @@ elseif World3 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
-			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -9144,7 +9078,6 @@ elseif World3 then
 			if value == false then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 			end
-			SaveSettings()
 
 			task.spawn(function()
 				while wait() do
@@ -9274,7 +9207,6 @@ elseif World3 then
 			if value == false then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 			end
-			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					if _G.Settings.Main["Auto Dough V2"] then
@@ -10441,7 +10373,6 @@ if World1 then
 		Default = _G.Settings.Main["Fast Auto Farm Level"],
 		callback = function(value)
 			_G.Settings.Main["Fast Auto Farm Level"] = value
-			SaveSettings()
 		end,
 	})
 end
@@ -10453,40 +10384,46 @@ Page_Configs.Toggle({
 	Default = _G.Settings.Configs["Fast Attack"],
 	callback = function(value)
 		_G.Settings.Configs["Fast Attack"] = value
+        _G.FastAttack = value
 	end,
 })
 
-Page_Configs.Dropdown({
-	Title = "Fast Attack Type",
-	Item = {"Fast","Normal","Slow"},
-	callback = function(value)
-		_G.Settings.Configs["Fast Attack Type"] = value
-	end,
-})
-
-coroutine.wrap(function()
-	while task.wait() do
-		local ac = CombatFrameworkR.activeController
-		if ac and ac.equipped then
-			wait(.1)
-			if FastAttack and _G.Settings.Configs["Fast Attack"] then
-				AttackFunction()
-				if _G.Settings.Configs["Fast Attack Type"] == "Normal" then
-					if tick() - cooldownfastattack > .9 then wait(.1) cooldownfastattack = tick() end
-				elseif _G.Settings.Configs["Fast Attack Type"] == "Fast" then
-					if tick() - cooldownfastattack > 1.5 then wait(.01) cooldownfastattack = tick() end
-				elseif _G.Settings.Configs["Fast Attack Type"] == "Slow" then
-					if tick() - cooldownfastattack > .3 then wait(.7) cooldownfastattack = tick() end
-				end
-			elseif FastAttack and _G.Settings.Configs["Fast Attack"] == false then
-				if ac.hitboxMagnitude ~= 55 then
-					ac.hitboxMagnitude = 55
-				end
-				ac:attack()
-			end
-		end
-	end
-end)()
+spawn(function()
+    while wait() do
+        if setscriptable then
+            setscriptable(game.Players.LocalPlayer, "SimulationRadius", true)
+            game.Players.LocalPlayer.SimulationRadius = math.huge * math.huge, math.huge * math.huge * 1 / 0 * 1 / 0 * 1 / 0 * 1 / 0 * 1 / 0
+        end
+    end
+end)local b= require(game.ReplicatedStorage.Util.CameraShaker)for a,a in pairs(getreg())do if typeof(a)=="function"and getfenv(a).script==game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework then for a,a in pairs(debug.getupvalues(a))do if typeof(a)=="table"then spawn(function()
+                        game:GetService("RunService").RenderStepped:Connect(function()
+                            if _G.FastAttack and FastAttack then
+                                pcall(function()
+                                    if game.Players.LocalPlayer.Character:FindFirstChild("Combat") or game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") or game.Players.LocalPlayer.Character:FindFirstChild("Electro") or game.Players.LocalPlayer.Character:FindFirstChild("Fishman Karate") or game.Players.LocalPlayer.Character:FindFirstChild("Dragon Claw") or game.Players.LocalPlayer.Character:FindFirstChild("Superhuman") or game.Players.LocalPlayer.Character:FindFirstChild("Sharkman Karate") then
+                                        a.activeController.increment = 3
+                                    else
+                                        a.activeController.increment = 4
+                                    end             
+                                    b:Stop()
+                                    a.activeController.timeToNextAttack = -(math.huge^math.huge)
+                                    a.activeController.attacking = false
+                                    a.activeController.timeToNextBlock = 0
+                                    a.activeController.blocking = false                            
+                                    a.activeController.hitboxMagnitude = 100
+                                    a.activeController.humanoid.AutoRotate = true
+                                    a.activeController.blocking = false
+                                    a.activeController.timeToNextBlock = 0
+                                    game.Players.LocalPlayer.Character.Stun.Value = 0
+                                    game.Players.LocalPlayer.Character.Humanoid.Sit = false
+                                      a.activeController.focusStart = 0
+                                end)
+                            end
+                        end)
+                    end)
+                  end 
+                end 
+              end 
+            end
 
 Page_Configs.Line()
 
@@ -11919,91 +11856,6 @@ Page_FightingStyle.Toggle({
 	end
 })
 
-	local Boss = UI.tab({
-	Logo = 11162907620,
-	ColorUI = Color3.fromRGB(153, 51, 255)
-})
-
-local Page_Boss = Boss.page()
-
-local LabelBoss = Page_Boss.Label({
-	Title = "Bosses"
-})
-LabelBoss.Color(Color3.fromRGB(153, 51, 255))
-
-Page_Boss.Toggle({
-	Title = "Auto All Boss",
-	Default = _G.Settings.Boss["Auto All Boss"],
-	callback = function(value)
-		_G.Settings.Boss["Auto All Boss"] = value
-	end,
-})
-
-spawn(function()
-	while wait() do
-		if _G.Settings.Boss["Auto All Boss"] then
-			pcall(function()
-				for i,v in pairs(game.ReplicatedStorage:GetChildren()) do
-					if string.find(v.Name,"Boss") then
-						if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 17000 then
-							repeat wait()
-								if Settings["Main"]["Auto Haki"] then
-									if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
-										game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
-									end
-								end
-								if not game.Players.LocalPlayer.Character:FindFirstChild(_G.Settings.Configs["Select Weapon"]) then
-									wait()
-									EquipWeapon(_G.Settings.Configs["Select Weapon"])
-								end
-								StartMagnet = true
-								FastAttack = true
-								toTarget(v.HumanoidRootPart.CFrame * CFrame.new(1,30,0))
-								PosMon = v.HumanoidRootPart.CFrame
-								v.HumanoidRootPart.Size = Vector3.new(60,60,60)
-								v.Humanoid.JumpPower = 0
-								v.Humanoid.WalkSpeed = 0
-								v.HumanoidRootPart.CanCollide = false
-								v.Humanoid:ChangeState(11)
-							until v.Humanoid.Health <= 0 or _G.Settings.Boss["Auto All Boss"] == false or not v.Parent
-							FastAttack = false
-						end
-					end
-				end
-			end)
-		end
-	end
-end)
-
-Page_Boss.Line()
-
-Page_Boss.Toggle({
-	Title = "Auto Boss Select",
-	Default = _G.Settings.Boss["Auto Boss Select"],
-	callback = function(value)
-		_G.Settings.Boss["Auto Boss Select"] = value
-	end,
-})
-
-Page_Boss.Dropdown({
-	Title = "Select Boss",
-	callback = function(value)
-		_G.Settings.Boss["Select Boss"] = value
-	end,
-})
-
-Page_Boss.Label({
-	Title = "Boss Config"
-})
-
-Page_Boss.Toggle({
-	Title = "Auto Quest",
-	Default = _G.Settings.Boss["Auto Quest"],
-	callback = function(value)
-		_G.Settings.Boss["Auto Quest"] = value
-	end,
-})
-
 local Mastery = UI.tab({
 	Logo = 11162915345,
 	ColorUI = Color3.fromRGB(153, 51, 255)
@@ -12830,7 +12682,6 @@ if not World1 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
-			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -14304,7 +14155,6 @@ if World2 then
 		Default = _G.Settings.Main["Auto Buy Legendary Sword"],
 		callback = function(value)
 			_G.Settings.Main["Auto Buy Legendary Sword"] = value
-			SaveSettings()
 		end,
 	})
 end
