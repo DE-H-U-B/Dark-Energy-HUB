@@ -3624,13 +3624,13 @@ end
 
 -- [Functions Click]
 
-function ClickCamera()
+function Click()
 	game:GetService("VirtualUser"):CaptureController()
 	game:GetService("VirtualUser"):ClickButton1(Vector2.new(851, 158), game:GetService("Workspace").Camera.CFrame)
 end
 function Click()
 	game:GetService("VirtualUser"):CaptureController()
-	game:GetService("VirtualUser"):Button1Down(Vector2.new(1280, 672))
+	game:GetService("VirtualUser"):Button1Down(Vector2.new(851, 158))
 end
 
 -- [Server Hop Api]
@@ -6040,7 +6040,7 @@ function AutoFarmLevel()
 												game:service('VirtualInputManager'):SendKeyEvent(false, "V", false, game)
 											end
 											if not _G.Settings.Configs["Fast Attack"] then
-												ClickCamera()
+												Click()
 											end
 											if game.Players.LocalPlayer.Data.Level.Value >= 20 and game.Players.LocalPlayer.Data.Level.Value <= 90 then
 												_G.Settings.Configs["Fast Attack Type"] = "Slow"
@@ -6092,7 +6092,7 @@ function AutoFarmLevel()
 												game:service('VirtualInputManager'):SendKeyEvent(false, "V", false, game)
 											end
 											if not _G.Settings.Configs["Fast Attack"] then
-												ClickCamera()
+												Click()
 											end
 											if game.Players.LocalPlayer.Data.Level.Value >= 20 and game.Players.LocalPlayer.Data.Level.Value <= 90 then
 												_G.Settings.Configs["Fast Attack Type"] = "Slow"
@@ -6237,7 +6237,7 @@ function AutoFarmLevel()
 												v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 											end
 											if not _G.Settings.Configs["Fast Attack"] then
-												ClickCamera()
+												Click()
 											end
 
 											if game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") and game.Players.LocalPlayer.Character:FindFirstChild("Black Leg").Level.Value >= 150 then
