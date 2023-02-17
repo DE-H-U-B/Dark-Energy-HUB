@@ -10383,8 +10383,7 @@ Page_Configs.Toggle({
 	Title = "Fast Attack",
 	Default = _G.Settings.Configs["Fast Attack"],
 	callback = function(value)
-		_G.Settings.Configs["Fast Attack"] = value
-        _G.FastAttack = value
+        _G.Settings.Configs["Fast Attack"] = value
 	end,
 })
 
@@ -10397,7 +10396,7 @@ spawn(function()
     end
 end)local b= require(game.ReplicatedStorage.Util.CameraShaker)for a,a in pairs(getreg())do if typeof(a)=="function"and getfenv(a).script==game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework then for a,a in pairs(debug.getupvalues(a))do if typeof(a)=="table"then spawn(function()
                         game:GetService("RunService").RenderStepped:Connect(function()
-                            if _G.FastAttack and FastAttack then
+                            if _G.Settings.Configs["Fast Attack"] and FastAttack then
                                 pcall(function()
                                     if game.Players.LocalPlayer.Character:FindFirstChild("Combat") or game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") or game.Players.LocalPlayer.Character:FindFirstChild("Electro") or game.Players.LocalPlayer.Character:FindFirstChild("Fishman Karate") or game.Players.LocalPlayer.Character:FindFirstChild("Dragon Claw") or game.Players.LocalPlayer.Character:FindFirstChild("Superhuman") or game.Players.LocalPlayer.Character:FindFirstChild("Sharkman Karate") then
                                         a.activeController.increment = 3
@@ -10417,6 +10416,10 @@ end)local b= require(game.ReplicatedStorage.Util.CameraShaker)for a,a in pairs(g
                                     game.Players.LocalPlayer.Character.Humanoid.Sit = false
                                       a.activeController.focusStart = 0
                                 end)
+                                elseif FastAttack and _G.Settings.Configs["Fast Attack"] == false then
+				               if a.hitboxMagnitude ~= 55 then
+					              a.hitboxMagnitude = 55
+				               end
                             end
                         end)
                     end)
