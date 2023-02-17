@@ -10372,7 +10372,7 @@ Page_Configs.Toggle({
 	Title = "Fast Attack Fix No Bug",
 	Default = _G.Settings.Configs["Fast Attack"],
 	callback = function(value)
-		_G.Settings.Configs["Fast Attack"] = value
+		_G.Settings.Configs["FastAttackFix"] = value
 	end,
 })
 
@@ -10380,8 +10380,8 @@ local Module = require(game:GetService("Players").LocalPlayer.PlayerScripts.Comb
 local CombatFramework = debug.getupvalues(Module)[2]
 local CameraShakerR = require(game.ReplicatedStorage.Util.CameraShaker)
 spawn(function()
-    while true do
-        if _G.Settings.Configs["Fast Attack"] then
+    while task.wait() do
+        if _G.Settings.Configs["FastAttackFix"] then
             pcall(function()
                 CameraShakerR:Stop()
                 CombatFramework.activeController.attacking = false
@@ -10394,7 +10394,6 @@ spawn(function()
                 CombatFramework.activeController.humanoid.AutoRotate = true
             end)
         end
-        task.wait(0)
     end
 end)
 
