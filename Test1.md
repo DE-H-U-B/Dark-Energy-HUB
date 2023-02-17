@@ -6013,7 +6013,6 @@ Page_Main.Toggle({
 		if value == false then
 			toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 		end
-		SaveSettings()
 	end,
 })
 
@@ -6623,7 +6622,6 @@ Page_Main.Toggle({
 		if value == false then
 			toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 		end
-		SaveSettings()
 	end,
 })
 
@@ -10426,7 +10424,6 @@ Page_Configs.Toggle({
 	Default = _G.Settings.Configs["Double Quest"],
 	callback = function(value)
 		_G.Settings.Configs["Double Quest"] = value
-		SaveSettings()
 	end,
 })
 
@@ -10435,7 +10432,6 @@ Page_Configs.Toggle({
 	Default = _G.Settings.Configs["Bypass TP"],
 	callback = function(value)
 		_G.Settings.Configs["Bypass TP"] = value
-		SaveSettings()
 	end,
 })
 
@@ -10457,7 +10453,6 @@ Page_Configs.Toggle({
 	Default = _G.Settings.Configs["Fast Attack"],
 	callback = function(value)
 		_G.Settings.Configs["Fast Attack"] = value
-		SaveSettings()
 	end,
 })
 
@@ -10466,7 +10461,6 @@ Page_Configs.Dropdown({
 	Item = {"Fast","Normal","Slow"},
 	callback = function(value)
 		_G.Settings.Configs["Fast Attack Type"] = value
-		SaveSettings()
 	end,
 })
 
@@ -10560,7 +10554,6 @@ Page_Configs.Toggle({
 	Default = _G.Settings.Configs["Auto Haki"],
 	callback = function(value)
 		_G.Settings.Configs["Auto Haki"] = value
-		SaveSettings()
 	end,
 })
 task.spawn(function()
@@ -10582,7 +10575,6 @@ Page_Configs.Slider({
 	Max = 60,
 	callback = function(value)
 		_G.Settings.Configs["Distance Auto Farm"] = value
-		SaveSettings()
 	end,
 })
 
@@ -10592,7 +10584,6 @@ Page_Configs.Toggle({
 	callback = function(value)
 		_G.Settings.Configs["Camera Shaker"] = value
 		CameraShaker()
-		SaveSettings()
 	end,
 })
 
@@ -10605,7 +10596,6 @@ Page_Configs.Toggle({
 	Default = _G.Settings.Configs["Bring Mob"],
 	callback = function(value)
 		_G.Settings.Configs["Bring Mob"] = value
-		SaveSettings()
 	end,
 })
 
@@ -10614,7 +10604,6 @@ Page_Configs.Toggle({
 	Default = _G.Settings.Configs["Show Hitbox"],
 	callback = function(value)
 		_G.Settings.Configs["Show Hitbox"] = value
-		SaveSettings()
 	end,
 })
 
@@ -10635,7 +10624,6 @@ Page_Configs.Toggle({
 	callback = function(value)
 		_G.Settings.Configs["Disabled Damage"] = value
 		DisabledDamage()
-		SaveSettings()
 	end,
 })
 
@@ -10731,7 +10719,6 @@ Page_FightingStyle.Toggle({
 				GetAllMeleeFarm()
 			end
 		end
-		SaveSettings()
 		task.spawn(function()
 			while wait() do
 				pcall(function()
@@ -11439,7 +11426,6 @@ Page_FightingStyle.Toggle({
 	Default = _G.Settings.FightingStyle["Auto Superhuman"],
 	callback = function(value)
 		_G.Settings.FightingStyle["Auto Superhuman"] = value
-		SaveSettings()
 		task.spawn(function()
 			while wait() do
 				pcall(function()
@@ -11574,7 +11560,6 @@ Page_FightingStyle.Toggle({
 	Default = _G.Settings.FightingStyle["Auto Electric Claw"],
 	callback = function(value)
 		_G.Settings.FightingStyle["Auto Electric Claw"] = value
-		SaveSettings()
 		if _G.Settings.FightingStyle["Auto Electric Claw"] then
 			Com("F_","BuyElectro")
 		end
@@ -11628,7 +11613,6 @@ Page_FightingStyle.Toggle({
 	Default = _G.Settings.FightingStyle["Auto Death Step"],
 	callback = function(value)
 		_G.Settings.FightingStyle["Auto Death Step"] = value
-		SaveSettings()
 		if _G.Settings.FightingStyle["Auto Death Step"] then
 			Com("F_","BuyBlackLeg")
 		end
@@ -11736,7 +11720,6 @@ Page_FightingStyle.Toggle({
 	Default = _G.Settings.FightingStyle["Auto SharkMan Karate"],
 	callback = function(value)
 		_G.Settings.FightingStyle["Auto SharkMan Karate"] = value
-		SaveSettings()
 		if _G.Settings.FightingStyle["Auto SharkMan Karate"] then
 			Com("F_","BuySharkmanKarate")
 		end
@@ -11840,7 +11823,6 @@ Page_FightingStyle.Toggle({
 	Default = _G.Settings.FightingStyle["Auto Dragon Talon"],
 	callback = function(value)
 		_G.Settings.FightingStyle["Auto Dragon Talon"] = value
-		SaveSettings()
 		if _G.Settings.FightingStyle["Auto Dragon Talon"] then
 			Com("F_","BlackbeardReward","DragonClaw","2")
 		end
@@ -11926,7 +11908,6 @@ Page_FightingStyle.Toggle({
 	Default = _G.Settings.FightingStyle["Auto Fully Death Step"],
 	callback = function(value)
 		_G.Settings.FightingStyle["Auto Fully Death Step"] = value
-		SaveSettings()
 	end
 })
 
@@ -11935,7 +11916,6 @@ Page_FightingStyle.Toggle({
 	Default = _G.Settings.FightingStyle["Auto Fully SharkMan Karate"],
 	callback = function(value)
 		_G.Settings.FightingStyle["Auto Fully SharkMan Karate"] = value
-		SaveSettings()
 	end
 })
 
@@ -11956,10 +11936,8 @@ Page_Boss.Toggle({
 	Default = _G.Settings.Boss["Auto All Boss"],
 	callback = function(value)
 		_G.Settings.Boss["Auto All Boss"] = value
-		SaveSettings()
 	end,
 })
-]]
 
 spawn(function()
 	while wait() do
@@ -11997,7 +11975,6 @@ spawn(function()
 	end
 end)
 
---[[
 Page_Boss.Line()
 
 Page_Boss.Toggle({
@@ -12005,7 +11982,6 @@ Page_Boss.Toggle({
 	Default = _G.Settings.Boss["Auto Boss Select"],
 	callback = function(value)
 		_G.Settings.Boss["Auto Boss Select"] = value
-		SaveSettings()
 	end,
 })
 
@@ -12013,7 +11989,6 @@ Page_Boss.Dropdown({
 	Title = "Select Boss",
 	callback = function(value)
 		_G.Settings.Boss["Select Boss"] = value
-		SaveSettings()
 	end,
 })
 
@@ -12026,10 +12001,8 @@ Page_Boss.Toggle({
 	Default = _G.Settings.Boss["Auto Quest"],
 	callback = function(value)
 		_G.Settings.Boss["Auto Quest"] = value
-		SaveSettings()
 	end,
 })
-]]
 
 local Mastery = UI.tab({
 	Logo = 11162915345,
@@ -12339,7 +12312,6 @@ local SwordMulti = Page_Mastery.MultiDropdown({
 		if value == false then
 			toTarget(game.Players.LocalPlayer.Character.HumanoidRootPart.Position,game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
 		end
-		SaveSettings()
 	end,
 })
 
@@ -12506,7 +12478,6 @@ Page_Mastery.Toggle({
 			toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 			wait()
 		end
-		SaveSettings()
 	end,
 })
 
@@ -12518,7 +12489,6 @@ Page_Mastery.Toggle({
 		if value == false then
 			toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 		end
-		SaveSettings()
 	end,
 })
 
@@ -12533,7 +12503,6 @@ Page_Mastery.Slider({
 	Max = 100,
 	callback = function(value)
 		_G.Settings.Mastery["Mob Health (%)"] = value
-		SaveSettings()
 	end,
 })
 
@@ -12544,7 +12513,6 @@ Page_Mastery.Toggle({
 	Default = _G.Settings.Configs["Skill Z"],
 	callback = function(value)
 		_G.Settings.Configs["Skill Z"] = value
-		SaveSettings()
 	end,
 })
 
@@ -12553,7 +12521,6 @@ Page_Mastery.Toggle({
 	Default = _G.Settings.Configs["Skill X"],
 	callback = function(value)
 		_G.Settings.Configs["Skill X"] = value
-		SaveSettings()
 	end,
 })
 
@@ -12562,7 +12529,6 @@ Page_Mastery.Toggle({
 	Default = _G.Settings.Configs["Skill C"],
 	callback = function(value)
 		_G.Settings.Configs["Skill C"] = value
-		SaveSettings()
 	end,
 })
 
@@ -12571,7 +12537,6 @@ Page_Mastery.Toggle({
 	Default = _G.Settings.Configs["Skill V"],
 	callback = function(value)
 		_G.Settings.Configs["Skill V"] = value
-		SaveSettings()
 	end,
 })
 
@@ -12612,7 +12577,6 @@ Page_Stats.Toggle({
 	Default = _G.Settings.Stat["Enabled Auto Stats"],
 	callback = function(value)
 		_G.Settings.Stat["Enabled Auto Stats"] = value
-		SaveSettings()
 	end,
 })
 
@@ -12623,7 +12587,6 @@ Page_Stats.Toggle({
 	Desc = "Will Up Melee to 2400 First then Up def",
 	callback = function(value)
 		_G.Settings.Stat["Auto Stats Kaitun"] = value
-		SaveSettings()
 	end,
 })
 
@@ -12654,7 +12617,6 @@ Page_Stats.Dropdown({
 	Item = {"Max Stats","Melee","Defense","Sword","Gun","Devil Fruits"},
 	callback = function(value)
 		_G.Settings.Stat["Select Stats"] = value
-		SaveSettings()
 		task.spawn(function()
 			pcall(function()
 				while wait() do
@@ -12738,7 +12700,6 @@ Page_Stats.Toggle({
 	Default = _G.Settings.Stat["Enabled Auto Redeem Code"],
 	callback = function(value)
 		_G.Settings.Stat["Enabled Auto Redeem Code"] = value
-		SaveSettings()
 	end,
 })
 
@@ -12750,7 +12711,6 @@ Page_Stats.Slider({
 	Max = 2400,
 	callback = function(value)
 		_G.Settings.Stat["Select Level Redeem Code"] = value
-		SaveSettings()
 	end,
 })
 
@@ -13142,7 +13102,6 @@ Page_Fruit.Toggle({
 	Default = _G.Settings.Fruits["Auto Buy Random Fruits"],
 	callback = function(value)
 		_G.Settings.Fruits["Auto Buy Random Fruits"] = value
-		SaveSettings()
 	end,
 })
 
@@ -13169,7 +13128,6 @@ Page_Fruit.Toggle({
 	Default = _G.Settings.Fruits["Auto Store Fruits"],
 	callback = function(value)
 		_G.Settings.Fruits["Auto Store Fruits"] = value
-		SaveSettings()
 	end,
 })
 
@@ -13326,7 +13284,6 @@ Page_Fruit.Toggle({
 	Default = _G.Settings.Fruits["Auto Buy Devil Fruits Sniper"],
 	callback = function(value)
 		_G.Settings.Fruits["Auto Buy Devil Fruits Sniper"] = value
-		SaveSettings()
 	end,
 })
 
@@ -13335,7 +13292,6 @@ Page_Fruit.Dropdown({
 	Item = SelectDevilFruits,
 	callback = function(value)
 		_G.Settings.Fruits["Select Devil Fruits"] = value
-		SaveSettings()
 	end,
 })
 
@@ -13380,7 +13336,6 @@ Page_Raids.Toggle({
 			toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 			wait()
 		end
-		SaveSettings()
 	end,
 })
 
@@ -13389,7 +13344,6 @@ Page_Raids.Dropdown({
 	Item = {"Flame","Ice","Quake","Light","Dark","String","Rumble","Magma","Human: Buddha","Sand","Bird: Phoenix","Dough"},
 	callback = function(value)
 		_G.Settings.Raids["Select Raids"] = value
-		SaveSettings()
 	end,
 })
 
@@ -13402,7 +13356,6 @@ Page_Raids.Toggle({
 	Default = _G.Settings.Raids["Kill Aura"],
 	callback = function(value)
 		_G.Settings.Raids["Kill Aura"] = value
-		SaveSettings()
 	end,
 })
 
@@ -13411,7 +13364,6 @@ Page_Raids.Toggle({
 	Default = _G.Settings.Raids["Auto Awakened"],
 	callback = function(value)
 		_G.Settings.Raids["Auto Awakened"] = value
-		SaveSettings()
 	end,
 })
 
@@ -13420,7 +13372,6 @@ Page_Raids.Toggle({
 	Default = _G.Settings.Raids["Auto Next Place"],
 	callback = function(value)
 		_G.Settings.Raids["Auto Next Place"] = value
-		SaveSettings()
 	end,
 })
 
@@ -13784,7 +13735,6 @@ Page_Misc.Toggle({
 	Default = _G.Settings.HUD["White Screen"],
 	callback = function(value)
 		_G.Settings.HUD["White Screen"] = value
-		SaveSettings()
 		if value == true then
 			RunService:Set3dRenderingEnabled(false)
 			setfpscap(30)
@@ -14159,7 +14109,6 @@ Page_Misc.Toggle({
 	callback = function(value)
 		_G.Settings.Misc["No Soru Cooldown"] = value
 		NoCooldown()
-		SaveSettings()
 	end,
 })
 
@@ -14169,7 +14118,6 @@ Page_Misc.Toggle({
 	callback = function(value)
 		_G.Settings.Misc["No Dash Cooldown"] = value
 		NoCooldown()
-		SaveSettings()
 	end,
 })
 
@@ -14181,7 +14129,6 @@ Page_Misc.Toggle({
 	callback = function(value)
 		_G.Settings.Misc["Infinities Geppo"] = value
 		NoCooldown()
-		SaveSettings()
 	end,
 })
 
@@ -14191,7 +14138,6 @@ Page_Misc.Toggle({
 	callback = function(value)
 		_G.Settings.Misc["Infinities Energy"] = value
 		InfinitiesEnergy()
-		SaveSettings()
 	end,
 })
 
@@ -14204,7 +14150,6 @@ Page_Misc.Toggle({
 	Default = _G.Settings.Misc["No Fog"],
 	callback = function(value)
 		_G.Settings.Misc["No Fog"] = value
-		SaveSettings()
 		task.spawn(function()
 			while wait() do
 				pcall(function()
@@ -14227,7 +14172,6 @@ Page_Misc.Toggle({
 	Default = _G.Settings.Misc["Wall-TP"],
 	callback = function(value)
 		_G.Settings.Misc["Wall-TP"] = value
-		SaveSettings()
 		task.spawn(function()
 			if _G.Settings.Misc["Wall-TP"] then
 				local torso
@@ -14264,7 +14208,6 @@ Page_Misc.Toggle({
 	Default = _G.Settings.Misc["Fly"],
 	callback = function(value)
 		_G.Settings.Misc["Fly"] = value
-		SaveSettings()
 		task.spawn(function()
 			if _G.Settings.Misc["Fly"] then
 				game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').PlatformStand = true
@@ -14342,7 +14285,6 @@ Page_Shop.Toggle({
 	Default = _G.Settings.Main["Auto Random Bone"],
 	callback = function(value)
 		_G.Settings.Main["Auto Random Bone"] = value
-		SaveSettings()
 	end,
 })
 
@@ -14372,7 +14314,6 @@ Page_Shop.Toggle({
 	Default = _G.Settings.Main["Auto Buy Enchanment Haki"],
 	callback = function(value)
 		_G.Settings.Main["Auto Buy Enchanment Haki"] = value
-		SaveSettings()
 	end,
 })
 
@@ -15254,7 +15195,6 @@ Page_Settings.Toggle({
 	Default = _G.Settings.Misc['Auto Rejoin'],
 	callback = function(value)
 		_G.Settings.Misc['Auto Rejoin'] = value
-		SaveSettings()
 	end,
 })
 
