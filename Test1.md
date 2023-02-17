@@ -720,7 +720,7 @@ function LoadFunction()
 					TweenInfo.new(.5, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut),
 					{TextTransparency = 0.2}
 				):Play()
-				TitleLoad.Text = "Get Patch Dark-Energy HUB Script Version : 2.0.0"
+				TitleLoad.Text = "Get Patch Dark-Energy Script Version : 1.0.0"
 				wait(0.35)
 				TweenService:Create(
 					TitleLoad,
@@ -733,7 +733,7 @@ function LoadFunction()
 					TweenInfo.new(.45, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut),
 					{TextTransparency = 0.2}
 				):Play()
-				TitleLoad.Text = "Welcome to Dark-Energy HUB Script | Premium Edition"
+				TitleLoad.Text = "Welcome to Dark-Energy Script | Premium Edition"
 				TitleLoad.Font = Enum.Font.GothamBold
 				TitleLoad.TextTransparency = 0
 				wait(3)
@@ -3748,7 +3748,7 @@ elseif placeId == 4442272183 then
 elseif placeId == 7449423635 then
 	ThreeWorld = true
 else
-	game.Players.LocalPlayer:Kick("ลูกหรี่ชอบโง่รันผิดแมพ")
+	game.Players.LocalPlayer:Kick("This script only works with Blox Fruit !")
 end
 
 -- [CheckMasteryWeapon]
@@ -11960,6 +11960,7 @@ Page_Boss.Toggle({
 		SaveSettings()
 	end,
 })
+]]
 
 spawn(function()
 	while wait() do
@@ -12029,6 +12030,7 @@ Page_Boss.Toggle({
 		SaveSettings()
 	end,
 })
+]]
 
 local Mastery = UI.tab({
 	Logo = 11162915345,
