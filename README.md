@@ -11998,6 +11998,7 @@ Page_Boss.Toggle({
 		SaveSettings()
 	end,
 })
+]]
 
 spawn(function()
 	while wait() do
@@ -12067,6 +12068,7 @@ Page_Boss.Toggle({
 		SaveSettings()
 	end,
 })
+]]
 
 local Mastery = UI.tab({
 	Logo = 11162915345,
