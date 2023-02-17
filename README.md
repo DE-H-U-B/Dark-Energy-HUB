@@ -19,7 +19,7 @@ repeat wait() until game:GetService("ReplicatedStorage").Effect.Container
 
 _G.SettingsUI = {
 	Configs = {
-		ColorUI = Color3.fromRGB(255, 0, 127),
+		ColorUI = Color3.fromRGB(153, 51, 255),
 		Key = Enum.KeyCode.RightControl
 	}
 }
@@ -108,8 +108,8 @@ _G.Settings = {
 		["Bypass TP"] = false,
 		["Select Team"] = {"Pirate"}, --{Pirate,Marine}
 
-
-		["Fast Attack"] = true,
+        ["Fast Attack Mobile"] = true,
+		["Fast Attack Pc Select"] = false,
 		["Fast Attack Type"] = {"Normal"}, --{Normal,Fast,Slow}
 
 		["Select Weapon"] = {},
@@ -191,7 +191,7 @@ _G.Settings = {
 		['White Screen'] = false,
 	},
 	ConfigsUI = {
-		ColorUI = Color3.fromRGB(255, 0, 127), --{Color UI}
+		ColorUI = Color3.fromRGB(153, 51, 255), --{Color UI}
 	}
 }
 
@@ -610,7 +610,7 @@ Title.Size = UDim2.new(0, 384, 0, 30)
 Title.Font = Enum.Font.GothamBold
 Title.Text = "BLOX FRUIT PREMIUM EDITION"
 Title.TextTransparency = 1
-Title.TextColor3 = Color3.fromRGB(255, 0, 127)
+Title.TextColor3 = Color3.fromRGB(153, 51, 255)
 Title.TextSize = 14.000
 
 
@@ -720,7 +720,7 @@ function LoadFunction()
 					TweenInfo.new(.5, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut),
 					{TextTransparency = 0.2}
 				):Play()
-				TitleLoad.Text = "Get Patch Unique Script Version : 1.0.0"
+				TitleLoad.Text = "Get Patch Dark-Energy HUB Script Version : 1.0.0"
 				wait(0.35)
 				TweenService:Create(
 					TitleLoad,
@@ -733,7 +733,7 @@ function LoadFunction()
 					TweenInfo.new(.45, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut),
 					{TextTransparency = 0.2}
 				):Play()
-				TitleLoad.Text = "Welcome to Unique Script | Premium Edition"
+				TitleLoad.Text = "Welcome to Dark-Energy HUB Script | Free Bata"
 				TitleLoad.Font = Enum.Font.GothamBold
 				TitleLoad.TextTransparency = 0
 				wait(3)
@@ -797,7 +797,7 @@ LoadScrollbar.MouseEnter:Connect(function()
 		TweenService:Create(
 			LoadScrollbar,
 			TweenInfo.new(.2, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),
-			{ImageColor3 = Color3.fromRGB(255, 0, 127)}
+			{ImageColor3 = Color3.fromRGB(153, 51, 255)}
 		):Play()
 	end
 end)
@@ -948,7 +948,7 @@ function Library.new()
 
 		Button.Name = "Button"
 		Button.Parent = MainNotification
-		Button.BackgroundColor3 = Color3.fromRGB(255, 0, 127)
+		Button.BackgroundColor3 = Color3.fromRGB(153, 51, 255)
 		Button.BorderSizePixel = 0
 		Button.Position = UDim2.new(0.0209424086, 0, 0.878048778, 0)
 		Button.Size = UDim2.new(0, 367, 0, 26)
@@ -971,7 +971,7 @@ function Library.new()
 
 		Line2.Name = "Line2"
 		Line2.Parent = Line1
-		Line2.BackgroundColor3 = Color3.fromRGB(255, 0, 127)
+		Line2.BackgroundColor3 = Color3.fromRGB(153, 51, 255)
 		Line2.BorderSizePixel = 0
 		Line2.Size = UDim2.new(0, 367, 0, 4)
 
@@ -1146,7 +1146,7 @@ function Library.new()
 				TweenService:Create(
 					LoadScrollbar,
 					TweenInfo.new(.2, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),
-					{ImageColor3 = Color3.fromRGB(255, 0, 127)}
+					{ImageColor3 = Color3.fromRGB(153, 51, 255)}
 				):Play()
 				TweenService:Create(
 					LoadScrollbar,
@@ -1303,7 +1303,7 @@ function Library.new()
 				Line.Position = UDim2.new(0.5, 0, 0.311723471, 0)
 				Line.Size = UDim2.new(0, 454, 0, 1)
 
-				UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(30,30,30)), ColorSequenceKeypoint.new(0.29, Color3.fromRGB(131, 13, 72)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(255, 0, 127)), ColorSequenceKeypoint.new(0.68, Color3.fromRGB(170, 9, 89)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(30,30,30))}
+				UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(30,30,30)), ColorSequenceKeypoint.new(0.29, Color3.fromRGB(131, 13, 72)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(153, 51, 255)), ColorSequenceKeypoint.new(0.68, Color3.fromRGB(170, 9, 89)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(30,30,30))}
 				UIGradient.Parent = Line
 
 				PlayerInfoFrame.Name = "PlayerInfoFrame"
@@ -1739,7 +1739,7 @@ function Library.new()
 						TweenService:Create(
 							Toggle_2,
 							TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-							{BackgroundColor3 = Color3.fromRGB(255, 0, 127)}
+							{BackgroundColor3 = Color3.fromRGB(153, 51, 255)}
 						):Play()
 						TweenService:Create(
 							Toggle_2,
@@ -1805,7 +1805,7 @@ function Library.new()
 					TweenService:Create(
 						Toggle_2,
 						TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-						{BackgroundColor3 = Color3.fromRGB(255, 0, 127)}
+						{BackgroundColor3 = Color3.fromRGB(153, 51, 255)}
 					):Play()
 					TweenService:Create(
 						Toggle_2,
@@ -1908,7 +1908,7 @@ function Library.new()
 
 				ButtonFrame.Name = "ButtonFrame"
 				ButtonFrame.Parent = ScrollingPageFrame
-				ButtonFrame.BackgroundColor3 = Color3.fromRGB(255, 0, 127)
+				ButtonFrame.BackgroundColor3 = Color3.fromRGB(153, 51, 255)
 				ButtonFrame.BackgroundTransparency = 0.450
 				ButtonFrame.Size = UDim2.new(0, 475, 0, 35)
 
@@ -2143,7 +2143,7 @@ function Library.new()
 							TweenService:Create(
 								Logo,
 								TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-								{ImageColor3 = Color3.fromRGB(255, 0, 127)}
+								{ImageColor3 = Color3.fromRGB(153, 51, 255)}
 							):Play()
 						else
 							for ine,va in pairs(MultiDropdown) do
@@ -2215,7 +2215,7 @@ function Library.new()
 						TweenService:Create(
 							Arrow,
 							TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-							{ImageColor3 = Color3.fromRGB(255, 0, 127)}
+							{ImageColor3 = Color3.fromRGB(153, 51, 255)}
 						):Play()
 						TweenService:Create(
 							SelectionFrame,
@@ -2327,7 +2327,7 @@ function Library.new()
 							TweenService:Create(
 								Logo,
 								TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-								{ImageColor3 = Color3.fromRGB(255, 0, 127)}
+								{ImageColor3 = Color3.fromRGB(153, 51, 255)}
 							):Play()
 						else
 							for ine,va in pairs(MultiDropdown) do
@@ -2593,7 +2593,7 @@ function Library.new()
 						TweenService:Create(
 							Arrow,
 							TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-							{ImageColor3 = Color3.fromRGB(255, 0, 127)}
+							{ImageColor3 = Color3.fromRGB(153, 51, 255)}
 						):Play()
 						TweenService:Create(
 							SelectionFrame,
@@ -2827,14 +2827,14 @@ function Library.new()
 
 				SliderValueFrame_2.Name = "SliderValueFrame"
 				SliderValueFrame_2.Parent = SliderValueFrame
-				SliderValueFrame_2.BackgroundColor3 = Color3.fromRGB(255, 0, 127)
+				SliderValueFrame_2.BackgroundColor3 = Color3.fromRGB(153, 51, 255)
 				SliderValueFrame_2.BorderSizePixel = 0
 				SliderValueFrame_2.Size = UDim2.new((visualDefault or 0) / visualMax, 0, 0, 5)
 
 				SliderValueFrame_3.Name = "SliderValueFrame"
 				SliderValueFrame_3.Parent = SliderValueFrame
 				SliderValueFrame_3.AnchorPoint = Vector2.new(0.5, 0.5)
-				SliderValueFrame_3.BackgroundColor3 = Color3.fromRGB(255, 0, 127)
+				SliderValueFrame_3.BackgroundColor3 = Color3.fromRGB(153, 51, 255)
 				SliderValueFrame_3.BorderSizePixel = 0
 				SliderValueFrame_3.ClipsDescendants = true
 				SliderValueFrame_3.Position = UDim2.new((visualDefault or 0)/visualMax, 0.5, 0.5,0.5, 0)
@@ -3023,16 +3023,16 @@ end
 
 function LoadSettings()
 	if readfile and writefile and isfile and isfolder then
-		if not isfolder("Unique Hub Premium Scripts") then
-			makefolder("Unique Hub Premium Scripts")
+		if not isfolder("Dark-Energy HUB Free Scripts") then
+			makefolder("Dark-Energy HUB Free Scripts")
 		end
-		if not isfolder("Unique Hub Premium Scripts/Blox Fruits/") then
-			makefolder("Unique Hub Premium Scripts/Blox Fruits/")
+		if not isfolder("Dark-Energy HUB Free Scripts/Blox Fruits/") then
+			makefolder("Dark-Energy HUB Free Scripts/Blox Fruits/")
 		end
-		if not isfile("Unique Hub Premium Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json") then
-			writefile("Unique Hub Premium Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json", game:GetService("HttpService"):JSONEncode(_G.Settings))
+		if not isfile("Dark-Energy HUB Free Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json") then
+			writefile("Dark-Energy HUB Free Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json", game:GetService("HttpService"):JSONEncode(_G.Settings))
 		else
-			local Decode = game:GetService("HttpService"):JSONDecode(readfile("Unique Hub Premium Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json"))
+			local Decode = game:GetService("HttpService"):JSONDecode(readfile("Dark-Energy HUB Free Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json"))
 			for i,v in pairs(Decode) do
 				_G.Settings[i] = v
 			end
@@ -3044,15 +3044,15 @@ end
 
 function SaveSettings()
 	if readfile and writefile and isfile and isfolder then
-		if not isfile("Unique Hub Premium Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json") then
+		if not isfile("Dark-Energy HUB Free Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json") then
 			LoadSettings()
 		else
-			local Decode = game:GetService("HttpService"):JSONDecode(readfile("Unique Hub Premium Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json"))
+			local Decode = game:GetService("HttpService"):JSONDecode(readfile("Dark-Energy HUB Free Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json"))
 			local Array = {}
 			for i,v in pairs(_G.Settings) do
 				Array[i] = v
 			end
-			writefile("Unique Hub Premium Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json", game:GetService("HttpService"):JSONEncode(Array))
+			writefile("Dark-Energy HUB Free Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json", game:GetService("HttpService"):JSONEncode(Array))
 		end
 	else
 		return warn("Status : Undetected Executor")
@@ -5981,7 +5981,7 @@ local UI = Library.new()
 
 local PlayerInfo = UI.tab({
 	Logo = 6022668898,
-	ColorUI = Color3.fromRGB(255, 0, 127)
+	ColorUI = Color3.fromRGB(153, 51, 255)
 })
 
 local Page_PlayerInfo = PlayerInfo.page()
@@ -5992,7 +5992,7 @@ Page_PlayerInfo.PlayerInfo()
 
 local Main = UI.tab({
 	Logo = 11155842453,
-	ColorUI = Color3.fromRGB(255, 0, 127)
+	ColorUI = Color3.fromRGB(153, 51, 255)
 })
 
 local Page_Main = Main.page()
@@ -6002,7 +6002,7 @@ local Page_Main = Main.page()
 local MainLabel =Page_Main.Label({
 	Title = "Main",
 })
-MainLabel.Color(Color3.fromRGB(255, 0, 127))
+MainLabel.Color(Color3.fromRGB(153, 51, 255))
 
 Page_Main.Toggle({
 	Title = "Auto Farm Level",
@@ -10407,7 +10407,7 @@ end
 
 local Configs = UI.tab({
 	Logo = 11156322986,
-	ColorUI = Color3.fromRGB(255, 0, 127)
+	ColorUI = Color3.fromRGB(153, 51, 255)
 })
 
 local Page_Configs = Configs.page()
@@ -10418,7 +10418,7 @@ local LabelConfigs = Page_Configs.Label({
 	Title = "Configs"
 })
 
-LabelConfigs.Color(Color3.fromRGB(255, 0, 127))
+LabelConfigs.Color(Color3.fromRGB(153, 51, 255))
 
 
 Page_Configs.Toggle({
@@ -10453,10 +10453,10 @@ end
 Page_Configs.Line()
 
 Page_Configs.Toggle({
-	Title = "Fast Attack",
-	Default = _G.Settings.Configs["Fast Attack"],
+	Title = "Fast Attack Mobile",
+	Default = _G.Settings.Configs["FastAttackFix"],
 	callback = function(value)
-		_G.Settings.Configs["Fast Attack"] = value
+		_G.Settings.Configs["FastAttackFix"] = value
 		SaveSettings()
 	end,
 })
@@ -10466,7 +10466,7 @@ local CombatFramework = debug.getupvalues(Module)[2]
 local CameraShakerR = require(game.ReplicatedStorage.Util.CameraShaker)
 spawn(function()
     while wait() do
-        if _G.Settings.Configs["Fast Attack"] then
+        if _G.Settings.Configs["FastAttackFix"] then
             pcall(function()
                 CameraShakerR:Stop()
                 CombatFramework.activeController.attacking = false
@@ -10481,6 +10481,48 @@ spawn(function()
         end
     end
 end)
+
+Page_Configs.Toggle({
+	Title = "Fast Attack Pc Select",
+	Default = _G.Settings.Configs["Fast Attack"],
+	callback = function(value)
+		_G.Settings.Configs["Fast Attack"] = value
+		SaveSettings()
+	end,
+})
+
+Page_Configs.Dropdown({
+	Title = "Fast Attack Type",
+	Item = {"Fast","Normal","Slow"},
+	callback = function(value)
+		_G.Settings.Configs["Fast Attack Type"] = value
+		SaveSettings()
+	end,
+})
+
+coroutine.wrap(function()
+	while task.wait() do
+		local ac = CombatFrameworkR.activeController
+		if ac and ac.equipped then
+			wait(.1)
+			if FastAttack and _G.Settings.Configs["Fast Attack"] then
+				AttackFunction()
+				if _G.Settings.Configs["Fast Attack Type"] == "Normal" then
+					if tick() - cooldownfastattack > .9 then wait(.1) cooldownfastattack = tick() end
+				elseif _G.Settings.Configs["Fast Attack Type"] == "Fast" then
+					if tick() - cooldownfastattack > 1.5 then wait(.01) cooldownfastattack = tick() end
+				elseif _G.Settings.Configs["Fast Attack Type"] == "Slow" then
+					if tick() - cooldownfastattack > .3 then wait(.7) cooldownfastattack = tick() end
+				end
+			elseif FastAttack and _G.Settings.Configs["Fast Attack"] == false then
+				if ac.hitboxMagnitude ~= 55 then
+					ac.hitboxMagnitude = 55
+				end
+				ac:attack()
+			end
+		end
+	end
+end)()
 
 Page_Configs.Line()
 
@@ -10629,7 +10671,7 @@ Page_Configs.Toggle({
 
 local FightingStyle = UI.tab({
 	Logo = 11162889532,
-	ColorUI = Color3.fromRGB(255, 0, 127)
+	ColorUI = Color3.fromRGB(153, 51, 255)
 })
 
 local Page_FightingStyle = FightingStyle.page()
@@ -10637,7 +10679,7 @@ local Page_FightingStyle = FightingStyle.page()
 local LabelFightingStyle = Page_FightingStyle.Label({
 	Title = "Fighting Style"
 })
-LabelFightingStyle.Color(Color3.fromRGB(255, 0, 127))
+LabelFightingStyle.Color(Color3.fromRGB(153, 51, 255))
 
 local SupComplete = false
 local EClawComplete = false
@@ -11926,11 +11968,9 @@ Page_FightingStyle.Toggle({
 		SaveSettings()
 	end
 })
-
---[[
 	local Boss = UI.tab({
 	Logo = 11162907620,
-	ColorUI = Color3.fromRGB(255, 0, 127)
+	ColorUI = Color3.fromRGB(153, 51, 255)
 })
 
 local Page_Boss = Boss.page()
@@ -11938,7 +11978,7 @@ local Page_Boss = Boss.page()
 local LabelBoss = Page_Boss.Label({
 	Title = "Bosses"
 })
-LabelBoss.Color(Color3.fromRGB(255, 0, 127))
+LabelBoss.Color(Color3.fromRGB(153, 51, 255))
 
 Page_Boss.Toggle({
 	Title = "Auto All Boss",
@@ -12022,7 +12062,7 @@ Page_Boss.Toggle({
 
 local Mastery = UI.tab({
 	Logo = 11162915345,
-	ColorUI = Color3.fromRGB(255, 0, 127)
+	ColorUI = Color3.fromRGB(153, 51, 255)
 })
 
 local Page_Mastery = Mastery.page()
@@ -12030,7 +12070,7 @@ local Page_Mastery = Mastery.page()
 local LabelMastery = Page_Mastery.Label({
 	Title = "Mastery Functions"
 })
-LabelMastery.Color(Color3.fromRGB(255, 0, 127))
+LabelMastery.Color(Color3.fromRGB(153, 51, 255))
 
 spawn(function()
 	local gg = getrawmetatable(game)
@@ -12584,7 +12624,7 @@ end)
 
 local Stats = UI.tab({
 	Logo = 11155953071,
-	ColorUI = Color3.fromRGB(255, 0, 127)
+	ColorUI = Color3.fromRGB(153, 51, 255)
 })
 
 local Page_Stats = Stats.page()
@@ -12594,7 +12634,7 @@ local Page_Stats = Stats.page()
 local LabelStats = Page_Stats.Label({
 	Title = "Stats"
 })
-LabelStats.Color(Color3.fromRGB(255, 0, 127))
+LabelStats.Color(Color3.fromRGB(153, 51, 255))
 
 Page_Stats.Toggle({
 	Title = "Auto Stats",
@@ -12765,7 +12805,7 @@ end)
 
 local Teleports = UI.tab({
 	Logo = 11155851001,
-	ColorUI = Color3.fromRGB(255, 0, 127)
+	ColorUI = Color3.fromRGB(153, 51, 255)
 })
 
 local Page_Teleports = Teleports.page()
@@ -12775,7 +12815,7 @@ local Page_Teleports = Teleports.page()
 local LabelTeleports = Page_Teleports.Label({
 	Title = "Teleports"
 })
-LabelTeleports.Color(Color3.fromRGB(255, 0, 127))
+LabelTeleports.Color(Color3.fromRGB(153, 51, 255))
 
 Page_Teleports.Line()
 
@@ -13114,7 +13154,7 @@ Page_Teleports.Button({
 
 local Fruit = UI.tab({
 	Logo = 11156000139,
-	ColorUI = Color3.fromRGB(255, 0, 127)
+	ColorUI = Color3.fromRGB(153, 51, 255)
 })
 
 local Page_Fruit = Fruit.page()
@@ -13124,7 +13164,7 @@ local Page_Fruit = Fruit.page()
 local LabelFruit = Page_Fruit.Label({
 	Title = "Devil Fruits"
 })
-LabelFruit.Color(Color3.fromRGB(255, 0, 127))
+LabelFruit.Color(Color3.fromRGB(153, 51, 255))
 
 Page_Fruit.Toggle({
 	Title = "Auto Buy Random Fruits",
@@ -13347,7 +13387,7 @@ Page_Fruit.Button({
 
 local Raids = UI.tab({
 	Logo = 11155986081,
-	ColorUI = Color3.fromRGB(255, 0, 127)
+	ColorUI = Color3.fromRGB(153, 51, 255)
 })
 
 local Page_Raids = Raids.page()
@@ -13357,7 +13397,7 @@ local Page_Raids = Raids.page()
 local LabelRaids = Page_Raids.Label({
 	Title = "Raids"
 })
-LabelRaids.Color(Color3.fromRGB(255, 0, 127))
+LabelRaids.Color(Color3.fromRGB(153, 51, 255))
 
 Page_Raids.Toggle({
 	Title = "Auto Raids",
@@ -13581,7 +13621,7 @@ end
 
 local Combat = UI.tab({
 	Logo = 11155827783,
-	ColorUI = Color3.fromRGB(255, 0, 127)
+	ColorUI = Color3.fromRGB(153, 51, 255)
 })
 
 local Page_Combat = Combat.page()
@@ -13589,7 +13629,7 @@ local Page_Combat = Combat.page()
 local LabelCombat = Page_Combat.Label({
 	Title = "Combat"
 })
-LabelCombat.Color(Color3.fromRGB(255, 0, 127))
+LabelCombat.Color(Color3.fromRGB(153, 51, 255))
 
 local PlayerDrop = Page_Combat.Dropdown({
 	Title = "Select Player",
@@ -13736,7 +13776,7 @@ Page_Combat.Toggle({
 
 local Misc = UI.tab({
 	Logo = 11156061121,
-	ColorUI = Color3.fromRGB(255, 0, 127)
+	ColorUI = Color3.fromRGB(153, 51, 255)
 })
 
 local Page_Misc = Misc.page()
@@ -13746,7 +13786,7 @@ local Page_Misc = Misc.page()
 local LabelMisc = Page_Misc.Label({
 	Title = "Misc"
 })
-LabelMisc.Color(Color3.fromRGB(255, 0, 127))
+LabelMisc.Color(Color3.fromRGB(153, 51, 255))
 
 Page_Misc.Label({Title = "FPS Lock"})
 
@@ -14314,7 +14354,7 @@ Page_Misc.Button({
 
 local Shop = UI.tab({
 	Logo = 11156948684,
-	ColorUI = Color3.fromRGB(255, 0, 127)
+	ColorUI = Color3.fromRGB(153, 51, 255)
 })
 
 local Page_Shop = Shop.page()
@@ -14324,7 +14364,7 @@ local Page_Shop = Shop.page()
 local LabelShop = Page_Shop.Label({
 	Title = "Shop"
 })
-LabelShop.Color(Color3.fromRGB(255, 0, 127))
+LabelShop.Color(Color3.fromRGB(153, 51, 255))
 
 Page_Shop.Label({Title = "Bones"})
 
@@ -14555,14 +14595,14 @@ end})
 
 -- local Credits = UI.tab({
 -- 	Logo = 11156083645,
--- 	ColorUI = Color3.fromRGB(255, 0, 127)
+-- 	ColorUI = Color3.fromRGB(153, 51, 255)
 -- })
 
 -- local Page_Credits = Credits.page()
 
 -- local CreditL = Page_Credits.Label({Title = "Made By Unique Team"})
 
--- CreditL.Color(Color3.fromRGB(255, 0, 127))
+-- CreditL.Color(Color3.fromRGB(153, 51, 255))
 
 -- Page_Credits.Label({Title = "Ui Creator : SixZens#5765"})
 
@@ -14571,7 +14611,7 @@ end})
 
 local Settings = UI.tab({
 	Logo = 11156075635,
-	ColorUI = Color3.fromRGB(255, 0, 127)
+	ColorUI = Color3.fromRGB(153, 51, 255)
 })
 
 local Page_Settings = Settings.page()
