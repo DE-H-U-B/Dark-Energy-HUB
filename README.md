@@ -5962,6 +5962,42 @@ local MainLabel =Page_Main.Label({
 })
 MainLabel.Color(Color3.fromRGB(153, 51, 255))
 
+Moon = Page_Main.Label({
+	Title = "",
+})
+
+task.spawn(function()
+            while task.wait() do
+                pcall(function()
+                    if game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149431" then
+                        Moon.SetText({
+                        Title = "🌑 : Full Moon 100%",
+                        })
+                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149052" then
+                        Moon.SetText({
+                        Title = "🌒 : Full Moon 75%",
+                        })
+                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709143733" then
+                        Moon.SetText({
+                        Title = "🌓 : Full Moon 50%",
+                        })
+                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709150401" then
+                        Moon.SetText({
+                        Title = "🌗 : Full Moon 25%",
+                        })
+                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149680" then
+                        Moon.SetText({
+                        Title = "🌖 : Full Moon 15%",
+                        })
+                    else
+                        Moon.SetText({
+                        Title = "🌕 : Full Moon 0%",
+                        })
+                    end
+                end)
+            end
+        end)
+
 Page_Main.Toggle({
 	Title = "Auto Farm Level",
 	Default = _G.Settings.Main["Auto Farm Level"],
