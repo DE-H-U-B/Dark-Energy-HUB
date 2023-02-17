@@ -3023,16 +3023,16 @@ end
 
 function LoadSettings()
 	if readfile and writefile and isfile and isfolder then
-		if not isfolder("Dark-Energy HUB Free Scripts") then
-			makefolder("Dark-Energy HUB Free Scripts")
+		if not isfolder("Unique Hub Premium Scripts") then
+			makefolder("Unique Hub Premium Scripts")
 		end
-		if not isfolder("Dark-Energy HUB Free Scripts/Blox Fruits/") then
-			makefolder("Dark-Energy HUB Free Scripts/Blox Fruits/")
+		if not isfolder("Unique Hub Premium Scripts/Blox Fruits/") then
+			makefolder("Unique Hub Premium Scripts/Blox Fruits/")
 		end
-		if not isfile("Dark-Energy HUB Free Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json") then
-			writefile("Dark-Energy HUB Free Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json", game:GetService("HttpService"):JSONEncode(_G.Settings))
+		if not isfile("Unique Hub Premium Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json") then
+			writefile("Unique Hub Premium Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json", game:GetService("HttpService"):JSONEncode(_G.Settings))
 		else
-			local Decode = game:GetService("HttpService"):JSONDecode(readfile("Dark-Energy HUB Free Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json"))
+			local Decode = game:GetService("HttpService"):JSONDecode(readfile("Unique Hub Premium Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json"))
 			for i,v in pairs(Decode) do
 				_G.Settings[i] = v
 			end
