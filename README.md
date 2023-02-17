@@ -6039,9 +6039,8 @@ function AutoFarmLevel()
 												game:service('VirtualInputManager'):SendKeyEvent(true, "V", false, game)
 												game:service('VirtualInputManager'):SendKeyEvent(false, "V", false, game)
 											end
-											if not _G.Settings.Configs["Fast Attack"] then
-												Click()
-											end
+game:GetService'VirtualUser':CaptureController()
+                                            game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
 											if game.Players.LocalPlayer.Data.Level.Value >= 20 and game.Players.LocalPlayer.Data.Level.Value <= 90 then
 												_G.Settings.Configs["Fast Attack Type"] = "Slow"
 											else
@@ -6091,9 +6090,8 @@ function AutoFarmLevel()
 												game:service('VirtualInputManager'):SendKeyEvent(true, "V", false, game)
 												game:service('VirtualInputManager'):SendKeyEvent(false, "V", false, game)
 											end
-											if not _G.Settings.Configs["Fast Attack"] then
-												Click()
-											end
+game:GetService'VirtualUser':CaptureController()
+                                            game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
 											if game.Players.LocalPlayer.Data.Level.Value >= 20 and game.Players.LocalPlayer.Data.Level.Value <= 90 then
 												_G.Settings.Configs["Fast Attack Type"] = "Slow"
 											else
@@ -6236,10 +6234,8 @@ function AutoFarmLevel()
 												v.Humanoid:ChangeState(11)
 												v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 											end
-											if not _G.Settings.Configs["Fast Attack"] then
-												Click()
-											end
-
+                                            game:GetService'VirtualUser':CaptureController()
+                                            game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
 											if game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") and game.Players.LocalPlayer.Character:FindFirstChild("Black Leg").Level.Value >= 150 then
 												game:service('VirtualInputManager'):SendKeyEvent(true, "V", false, game)
 												game:service('VirtualInputManager'):SendKeyEvent(false, "V", false, game)
@@ -6656,7 +6652,7 @@ if World1 then
 													FastAttack = true
 													if not _G.Settings.Configs["Fast Attack"] then
 														game:GetService'VirtualUser':CaptureController()
-														game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+											            game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
 													end
 													v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 													if _G.Settings.Configs["Show Hitbox"] then
