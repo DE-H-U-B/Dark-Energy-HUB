@@ -19,7 +19,7 @@ repeat wait() until game:GetService("ReplicatedStorage").Effect.Container
 
 _G.SettingsUI = {
 	Configs = {
-		ColorUI = Color3.fromRGB(153, 51, 255),
+		ColorUI = Color3.fromRGB(255, 0, 127),
 		Key = Enum.KeyCode.RightControl
 	}
 }
@@ -191,7 +191,7 @@ _G.Settings = {
 		['White Screen'] = false,
 	},
 	ConfigsUI = {
-		ColorUI = Color3.fromRGB(153, 51, 255), --{Color UI}
+		ColorUI = Color3.fromRGB(255, 0, 127), --{Color UI}
 	}
 }
 
@@ -455,7 +455,7 @@ local SoundClick = Instance.new("Sound")
 
 SoundClick.Name = "Sound Effect"
 SoundClick.Parent = Load
-SoundClick.SoundId = "rbxassetid://452267918"
+SoundClick.SoundId = "rbxassetid://130785805"
 SoundClick.Volume = 1
 
 local Blur = Instance.new("BlurEffect")
@@ -610,7 +610,7 @@ Title.Size = UDim2.new(0, 384, 0, 30)
 Title.Font = Enum.Font.GothamBold
 Title.Text = "BLOX FRUIT PREMIUM EDITION"
 Title.TextTransparency = 1
-Title.TextColor3 = Color3.fromRGB(153, 51, 255)
+Title.TextColor3 = Color3.fromRGB(255, 0, 127)
 Title.TextSize = 14.000
 
 
@@ -720,7 +720,7 @@ function LoadFunction()
 					TweenInfo.new(.5, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut),
 					{TextTransparency = 0.2}
 				):Play()
-				TitleLoad.Text = "Get Patch Dark-Energy Script Version : 1.0.0"
+				TitleLoad.Text = "Get Patch Unique Script Version : 1.0.0"
 				wait(0.35)
 				TweenService:Create(
 					TitleLoad,
@@ -733,7 +733,7 @@ function LoadFunction()
 					TweenInfo.new(.45, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut),
 					{TextTransparency = 0.2}
 				):Play()
-				TitleLoad.Text = "Welcome to Dark-Energy Script | Premium Edition"
+				TitleLoad.Text = "Welcome to Unique Script | Premium Edition"
 				TitleLoad.Font = Enum.Font.GothamBold
 				TitleLoad.TextTransparency = 0
 				wait(3)
@@ -797,7 +797,7 @@ LoadScrollbar.MouseEnter:Connect(function()
 		TweenService:Create(
 			LoadScrollbar,
 			TweenInfo.new(.2, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),
-			{ImageColor3 = Color3.fromRGB(153, 51, 255)}
+			{ImageColor3 = Color3.fromRGB(255, 0, 127)}
 		):Play()
 	end
 end)
@@ -948,7 +948,7 @@ function Library.new()
 
 		Button.Name = "Button"
 		Button.Parent = MainNotification
-		Button.BackgroundColor3 = Color3.fromRGB(153, 51, 255)
+		Button.BackgroundColor3 = Color3.fromRGB(255, 0, 127)
 		Button.BorderSizePixel = 0
 		Button.Position = UDim2.new(0.0209424086, 0, 0.878048778, 0)
 		Button.Size = UDim2.new(0, 367, 0, 26)
@@ -971,7 +971,7 @@ function Library.new()
 
 		Line2.Name = "Line2"
 		Line2.Parent = Line1
-		Line2.BackgroundColor3 = Color3.fromRGB(153, 51, 255)
+		Line2.BackgroundColor3 = Color3.fromRGB(255, 0, 127)
 		Line2.BorderSizePixel = 0
 		Line2.Size = UDim2.new(0, 367, 0, 4)
 
@@ -1048,7 +1048,7 @@ function Library.new()
 
 		local Logo = options.Logo or 6034687957
 		local ColorUI = options.ColorUI or _G.Settings.ConfigsUI.Color
-		local Sound = options.SoundEffect or 452267918
+		local Sound = options.SoundEffect or 130785805
 
 		PageOrder = PageOrder + 1
 
@@ -1146,7 +1146,7 @@ function Library.new()
 				TweenService:Create(
 					LoadScrollbar,
 					TweenInfo.new(.2, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),
-					{ImageColor3 = Color3.fromRGB(153, 51, 255)}
+					{ImageColor3 = Color3.fromRGB(255, 0, 127)}
 				):Play()
 				TweenService:Create(
 					LoadScrollbar,
@@ -1303,7 +1303,7 @@ function Library.new()
 				Line.Position = UDim2.new(0.5, 0, 0.311723471, 0)
 				Line.Size = UDim2.new(0, 454, 0, 1)
 
-				UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(30,30,30)), ColorSequenceKeypoint.new(0.29, Color3.fromRGB(131, 13, 72)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(153, 51, 255)), ColorSequenceKeypoint.new(0.68, Color3.fromRGB(170, 9, 89)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(30,30,30))}
+				UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(30,30,30)), ColorSequenceKeypoint.new(0.29, Color3.fromRGB(131, 13, 72)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(255, 0, 127)), ColorSequenceKeypoint.new(0.68, Color3.fromRGB(170, 9, 89)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(30,30,30))}
 				UIGradient.Parent = Line
 
 				PlayerInfoFrame.Name = "PlayerInfoFrame"
@@ -1739,7 +1739,7 @@ function Library.new()
 						TweenService:Create(
 							Toggle_2,
 							TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-							{BackgroundColor3 = Color3.fromRGB(153, 51, 255)}
+							{BackgroundColor3 = Color3.fromRGB(255, 0, 127)}
 						):Play()
 						TweenService:Create(
 							Toggle_2,
@@ -1805,7 +1805,7 @@ function Library.new()
 					TweenService:Create(
 						Toggle_2,
 						TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-						{BackgroundColor3 = Color3.fromRGB(153, 51, 255)}
+						{BackgroundColor3 = Color3.fromRGB(255, 0, 127)}
 					):Play()
 					TweenService:Create(
 						Toggle_2,
@@ -1908,7 +1908,7 @@ function Library.new()
 
 				ButtonFrame.Name = "ButtonFrame"
 				ButtonFrame.Parent = ScrollingPageFrame
-				ButtonFrame.BackgroundColor3 = Color3.fromRGB(153, 51, 255)
+				ButtonFrame.BackgroundColor3 = Color3.fromRGB(255, 0, 127)
 				ButtonFrame.BackgroundTransparency = 0.450
 				ButtonFrame.Size = UDim2.new(0, 475, 0, 35)
 
@@ -2143,7 +2143,7 @@ function Library.new()
 							TweenService:Create(
 								Logo,
 								TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-								{ImageColor3 = Color3.fromRGB(153, 51, 255)}
+								{ImageColor3 = Color3.fromRGB(255, 0, 127)}
 							):Play()
 						else
 							for ine,va in pairs(MultiDropdown) do
@@ -2215,7 +2215,7 @@ function Library.new()
 						TweenService:Create(
 							Arrow,
 							TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-							{ImageColor3 = Color3.fromRGB(153, 51, 255)}
+							{ImageColor3 = Color3.fromRGB(255, 0, 127)}
 						):Play()
 						TweenService:Create(
 							SelectionFrame,
@@ -2327,7 +2327,7 @@ function Library.new()
 							TweenService:Create(
 								Logo,
 								TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-								{ImageColor3 = Color3.fromRGB(153, 51, 255)}
+								{ImageColor3 = Color3.fromRGB(255, 0, 127)}
 							):Play()
 						else
 							for ine,va in pairs(MultiDropdown) do
@@ -2593,7 +2593,7 @@ function Library.new()
 						TweenService:Create(
 							Arrow,
 							TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-							{ImageColor3 = Color3.fromRGB(153, 51, 255)}
+							{ImageColor3 = Color3.fromRGB(255, 0, 127)}
 						):Play()
 						TweenService:Create(
 							SelectionFrame,
@@ -2827,14 +2827,14 @@ function Library.new()
 
 				SliderValueFrame_2.Name = "SliderValueFrame"
 				SliderValueFrame_2.Parent = SliderValueFrame
-				SliderValueFrame_2.BackgroundColor3 = Color3.fromRGB(153, 51, 255)
+				SliderValueFrame_2.BackgroundColor3 = Color3.fromRGB(255, 0, 127)
 				SliderValueFrame_2.BorderSizePixel = 0
 				SliderValueFrame_2.Size = UDim2.new((visualDefault or 0) / visualMax, 0, 0, 5)
 
 				SliderValueFrame_3.Name = "SliderValueFrame"
 				SliderValueFrame_3.Parent = SliderValueFrame
 				SliderValueFrame_3.AnchorPoint = Vector2.new(0.5, 0.5)
-				SliderValueFrame_3.BackgroundColor3 = Color3.fromRGB(153, 51, 255)
+				SliderValueFrame_3.BackgroundColor3 = Color3.fromRGB(255, 0, 127)
 				SliderValueFrame_3.BorderSizePixel = 0
 				SliderValueFrame_3.ClipsDescendants = true
 				SliderValueFrame_3.Position = UDim2.new((visualDefault or 0)/visualMax, 0.5, 0.5,0.5, 0)
@@ -3018,6 +3018,48 @@ function Library.new()
 	end	
 	return LibraryTab
 end
+
+-- [Save Settings]
+
+function LoadSettings()
+	if readfile and writefile and isfile and isfolder then
+		if not isfolder("Unique Hub Premium Scripts") then
+			makefolder("Unique Hub Premium Scripts")
+		end
+		if not isfolder("Unique Hub Premium Scripts/Blox Fruits/") then
+			makefolder("Unique Hub Premium Scripts/Blox Fruits/")
+		end
+		if not isfile("Unique Hub Premium Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json") then
+			writefile("Unique Hub Premium Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json", game:GetService("HttpService"):JSONEncode(_G.Settings))
+		else
+			local Decode = game:GetService("HttpService"):JSONDecode(readfile("Unique Hub Premium Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json"))
+			for i,v in pairs(Decode) do
+				_G.Settings[i] = v
+			end
+		end
+	else
+		return warn("Status : Undetected Executor")
+	end
+end
+
+function SaveSettings()
+	if readfile and writefile and isfile and isfolder then
+		if not isfile("Unique Hub Premium Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json") then
+			LoadSettings()
+		else
+			local Decode = game:GetService("HttpService"):JSONDecode(readfile("Unique Hub Premium Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json"))
+			local Array = {}
+			for i,v in pairs(_G.Settings) do
+				Array[i] = v
+			end
+			writefile("Unique Hub Premium Scripts/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json", game:GetService("HttpService"):JSONEncode(Array))
+		end
+	else
+		return warn("Status : Undetected Executor")
+	end
+end
+
+LoadSettings()
 
 if not game:IsLoaded() then
 	local Loaded = Instance.new("Message",workspace)
@@ -3624,16 +3666,18 @@ end
 
 -- [Functions Click]
 
-function Click()
+function ClickCamera()
 	game:GetService("VirtualUser"):CaptureController()
 	game:GetService("VirtualUser"):ClickButton1(Vector2.new(851, 158), game:GetService("Workspace").Camera.CFrame)
 end
 function Click()
 	game:GetService("VirtualUser"):CaptureController()
-	game:GetService("VirtualUser"):Button1Down(Vector2.new(851, 158))
+	game:GetService("VirtualUser"):Button1Down(Vector2.new(1280, 672))
 end
 
 -- [Server Hop Api]
+
+
 
 -- [Remove Text Fruits]
 
@@ -3704,7 +3748,7 @@ elseif placeId == 4442272183 then
 elseif placeId == 7449423635 then
 	ThreeWorld = true
 else
-	game.Players.LocalPlayer:Kick("This script works with maps. Blox Fruit only")
+	game.Players.LocalPlayer:Kick("ลูกหรี่ชอบโง่รันผิดแมพ")
 end
 
 -- [CheckMasteryWeapon]
@@ -5937,7 +5981,7 @@ local UI = Library.new()
 
 local PlayerInfo = UI.tab({
 	Logo = 6022668898,
-	ColorUI = Color3.fromRGB(153, 51, 255)
+	ColorUI = Color3.fromRGB(255, 0, 127)
 })
 
 local Page_PlayerInfo = PlayerInfo.page()
@@ -5948,7 +5992,7 @@ Page_PlayerInfo.PlayerInfo()
 
 local Main = UI.tab({
 	Logo = 11155842453,
-	ColorUI = Color3.fromRGB(153, 51, 255)
+	ColorUI = Color3.fromRGB(255, 0, 127)
 })
 
 local Page_Main = Main.page()
@@ -5958,7 +6002,7 @@ local Page_Main = Main.page()
 local MainLabel =Page_Main.Label({
 	Title = "Main",
 })
-MainLabel.Color(Color3.fromRGB(153, 51, 255))
+MainLabel.Color(Color3.fromRGB(255, 0, 127))
 
 Page_Main.Toggle({
 	Title = "Auto Farm Level",
@@ -5969,6 +6013,7 @@ Page_Main.Toggle({
 		if value == false then
 			toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 		end
+		SaveSettings()
 	end,
 })
 
@@ -6039,8 +6084,9 @@ function AutoFarmLevel()
 												game:service('VirtualInputManager'):SendKeyEvent(true, "V", false, game)
 												game:service('VirtualInputManager'):SendKeyEvent(false, "V", false, game)
 											end
-game:GetService'VirtualUser':CaptureController()
-                                            game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+											if not _G.Settings.Configs["Fast Attack"] then
+												ClickCamera()
+											end
 											if game.Players.LocalPlayer.Data.Level.Value >= 20 and game.Players.LocalPlayer.Data.Level.Value <= 90 then
 												_G.Settings.Configs["Fast Attack Type"] = "Slow"
 											else
@@ -6090,8 +6136,9 @@ game:GetService'VirtualUser':CaptureController()
 												game:service('VirtualInputManager'):SendKeyEvent(true, "V", false, game)
 												game:service('VirtualInputManager'):SendKeyEvent(false, "V", false, game)
 											end
-game:GetService'VirtualUser':CaptureController()
-                                            game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+											if not _G.Settings.Configs["Fast Attack"] then
+												ClickCamera()
+											end
 											if game.Players.LocalPlayer.Data.Level.Value >= 20 and game.Players.LocalPlayer.Data.Level.Value <= 90 then
 												_G.Settings.Configs["Fast Attack Type"] = "Slow"
 											else
@@ -6234,8 +6281,10 @@ game:GetService'VirtualUser':CaptureController()
 												v.Humanoid:ChangeState(11)
 												v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 											end
-                                            game:GetService'VirtualUser':CaptureController()
-                                            game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+											if not _G.Settings.Configs["Fast Attack"] then
+												ClickCamera()
+											end
+
 											if game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") and game.Players.LocalPlayer.Character:FindFirstChild("Black Leg").Level.Value >= 150 then
 												game:service('VirtualInputManager'):SendKeyEvent(true, "V", false, game)
 												game:service('VirtualInputManager'):SendKeyEvent(false, "V", false, game)
@@ -6574,6 +6623,7 @@ Page_Main.Toggle({
 		if value == false then
 			toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 		end
+		SaveSettings()
 	end,
 })
 
@@ -6619,6 +6669,7 @@ if World1 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
+			SaveSettings()
 
 			task.spawn(function()
 				while wait() do
@@ -6652,7 +6703,7 @@ if World1 then
 													FastAttack = true
 													if not _G.Settings.Configs["Fast Attack"] then
 														game:GetService'VirtualUser':CaptureController()
-											            game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+														game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
 													end
 													v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 													if _G.Settings.Configs["Show Hitbox"] then
@@ -6693,6 +6744,7 @@ if World1 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
+			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -6845,6 +6897,7 @@ if World1 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
+			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -6921,6 +6974,7 @@ if World1 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
+			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -7077,6 +7131,7 @@ elseif World2 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
+			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -7376,6 +7431,7 @@ elseif World2 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
+			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -7543,6 +7599,7 @@ elseif World2 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
+			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -7603,6 +7660,7 @@ elseif World2 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
+			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -7666,6 +7724,7 @@ elseif World2 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
+			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -7689,6 +7748,7 @@ elseif World2 then
 			if value == false then
 				toTarget(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
 			end
+			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -7752,6 +7812,7 @@ elseif World2 then
 			if value == false then
 				toTarget(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
 			end
+			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -7821,6 +7882,7 @@ elseif World2 then
 		Default = _G.Settings.Main["Auto Buy Legendary Sword"],
 		callback = function(value)
 			_G.Settings.Main["Auto Buy Legendary Sword"] = value
+			SaveSettings()
 
 			task.spawn(function()
 				while wait() do
@@ -7841,6 +7903,7 @@ elseif World2 then
 		Default = _G.Settings.Main["Auto Buy Enchanment Haki"],
 		callback = function(value)
 			_G.Settings.Main["Auto Buy Enchanment Haki"] = value
+			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -7952,6 +8015,7 @@ elseif World3 then
 			if value == false then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 			end
+			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					if _G.Settings.Main["Auto Holy Torch"] then
@@ -7981,6 +8045,7 @@ elseif World3 then
 			if value == false then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 			end
+			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -8039,6 +8104,7 @@ elseif World3 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
+			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -8099,6 +8165,7 @@ elseif World3 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
+			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -8331,6 +8398,7 @@ elseif World3 then
 			if value == false then
 				toTarget(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
 			end
+			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -8476,6 +8544,7 @@ elseif World3 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
+			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -8597,6 +8666,7 @@ elseif World3 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
+			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -8659,6 +8729,7 @@ elseif World3 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
+			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -8803,6 +8874,7 @@ elseif World3 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
+			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -8858,6 +8930,7 @@ elseif World3 then
 		Default = _G.Settings.Main["Auto Yama Sword"],
 		callback = function(value)
 			_G.Settings.Main["Auto Yama Sword"] = value
+			SaveSettings()
 			spawn(function()
 				while wait() do
 					if _G.Settings.Main["Auto Yama Sword"] then
@@ -8882,6 +8955,7 @@ elseif World3 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
+			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					if _G.Settings.Main["Auto Tushita Sword"] then
@@ -8940,6 +9014,7 @@ elseif World3 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
+			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					if _G.Settings.Main["Auto Serpent Bow"] then
@@ -8998,6 +9073,7 @@ elseif World3 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
+			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -9070,6 +9146,7 @@ elseif World3 then
 			if value == false then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 			end
+			SaveSettings()
 
 			task.spawn(function()
 				while wait() do
@@ -9199,6 +9276,7 @@ elseif World3 then
 			if value == false then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 			end
+			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					if _G.Settings.Main["Auto Dough V2"] then
@@ -10092,6 +10170,7 @@ elseif World3 then
 					toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 					wait()
 				end
+				SaveSettings()
 				task.spawn(function()
 					while wait() do
 						pcall(function()
@@ -10163,6 +10242,7 @@ elseif World3 then
 					toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 					wait()
 				end
+				SaveSettings()
 				task.spawn(function()
 					while wait() do
 						pcall(function()
@@ -10189,6 +10269,7 @@ elseif World3 then
 					toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 					wait()
 				end
+				SaveSettings()
 				task.spawn(function()
 					while wait() do
 						pcall(function()
@@ -10326,7 +10407,7 @@ end
 
 local Configs = UI.tab({
 	Logo = 11156322986,
-	ColorUI = Color3.fromRGB(153, 51, 255)
+	ColorUI = Color3.fromRGB(255, 0, 127)
 })
 
 local Page_Configs = Configs.page()
@@ -10337,7 +10418,7 @@ local LabelConfigs = Page_Configs.Label({
 	Title = "Configs"
 })
 
-LabelConfigs.Color(Color3.fromRGB(153, 51, 255))
+LabelConfigs.Color(Color3.fromRGB(255, 0, 127))
 
 
 Page_Configs.Toggle({
@@ -10345,6 +10426,7 @@ Page_Configs.Toggle({
 	Default = _G.Settings.Configs["Double Quest"],
 	callback = function(value)
 		_G.Settings.Configs["Double Quest"] = value
+		SaveSettings()
 	end,
 })
 
@@ -10353,6 +10435,7 @@ Page_Configs.Toggle({
 	Default = _G.Settings.Configs["Bypass TP"],
 	callback = function(value)
 		_G.Settings.Configs["Bypass TP"] = value
+		SaveSettings()
 	end,
 })
 
@@ -10362,6 +10445,7 @@ if World1 then
 		Default = _G.Settings.Main["Fast Auto Farm Level"],
 		callback = function(value)
 			_G.Settings.Main["Fast Auto Farm Level"] = value
+			SaveSettings()
 		end,
 	})
 end
@@ -10369,10 +10453,11 @@ end
 Page_Configs.Line()
 
 Page_Configs.Toggle({
-	Title = "Fast Attack Fix No Bug",
+	Title = "Fast Attack",
 	Default = _G.Settings.Configs["Fast Attack"],
 	callback = function(value)
-		_G.Settings.Configs["FastAttackFix"] = value
+		_G.Settings.Configs["Fast Attack"] = value
+		SaveSettings()
 	end,
 })
 
@@ -10380,8 +10465,8 @@ local Module = require(game:GetService("Players").LocalPlayer.PlayerScripts.Comb
 local CombatFramework = debug.getupvalues(Module)[2]
 local CameraShakerR = require(game.ReplicatedStorage.Util.CameraShaker)
 spawn(function()
-    while task.wait() do
-        if _G.Settings.Configs["FastAttackFix"] then
+    while wait() do
+        if _G.Settings.Configs["Fast Attack"] then
             pcall(function()
                 CameraShakerR:Stop()
                 CombatFramework.activeController.attacking = false
@@ -10463,6 +10548,7 @@ Page_Configs.Toggle({
 	Default = _G.Settings.Configs["Auto Haki"],
 	callback = function(value)
 		_G.Settings.Configs["Auto Haki"] = value
+		SaveSettings()
 	end,
 })
 task.spawn(function()
@@ -10484,6 +10570,7 @@ Page_Configs.Slider({
 	Max = 60,
 	callback = function(value)
 		_G.Settings.Configs["Distance Auto Farm"] = value
+		SaveSettings()
 	end,
 })
 
@@ -10493,6 +10580,7 @@ Page_Configs.Toggle({
 	callback = function(value)
 		_G.Settings.Configs["Camera Shaker"] = value
 		CameraShaker()
+		SaveSettings()
 	end,
 })
 
@@ -10505,6 +10593,7 @@ Page_Configs.Toggle({
 	Default = _G.Settings.Configs["Bring Mob"],
 	callback = function(value)
 		_G.Settings.Configs["Bring Mob"] = value
+		SaveSettings()
 	end,
 })
 
@@ -10513,6 +10602,7 @@ Page_Configs.Toggle({
 	Default = _G.Settings.Configs["Show Hitbox"],
 	callback = function(value)
 		_G.Settings.Configs["Show Hitbox"] = value
+		SaveSettings()
 	end,
 })
 
@@ -10520,7 +10610,7 @@ Page_Configs.Slider({
 	Title = "Hitbox Transparency",
 	Dec = true,
 	Min = 0,
-	Default = 1,
+	Default = 0.5,
 	Max = 1,
 	callback = function(value)
 		_G.Hitbox_LocalTransparency = value
@@ -10533,12 +10623,13 @@ Page_Configs.Toggle({
 	callback = function(value)
 		_G.Settings.Configs["Disabled Damage"] = value
 		DisabledDamage()
+		SaveSettings()
 	end,
 })
 
 local FightingStyle = UI.tab({
 	Logo = 11162889532,
-	ColorUI = Color3.fromRGB(153, 51, 255)
+	ColorUI = Color3.fromRGB(255, 0, 127)
 })
 
 local Page_FightingStyle = FightingStyle.page()
@@ -10546,7 +10637,7 @@ local Page_FightingStyle = FightingStyle.page()
 local LabelFightingStyle = Page_FightingStyle.Label({
 	Title = "Fighting Style"
 })
-LabelFightingStyle.Color(Color3.fromRGB(153, 51, 255))
+LabelFightingStyle.Color(Color3.fromRGB(255, 0, 127))
 
 local SupComplete = false
 local EClawComplete = false
@@ -10628,6 +10719,7 @@ Page_FightingStyle.Toggle({
 				GetAllMeleeFarm()
 			end
 		end
+		SaveSettings()
 		task.spawn(function()
 			while wait() do
 				pcall(function()
@@ -11335,6 +11427,7 @@ Page_FightingStyle.Toggle({
 	Default = _G.Settings.FightingStyle["Auto Superhuman"],
 	callback = function(value)
 		_G.Settings.FightingStyle["Auto Superhuman"] = value
+		SaveSettings()
 		task.spawn(function()
 			while wait() do
 				pcall(function()
@@ -11469,6 +11562,7 @@ Page_FightingStyle.Toggle({
 	Default = _G.Settings.FightingStyle["Auto Electric Claw"],
 	callback = function(value)
 		_G.Settings.FightingStyle["Auto Electric Claw"] = value
+		SaveSettings()
 		if _G.Settings.FightingStyle["Auto Electric Claw"] then
 			Com("F_","BuyElectro")
 		end
@@ -11522,6 +11616,7 @@ Page_FightingStyle.Toggle({
 	Default = _G.Settings.FightingStyle["Auto Death Step"],
 	callback = function(value)
 		_G.Settings.FightingStyle["Auto Death Step"] = value
+		SaveSettings()
 		if _G.Settings.FightingStyle["Auto Death Step"] then
 			Com("F_","BuyBlackLeg")
 		end
@@ -11629,6 +11724,7 @@ Page_FightingStyle.Toggle({
 	Default = _G.Settings.FightingStyle["Auto SharkMan Karate"],
 	callback = function(value)
 		_G.Settings.FightingStyle["Auto SharkMan Karate"] = value
+		SaveSettings()
 		if _G.Settings.FightingStyle["Auto SharkMan Karate"] then
 			Com("F_","BuySharkmanKarate")
 		end
@@ -11732,6 +11828,7 @@ Page_FightingStyle.Toggle({
 	Default = _G.Settings.FightingStyle["Auto Dragon Talon"],
 	callback = function(value)
 		_G.Settings.FightingStyle["Auto Dragon Talon"] = value
+		SaveSettings()
 		if _G.Settings.FightingStyle["Auto Dragon Talon"] then
 			Com("F_","BlackbeardReward","DragonClaw","2")
 		end
@@ -11817,6 +11914,7 @@ Page_FightingStyle.Toggle({
 	Default = _G.Settings.FightingStyle["Auto Fully Death Step"],
 	callback = function(value)
 		_G.Settings.FightingStyle["Auto Fully Death Step"] = value
+		SaveSettings()
 	end
 })
 
@@ -11825,13 +11923,14 @@ Page_FightingStyle.Toggle({
 	Default = _G.Settings.FightingStyle["Auto Fully SharkMan Karate"],
 	callback = function(value)
 		_G.Settings.FightingStyle["Auto Fully SharkMan Karate"] = value
+		SaveSettings()
 	end
 })
 
 --[[
 	local Boss = UI.tab({
 	Logo = 11162907620,
-	ColorUI = Color3.fromRGB(153, 51, 255)
+	ColorUI = Color3.fromRGB(255, 0, 127)
 })
 
 local Page_Boss = Boss.page()
@@ -11839,13 +11938,14 @@ local Page_Boss = Boss.page()
 local LabelBoss = Page_Boss.Label({
 	Title = "Bosses"
 })
-LabelBoss.Color(Color3.fromRGB(153, 51, 255))
+LabelBoss.Color(Color3.fromRGB(255, 0, 127))
 
 Page_Boss.Toggle({
 	Title = "Auto All Boss",
 	Default = _G.Settings.Boss["Auto All Boss"],
 	callback = function(value)
 		_G.Settings.Boss["Auto All Boss"] = value
+		SaveSettings()
 	end,
 })
 ]]
@@ -11894,6 +11994,7 @@ Page_Boss.Toggle({
 	Default = _G.Settings.Boss["Auto Boss Select"],
 	callback = function(value)
 		_G.Settings.Boss["Auto Boss Select"] = value
+		SaveSettings()
 	end,
 })
 
@@ -11901,6 +12002,7 @@ Page_Boss.Dropdown({
 	Title = "Select Boss",
 	callback = function(value)
 		_G.Settings.Boss["Select Boss"] = value
+		SaveSettings()
 	end,
 })
 
@@ -11913,13 +12015,14 @@ Page_Boss.Toggle({
 	Default = _G.Settings.Boss["Auto Quest"],
 	callback = function(value)
 		_G.Settings.Boss["Auto Quest"] = value
+		SaveSettings()
 	end,
 })
 ]]
 
 local Mastery = UI.tab({
 	Logo = 11162915345,
-	ColorUI = Color3.fromRGB(153, 51, 255)
+	ColorUI = Color3.fromRGB(255, 0, 127)
 })
 
 local Page_Mastery = Mastery.page()
@@ -11927,7 +12030,7 @@ local Page_Mastery = Mastery.page()
 local LabelMastery = Page_Mastery.Label({
 	Title = "Mastery Functions"
 })
-LabelMastery.Color(Color3.fromRGB(153, 51, 255))
+LabelMastery.Color(Color3.fromRGB(255, 0, 127))
 
 spawn(function()
 	local gg = getrawmetatable(game)
@@ -12225,6 +12328,7 @@ local SwordMulti = Page_Mastery.MultiDropdown({
 		if value == false then
 			toTarget(game.Players.LocalPlayer.Character.HumanoidRootPart.Position,game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
 		end
+		SaveSettings()
 	end,
 })
 
@@ -12321,7 +12425,8 @@ Page_Mastery.Toggle({Title = "Auto Farm Sword Mastery",Default = _G.Settings.Mas
 	_G.Settings.Mastery["Farm Mastery SwordList"] = x
 	if x == false then
 		toTarget(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
-	end;
+	end
+	SaveSettings();
 	spawn(function()
 		while wait() do
 			if _G.Settings.Mastery["Farm Mastery SwordList"] and #_G.Settings.Mastery["Select Multi Sword"] ~= 0 then
@@ -12390,6 +12495,7 @@ Page_Mastery.Toggle({
 			toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 			wait()
 		end
+		SaveSettings()
 	end,
 })
 
@@ -12401,6 +12507,7 @@ Page_Mastery.Toggle({
 		if value == false then
 			toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 		end
+		SaveSettings()
 	end,
 })
 
@@ -12415,6 +12522,7 @@ Page_Mastery.Slider({
 	Max = 100,
 	callback = function(value)
 		_G.Settings.Mastery["Mob Health (%)"] = value
+		SaveSettings()
 	end,
 })
 
@@ -12425,6 +12533,7 @@ Page_Mastery.Toggle({
 	Default = _G.Settings.Configs["Skill Z"],
 	callback = function(value)
 		_G.Settings.Configs["Skill Z"] = value
+		SaveSettings()
 	end,
 })
 
@@ -12433,6 +12542,7 @@ Page_Mastery.Toggle({
 	Default = _G.Settings.Configs["Skill X"],
 	callback = function(value)
 		_G.Settings.Configs["Skill X"] = value
+		SaveSettings()
 	end,
 })
 
@@ -12441,6 +12551,7 @@ Page_Mastery.Toggle({
 	Default = _G.Settings.Configs["Skill C"],
 	callback = function(value)
 		_G.Settings.Configs["Skill C"] = value
+		SaveSettings()
 	end,
 })
 
@@ -12449,6 +12560,7 @@ Page_Mastery.Toggle({
 	Default = _G.Settings.Configs["Skill V"],
 	callback = function(value)
 		_G.Settings.Configs["Skill V"] = value
+		SaveSettings()
 	end,
 })
 
@@ -12472,7 +12584,7 @@ end)
 
 local Stats = UI.tab({
 	Logo = 11155953071,
-	ColorUI = Color3.fromRGB(153, 51, 255)
+	ColorUI = Color3.fromRGB(255, 0, 127)
 })
 
 local Page_Stats = Stats.page()
@@ -12482,13 +12594,14 @@ local Page_Stats = Stats.page()
 local LabelStats = Page_Stats.Label({
 	Title = "Stats"
 })
-LabelStats.Color(Color3.fromRGB(153, 51, 255))
+LabelStats.Color(Color3.fromRGB(255, 0, 127))
 
 Page_Stats.Toggle({
 	Title = "Auto Stats",
 	Default = _G.Settings.Stat["Enabled Auto Stats"],
 	callback = function(value)
 		_G.Settings.Stat["Enabled Auto Stats"] = value
+		SaveSettings()
 	end,
 })
 
@@ -12499,6 +12612,7 @@ Page_Stats.Toggle({
 	Desc = "Will Up Melee to 2400 First then Up def",
 	callback = function(value)
 		_G.Settings.Stat["Auto Stats Kaitun"] = value
+		SaveSettings()
 	end,
 })
 
@@ -12529,6 +12643,7 @@ Page_Stats.Dropdown({
 	Item = {"Max Stats","Melee","Defense","Sword","Gun","Devil Fruits"},
 	callback = function(value)
 		_G.Settings.Stat["Select Stats"] = value
+		SaveSettings()
 		task.spawn(function()
 			pcall(function()
 				while wait() do
@@ -12612,6 +12727,7 @@ Page_Stats.Toggle({
 	Default = _G.Settings.Stat["Enabled Auto Redeem Code"],
 	callback = function(value)
 		_G.Settings.Stat["Enabled Auto Redeem Code"] = value
+		SaveSettings()
 	end,
 })
 
@@ -12623,6 +12739,7 @@ Page_Stats.Slider({
 	Max = 2400,
 	callback = function(value)
 		_G.Settings.Stat["Select Level Redeem Code"] = value
+		SaveSettings()
 	end,
 })
 
@@ -12648,7 +12765,7 @@ end)
 
 local Teleports = UI.tab({
 	Logo = 11155851001,
-	ColorUI = Color3.fromRGB(153, 51, 255)
+	ColorUI = Color3.fromRGB(255, 0, 127)
 })
 
 local Page_Teleports = Teleports.page()
@@ -12658,7 +12775,7 @@ local Page_Teleports = Teleports.page()
 local LabelTeleports = Page_Teleports.Label({
 	Title = "Teleports"
 })
-LabelTeleports.Color(Color3.fromRGB(153, 51, 255))
+LabelTeleports.Color(Color3.fromRGB(255, 0, 127))
 
 Page_Teleports.Line()
 
@@ -12742,6 +12859,7 @@ if not World1 then
 				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 				wait()
 			end
+			SaveSettings()
 			task.spawn(function()
 				while wait() do
 					pcall(function()
@@ -12996,7 +13114,7 @@ Page_Teleports.Button({
 
 local Fruit = UI.tab({
 	Logo = 11156000139,
-	ColorUI = Color3.fromRGB(153, 51, 255)
+	ColorUI = Color3.fromRGB(255, 0, 127)
 })
 
 local Page_Fruit = Fruit.page()
@@ -13006,13 +13124,14 @@ local Page_Fruit = Fruit.page()
 local LabelFruit = Page_Fruit.Label({
 	Title = "Devil Fruits"
 })
-LabelFruit.Color(Color3.fromRGB(153, 51, 255))
+LabelFruit.Color(Color3.fromRGB(255, 0, 127))
 
 Page_Fruit.Toggle({
 	Title = "Auto Buy Random Fruits",
 	Default = _G.Settings.Fruits["Auto Buy Random Fruits"],
 	callback = function(value)
 		_G.Settings.Fruits["Auto Buy Random Fruits"] = value
+		SaveSettings()
 	end,
 })
 
@@ -13039,6 +13158,7 @@ Page_Fruit.Toggle({
 	Default = _G.Settings.Fruits["Auto Store Fruits"],
 	callback = function(value)
 		_G.Settings.Fruits["Auto Store Fruits"] = value
+		SaveSettings()
 	end,
 })
 
@@ -13195,6 +13315,7 @@ Page_Fruit.Toggle({
 	Default = _G.Settings.Fruits["Auto Buy Devil Fruits Sniper"],
 	callback = function(value)
 		_G.Settings.Fruits["Auto Buy Devil Fruits Sniper"] = value
+		SaveSettings()
 	end,
 })
 
@@ -13203,6 +13324,7 @@ Page_Fruit.Dropdown({
 	Item = SelectDevilFruits,
 	callback = function(value)
 		_G.Settings.Fruits["Select Devil Fruits"] = value
+		SaveSettings()
 	end,
 })
 
@@ -13225,7 +13347,7 @@ Page_Fruit.Button({
 
 local Raids = UI.tab({
 	Logo = 11155986081,
-	ColorUI = Color3.fromRGB(153, 51, 255)
+	ColorUI = Color3.fromRGB(255, 0, 127)
 })
 
 local Page_Raids = Raids.page()
@@ -13235,7 +13357,7 @@ local Page_Raids = Raids.page()
 local LabelRaids = Page_Raids.Label({
 	Title = "Raids"
 })
-LabelRaids.Color(Color3.fromRGB(153, 51, 255))
+LabelRaids.Color(Color3.fromRGB(255, 0, 127))
 
 Page_Raids.Toggle({
 	Title = "Auto Raids",
@@ -13247,6 +13369,7 @@ Page_Raids.Toggle({
 			toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 			wait()
 		end
+		SaveSettings()
 	end,
 })
 
@@ -13255,6 +13378,7 @@ Page_Raids.Dropdown({
 	Item = {"Flame","Ice","Quake","Light","Dark","String","Rumble","Magma","Human: Buddha","Sand","Bird: Phoenix","Dough"},
 	callback = function(value)
 		_G.Settings.Raids["Select Raids"] = value
+		SaveSettings()
 	end,
 })
 
@@ -13267,6 +13391,7 @@ Page_Raids.Toggle({
 	Default = _G.Settings.Raids["Kill Aura"],
 	callback = function(value)
 		_G.Settings.Raids["Kill Aura"] = value
+		SaveSettings()
 	end,
 })
 
@@ -13275,6 +13400,7 @@ Page_Raids.Toggle({
 	Default = _G.Settings.Raids["Auto Awakened"],
 	callback = function(value)
 		_G.Settings.Raids["Auto Awakened"] = value
+		SaveSettings()
 	end,
 })
 
@@ -13283,6 +13409,7 @@ Page_Raids.Toggle({
 	Default = _G.Settings.Raids["Auto Next Place"],
 	callback = function(value)
 		_G.Settings.Raids["Auto Next Place"] = value
+		SaveSettings()
 	end,
 })
 
@@ -13454,7 +13581,7 @@ end
 
 local Combat = UI.tab({
 	Logo = 11155827783,
-	ColorUI = Color3.fromRGB(153, 51, 255)
+	ColorUI = Color3.fromRGB(255, 0, 127)
 })
 
 local Page_Combat = Combat.page()
@@ -13462,7 +13589,7 @@ local Page_Combat = Combat.page()
 local LabelCombat = Page_Combat.Label({
 	Title = "Combat"
 })
-LabelCombat.Color(Color3.fromRGB(153, 51, 255))
+LabelCombat.Color(Color3.fromRGB(255, 0, 127))
 
 local PlayerDrop = Page_Combat.Dropdown({
 	Title = "Select Player",
@@ -13593,62 +13720,15 @@ mouse.Button1Down:Connect(function()
 	end 
 end)
 
----
+--
 
-    	function isnil(thing)
-		return (thing == nil)
-	end
-	local function round(n)
-		return math.floor(tonumber(n) + 0.5)
-	end
-	Number = math.random(1, 1000000)
-	function UpdateEspPlayer()
-		for i,v in pairs(game:GetService'Players':GetChildren()) do
-			pcall(function()
-				if not isnil(v.Character) then
-					if ESPPlayer then
-						if not isnil(v.Character.Head) and not v.Character.Head:FindFirstChild('NameEsp'..Number) then
-							local bill = Instance.new('BillboardGui',v.Character.Head)
-							bill.Name = 'NameEsp'..Number
-							bill.ExtentsOffset = Vector3.new(0, 1, 0)
-							bill.Size = UDim2.new(1,100,1,20)
-							bill.Adornee = v.Character.Head
-							bill.AlwaysOnTop = true
-							local name = Instance.new('TextLabel',bill)
-							name.Font = "GothamBold"
-							name.FontSize = "Size14"
-							name.TextWrapped = true
-							name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M')
-							name.Size = UDim2.new(1,0,1,0)
-							name.TextYAlignment = 'Top'
-							name.BackgroundTransparency = 1
-							name.TextStrokeTransparency = 0.5
-							if v.Team == game.Players.LocalPlayer.Team then
-								name.TextColor3 = Color3.new(0,255,0)
-							else
-								name.TextColor3 = Color3.new(255,0,0)
-							end
-						else
-							v.Character.Head['NameEsp'..Number].TextLabel.Text = (v.Name ..' | '.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M\nHealth : ' .. round(v.Character.Humanoid.Health*100/v.Character.Humanoid.MaxHealth) .. '%')
-						end
-					else
-						if v.Character.Head:FindFirstChild('NameEsp'..Number) then
-							v.Character.Head:FindFirstChild('NameEsp'..Number):Destroy()
-						end
-					end
-				end
-			end)
-		end
-	end
+getgenv().ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/ErenYeaker/SaveScript/main/ESP.lua"))();
 
 Page_Combat.Toggle({
-	Title = "ESP Player",
+	Title = "ESP",
 	Default = false,
 	callback = function(value)
-		ESPPlayer = value
-        while ESPPlayer do wait()
-            UpdateEspPlayer()
-        end
+		getgenv().ESP:Toggle(value);
 	end,
 })
 
@@ -13656,7 +13736,7 @@ Page_Combat.Toggle({
 
 local Misc = UI.tab({
 	Logo = 11156061121,
-	ColorUI = Color3.fromRGB(153, 51, 255)
+	ColorUI = Color3.fromRGB(255, 0, 127)
 })
 
 local Page_Misc = Misc.page()
@@ -13666,16 +13746,18 @@ local Page_Misc = Misc.page()
 local LabelMisc = Page_Misc.Label({
 	Title = "Misc"
 })
-LabelMisc.Color(Color3.fromRGB(153, 51, 255))
+LabelMisc.Color(Color3.fromRGB(255, 0, 127))
 
 Page_Misc.Label({Title = "FPS Lock"})
 
 Page_Misc.Slider({Title = "Select FPS Lock",Min = 5,Max = 240,Default = _G.Settings.HUD["FPS"],callback = function(x)
 	_G.Settings.HUD["FPS"] = x
+	SaveSettings()
 end,})
 
 Page_Misc.Toggle({Title = "Lock Set FPS",Default = _G.Settings.HUD["LockFPS"],callback = function(x)
 	_G.Settings.HUD["LockFPS"] = x
+	SaveSettings()
 	if _G.Settings.HUD["LockFPS"] == true then
 		setfpscap(_G.Settings.HUD["FPS"])
 	else
@@ -13693,6 +13775,7 @@ Page_Misc.Toggle({
 	Default = _G.Settings.HUD["White Screen"],
 	callback = function(value)
 		_G.Settings.HUD["White Screen"] = value
+		SaveSettings()
 		if value == true then
 			RunService:Set3dRenderingEnabled(false)
 			setfpscap(30)
@@ -14067,6 +14150,7 @@ Page_Misc.Toggle({
 	callback = function(value)
 		_G.Settings.Misc["No Soru Cooldown"] = value
 		NoCooldown()
+		SaveSettings()
 	end,
 })
 
@@ -14076,6 +14160,7 @@ Page_Misc.Toggle({
 	callback = function(value)
 		_G.Settings.Misc["No Dash Cooldown"] = value
 		NoCooldown()
+		SaveSettings()
 	end,
 })
 
@@ -14087,6 +14172,7 @@ Page_Misc.Toggle({
 	callback = function(value)
 		_G.Settings.Misc["Infinities Geppo"] = value
 		NoCooldown()
+		SaveSettings()
 	end,
 })
 
@@ -14096,6 +14182,7 @@ Page_Misc.Toggle({
 	callback = function(value)
 		_G.Settings.Misc["Infinities Energy"] = value
 		InfinitiesEnergy()
+		SaveSettings()
 	end,
 })
 
@@ -14108,6 +14195,7 @@ Page_Misc.Toggle({
 	Default = _G.Settings.Misc["No Fog"],
 	callback = function(value)
 		_G.Settings.Misc["No Fog"] = value
+		SaveSettings()
 		task.spawn(function()
 			while wait() do
 				pcall(function()
@@ -14130,6 +14218,7 @@ Page_Misc.Toggle({
 	Default = _G.Settings.Misc["Wall-TP"],
 	callback = function(value)
 		_G.Settings.Misc["Wall-TP"] = value
+		SaveSettings()
 		task.spawn(function()
 			if _G.Settings.Misc["Wall-TP"] then
 				local torso
@@ -14166,6 +14255,7 @@ Page_Misc.Toggle({
 	Default = _G.Settings.Misc["Fly"],
 	callback = function(value)
 		_G.Settings.Misc["Fly"] = value
+		SaveSettings()
 		task.spawn(function()
 			if _G.Settings.Misc["Fly"] then
 				game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').PlatformStand = true
@@ -14224,7 +14314,7 @@ Page_Misc.Button({
 
 local Shop = UI.tab({
 	Logo = 11156948684,
-	ColorUI = Color3.fromRGB(153, 51, 255)
+	ColorUI = Color3.fromRGB(255, 0, 127)
 })
 
 local Page_Shop = Shop.page()
@@ -14234,7 +14324,7 @@ local Page_Shop = Shop.page()
 local LabelShop = Page_Shop.Label({
 	Title = "Shop"
 })
-LabelShop.Color(Color3.fromRGB(153, 51, 255))
+LabelShop.Color(Color3.fromRGB(255, 0, 127))
 
 Page_Shop.Label({Title = "Bones"})
 
@@ -14243,6 +14333,7 @@ Page_Shop.Toggle({
 	Default = _G.Settings.Main["Auto Random Bone"],
 	callback = function(value)
 		_G.Settings.Main["Auto Random Bone"] = value
+		SaveSettings()
 	end,
 })
 
@@ -14262,6 +14353,7 @@ if World2 then
 		Default = _G.Settings.Main["Auto Buy Legendary Sword"],
 		callback = function(value)
 			_G.Settings.Main["Auto Buy Legendary Sword"] = value
+			SaveSettings()
 		end,
 	})
 end
@@ -14271,6 +14363,7 @@ Page_Shop.Toggle({
 	Default = _G.Settings.Main["Auto Buy Enchanment Haki"],
 	callback = function(value)
 		_G.Settings.Main["Auto Buy Enchanment Haki"] = value
+		SaveSettings()
 	end,
 })
 
@@ -14462,14 +14555,14 @@ end})
 
 -- local Credits = UI.tab({
 -- 	Logo = 11156083645,
--- 	ColorUI = Color3.fromRGB(153, 51, 255)
+-- 	ColorUI = Color3.fromRGB(255, 0, 127)
 -- })
 
 -- local Page_Credits = Credits.page()
 
 -- local CreditL = Page_Credits.Label({Title = "Made By Unique Team"})
 
--- CreditL.Color(Color3.fromRGB(153, 51, 255))
+-- CreditL.Color(Color3.fromRGB(255, 0, 127))
 
 -- Page_Credits.Label({Title = "Ui Creator : SixZens#5765"})
 
@@ -14478,7 +14571,7 @@ end})
 
 local Settings = UI.tab({
 	Logo = 11156075635,
-	ColorUI = Color3.fromRGB(153, 51, 255)
+	ColorUI = Color3.fromRGB(255, 0, 127)
 })
 
 local Page_Settings = Settings.page()
@@ -15152,6 +15245,7 @@ Page_Settings.Toggle({
 	Default = _G.Settings.Misc['Auto Rejoin'],
 	callback = function(value)
 		_G.Settings.Misc['Auto Rejoin'] = value
+		SaveSettings()
 	end,
 })
 
