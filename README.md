@@ -3635,8 +3635,6 @@ end
 
 -- [Server Hop Api]
 
-
-
 -- [Remove Text Fruits]
 
 function RemoveFruit(str)
@@ -3706,7 +3704,7 @@ elseif placeId == 4442272183 then
 elseif placeId == 7449423635 then
 	ThreeWorld = true
 else
-	game.Players.LocalPlayer:Kick("ลูกหรี่ชอบโง่รันผิดแมพ")
+	game.Players.LocalPlayer:Kick("This script works with maps. Blox Fruit only")
 end
 
 -- [CheckMasteryWeapon]
@@ -10392,7 +10390,6 @@ task.spawn(function()
                 CameraShakerR:Stop()
                 CombatFramework.activeController.attacking = false
                 CombatFramework.activeController.timeToNextAttack = 0 --0
-                CombatFramework.activeController.increment = 1 + 1 / 1  --3
                 CombatFramework.activeController.hitboxMagnitude = 55
                 CombatFramework.activeController.blocking = false
                 CombatFramework.activeController.increment = 3
