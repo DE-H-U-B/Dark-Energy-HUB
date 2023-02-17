@@ -11939,7 +11939,6 @@ Page_FightingStyle.Toggle({
 	end
 })
 
---[[
 	local Boss = UI.tab({
 	Logo = 11162907620,
 	ColorUI = Color3.fromRGB(153, 51, 255)
@@ -13733,8 +13732,6 @@ mouse.Button1Down:Connect(function()
 end)
 
 --
-
-getgenv().ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/ErenYeaker/SaveScript/main/ESP.lua"))();
 
 Page_Combat.Toggle({
 	Title = "ESP",
