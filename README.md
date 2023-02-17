@@ -10471,7 +10471,7 @@ spawn(function()
                 CameraShakerR:Stop()
                 CombatFramework.activeController.attacking = false
                 CombatFramework.activeController.timeToNextAttack = 0 --0
-                CombatFramework.activeController.increment = 3  --3
+                CombatFramework.activeController.increment = 5.3  --3
                 CombatFramework.activeController.hitboxMagnitude = 55
                 CombatFramework.activeController.blocking = false
                 CombatFramework.activeController.timeToNextBlock = 0 --0
@@ -10489,6 +10489,48 @@ game:GetService("RunService").Heartbeat:Connect(function()
         game:GetService'VirtualUser':Button1Up(Vector2.new(0.9,0.9))
     end
 end)
+
+Page_Configs.Toggle({
+	Title = "Fast Attack",
+	Default = _G.Settings.Configs["Fast Attack"],
+	callback = function(value)
+		_G.Settings.Configs["Fast Attack"] = value
+		SaveSettings()
+	end,
+})
+
+Page_Configs.Dropdown({
+	Title = "Fast Attack Type",
+	Item = {"Fast","Normal","Slow"},
+	callback = function(value)
+		_G.Settings.Configs["Fast Attack Type"] = value
+		SaveSettings()
+	end,
+})
+
+coroutine.wrap(function()
+	while task.wait() do
+		local ac = CombatFrameworkR.activeController
+		if ac and ac.equipped then
+			wait(.1)
+			if FastAttack and _G.Settings.Configs["Fast Attack"] then
+				AttackFunction()
+				if _G.Settings.Configs["Fast Attack Type"] == "Normal" then
+					if tick() - cooldownfastattack > .9 then wait(.1) cooldownfastattack = tick() end
+				elseif _G.Settings.Configs["Fast Attack Type"] == "Fast" then
+					if tick() - cooldownfastattack > 1.5 then wait(.01) cooldownfastattack = tick() end
+				elseif _G.Settings.Configs["Fast Attack Type"] == "Slow" then
+					if tick() - cooldownfastattack > .3 then wait(.7) cooldownfastattack = tick() end
+				end
+			elseif FastAttack and _G.Settings.Configs["Fast Attack"] == false then
+				if ac.hitboxMagnitude ~= 55 then
+					ac.hitboxMagnitude = 55
+				end
+				ac:attack()
+			end
+		end
+	end
+end)()
 
 Page_Configs.Line()
 
@@ -11935,6 +11977,7 @@ Page_FightingStyle.Toggle({
 	end
 })
 
+--[[
 	local Boss = UI.tab({
 	Logo = 11162907620,
 	ColorUI = Color3.fromRGB(153, 51, 255)
@@ -11992,6 +12035,7 @@ spawn(function()
 	end
 end)
 
+--[[
 Page_Boss.Line()
 
 Page_Boss.Toggle({
