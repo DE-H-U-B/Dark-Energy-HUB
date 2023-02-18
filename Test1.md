@@ -13538,8 +13538,6 @@ end)
 
 --
 
-Page_Combat.Label({Title = "ESP"})
-
 Page_Combat.Toggle({
 	Title = "ESP PLAYER",
 	Default = false,
@@ -13547,16 +13545,6 @@ Page_Combat.Toggle({
 		ESPPlayer = value
         while ESPPlayer do wait()
             UpdateEspPlayer()
-	end,
-})
-
-Page_Combat.Toggle({
-	Title = "ESP FRUIT",
-	Default = false,
-	callback = function(value)
-		DevilFruitESP = value
-        while DevilFruitESP do wait()
-            UpdateBfEsp() 
 	end,
 })
 
@@ -13605,41 +13593,6 @@ Page_Combat.Toggle({
 			end)
 		end
 	end
-    
-    function UpdateBfEsp() 
-        for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-            pcall(function()
-                if DevilFruitESP then
-                    if string.find(v.Name, "Fruit") then   
-                        if not v.Handle:FindFirstChild('NameEsp'..Number) then
-                            local bill = Instance.new('BillboardGui',v.Handle)
-                            bill.Name = 'NameEsp'..Number
-                            bill.ExtentsOffset = Vector3.new(0, 1, 0)
-                            bill.Size = UDim2.new(1,200,1,30)
-                            bill.Adornee = v.Handle
-                            bill.AlwaysOnTop = true
-                            local name = Instance.new('TextLabel',bill)
-                            name.Font = "GothamBold"
-                            name.FontSize = "Size14"
-                            name.TextWrapped = true
-                            name.Size = UDim2.new(1,0,1,0)
-                            name.TextYAlignment = 'Top'
-                            name.BackgroundTransparency = 1
-                            name.TextStrokeTransparency = 0.5
-                            name.TextColor3 = Color3.fromRGB(255, 0, 0)
-                            name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) ..' M')
-                        else
-                            v.Handle['NameEsp'..Number].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) ..' M')
-                        end
-                    end
-                else
-                    if v.Handle:FindFirstChild('NameEsp'..Number) then
-                        v.Handle:FindFirstChild('NameEsp'..Number):Destroy()
-                        end
-                end
-            end)
-        end
-    end
 
 --
 
@@ -14244,58 +14197,6 @@ spawn(function()
 		end
 	end
 end)
-
-Page_Shop.Label({Title = "BOST SHOP"})
-
-    BoatList= {
-    "Pirate Sloop",
-    "Enforcer",
-    "Rocket Boost",
-    "Dinghy",
-    "Pirate Basic",
-    "Pirate Brigade"
-}
-
-spawn(function()
-    while wait() do
-        pcall(function()
-            if SelectBoat == "Pirate Sloop" then
-                _G.SelectBoat = "PirateSloop"
-            else
-                if SelectBoat == "Enforcer" then
-                    _G.SelectBoat = "Enforcer"
-                else
-                    if SelectBoat == "RocketBoost" then
-                        _G.SelectBoat = "RocketBoost"
-                    else
-                        if SelectBoat == "PirateBasic" then
-                            _G.SelectBoat = "PirateBasic"
-                        else
-                            if SelectBoat == "PirateBrigade" then
-                                _G.SelectBoat = "PirateBrigade"
-                            end
-                        end
-                    end
-                end
-            end
-        end)
-    end
-end)
-
-Page_Shop.Dropdown({
-	Title = "Select Bost",
-	Item = BoatList,
-	callback = function(a)
-		SelectBoat = a
-	end,
-})
-
-Page_Shop.Button({
-	Title = "Buy To Select Bost",
-	callback = function()
-		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBoat",_G.SelectBoat)
-	end,
-})
 
 if World2 then
 	Page_Shop.Label({Title = "Legendary Sword"})
