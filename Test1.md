@@ -14386,58 +14386,6 @@ spawn(function()
 	end
 end)
 
-Page_Shop.Label({Title = "BOST SHOP"})
-
-    BoatList= {
-    "Pirate Sloop",
-    "Enforcer",
-    "Rocket Boost",
-    "Dinghy",
-    "Pirate Basic",
-    "Pirate Brigade"
-}
-
-spawn(function()
-    while wait() do
-        pcall(function()
-            if SelectBoat == "Pirate Sloop" then
-                _G.SelectBoat = "PirateSloop"
-            else
-                if SelectBoat == "Enforcer" then
-                    _G.SelectBoat = "Enforcer"
-                else
-                    if SelectBoat == "RocketBoost" then
-                        _G.SelectBoat = "RocketBoost"
-                    else
-                        if SelectBoat == "PirateBasic" then
-                            _G.SelectBoat = "PirateBasic"
-                        else
-                            if SelectBoat == "PirateBrigade" then
-                                _G.SelectBoat = "PirateBrigade"
-                            end
-                        end
-                    end
-                end
-            end
-        end)
-    end
-end)
-
-Page_Shop.Dropdown({
-	Title = "Select Bost",
-	Item = BoatList,
-	callback = function(a)
-		SelectBoat = a
-	end,
-})
-
-Page_Shop.Button({
-	Title = "Buy To Select Bost",
-	callback = function()
-		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBoat",_G.SelectBoat)
-	end,
-})
-
 if World2 then
 	Page_Shop.Label({Title = "Legendary Sword"})
 
