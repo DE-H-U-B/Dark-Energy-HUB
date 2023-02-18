@@ -13560,26 +13560,6 @@ Page_Combat.Toggle({
 	end,
 })
 
-Page_Combat.Toggle({
-	Title = "ESP SPOILED FLOWERS",
-	Default = false,
-	callback = function(value)
-		FlowerESP = value
-        while FlowerESP do wait()
-            UpdateFlowerEsp() 
-	end,
-})
-
-Page_Combat.Toggle({
-	Title = "ESP ISLAND",
-	Default = false,
-	callback = function(value)
-		IslandESP = value
-        while IslandESP do wait()
-            UpdateIslandESP()  
-	end,
-})
-
     	function isnil(thing)
 		return (thing == nil)
 	end
@@ -13626,85 +13606,6 @@ Page_Combat.Toggle({
 		end
 	end
     
-    function UpdateIslandESP() 
-        for i,v in pairs(game:GetService("Workspace")["_WorldOrigin"].Locations:GetChildren()) do
-            pcall(function()
-                if IslandESP then 
-                    if v.Name ~= "Sea" then
-                        if not v:FindFirstChild('NameEsp') then
-                            local bill = Instance.new('BillboardGui',v)
-                            bill.Name = 'NameEsp'
-                            bill.ExtentsOffset = Vector3.new(0, 1, 0)
-                            bill.Size = UDim2.new(1,200,1,30)
-                            bill.Adornee = v
-                            bill.AlwaysOnTop = true
-                            local name = Instance.new('TextLabel',bill)
-                            name.Font = "GothamBold"
-                            name.FontSize = "Size14"
-                            name.TextWrapped = true
-                            name.Size = UDim2.new(1,0,1,0)
-                            name.TextYAlignment = 'Top'
-                            name.BackgroundTransparency = 1
-                            name.TextStrokeTransparency = 0.5
-                            name.TextColor3 = Color3.fromRGB(80, 245, 245)
-                        else
-                            v['NameEsp'].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M')
-                        end
-                    end
-                else
-                    if v:FindFirstChild('NameEsp') then
-                        v:FindFirstChild('NameEsp'):Destroy()
-                    end
-                end
-            end)
-        end
-    end
-    
-    function UpdateChestEsp() 
-        for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-            pcall(function()
-                if string.find(v.Name,"Chest") then
-                    if ChestESP then
-                        if string.find(v.Name,"Chest") then
-                            if not v:FindFirstChild('NameEsp'..Number) then
-                                local bill = Instance.new('BillboardGui',v)
-                                bill.Name = 'NameEsp'..Number
-                                bill.ExtentsOffset = Vector3.new(0, 1, 0)
-                                bill.Size = UDim2.new(1,200,1,30)
-                                bill.Adornee = v
-                                bill.AlwaysOnTop = true
-                                local name = Instance.new('TextLabel',bill)
-                                name.Font = "GothamBold"
-                                name.FontSize = "Size14"
-                                name.TextWrapped = true
-                                name.Size = UDim2.new(1,0,1,0)
-                                name.TextYAlignment = 'Top'
-                                name.BackgroundTransparency = 1
-                                name.TextStrokeTransparency = 0.5
-                                name.TextColor3 = Color3.fromRGB(0, 255, 250)
-                            if v.Name == "Chest1" then
-                                name.Text = ("Chest 1" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M')
-                            end
-                            if v.Name == "Chest2" then
-                                name.Text = ("Chest 2" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M')
-                            end
-                        if v.Name == "Chest3" then
-                            name.Text = ("Chest 3" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M')
-                        end
-                        else
-                            v['NameEsp'..Number].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M')
-                        end
-                    end
-                else
-                    if v:FindFirstChild('NameEsp'..Number) then
-                    v:FindFirstChild('NameEsp'..Number):Destroy()
-                    end
-                end
-                end
-            end)
-        end
-    end
-    
     function UpdateBfEsp() 
         for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
             pcall(function()
@@ -13736,48 +13637,6 @@ Page_Combat.Toggle({
                         v.Handle:FindFirstChild('NameEsp'..Number):Destroy()
                         end
                 end
-            end)
-        end
-    end
-    
-    function UpdateFlowerEsp() 
-        for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-            pcall(function()
-                if v.Name == "Flower2" or v.Name == "Flower1" then
-                    if FlowerESP then 
-                        if not v:FindFirstChild('NameEsp'..Number) then
-                            local bill = Instance.new('BillboardGui',v)
-                            bill.Name = 'NameEsp'..Number
-                            bill.ExtentsOffset = Vector3.new(0, 1, 0)
-                            bill.Size = UDim2.new(1,200,1,30)
-                            bill.Adornee = v
-                            bill.AlwaysOnTop = true
-                            local name = Instance.new('TextLabel',bill)
-                            name.Font = "GothamBold"
-                            name.FontSize = "Size14"
-                            name.TextWrapped = true
-                            name.Size = UDim2.new(1,0,1,0)
-                            name.TextYAlignment = 'Top'
-                            name.BackgroundTransparency = 1
-                            name.TextStrokeTransparency = 0.5
-                            name.TextColor3 = Color3.fromRGB(255, 0, 0)
-                        if v.Name == "Flower1" then 
-                            name.Text = ("Blue Flower" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M')
-                            name.TextColor3 = Color3.fromRGB(0, 255, 250)
-                        end
-                        if v.Name == "Flower2" then
-                            name.Text = ("Red Flower" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M')
-                            name.TextColor3 = Color3.fromRGB(255, 51, 51)
-                        end
-                    else
-                        v['NameEsp'..Number].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M')
-                    end
-                    else
-                        if v:FindFirstChild('NameEsp'..Number) then
-                            v:FindFirstChild('NameEsp'..Number):Destroy()
-                        end
-                    end
-                end   
             end)
         end
     end
@@ -14385,6 +14244,58 @@ spawn(function()
 		end
 	end
 end)
+
+Page_Shop.Label({Title = "BOST SHOP"})
+
+    BoatList= {
+    "Pirate Sloop",
+    "Enforcer",
+    "Rocket Boost",
+    "Dinghy",
+    "Pirate Basic",
+    "Pirate Brigade"
+}
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            if SelectBoat == "Pirate Sloop" then
+                _G.SelectBoat = "PirateSloop"
+            else
+                if SelectBoat == "Enforcer" then
+                    _G.SelectBoat = "Enforcer"
+                else
+                    if SelectBoat == "RocketBoost" then
+                        _G.SelectBoat = "RocketBoost"
+                    else
+                        if SelectBoat == "PirateBasic" then
+                            _G.SelectBoat = "PirateBasic"
+                        else
+                            if SelectBoat == "PirateBrigade" then
+                                _G.SelectBoat = "PirateBrigade"
+                            end
+                        end
+                    end
+                end
+            end
+        end)
+    end
+end)
+
+Page_Shop.Dropdown({
+	Title = "Select Bost",
+	Item = BoatList,
+	callback = function(a)
+		SelectBoat = a
+	end,
+})
+
+Page_Shop.Button({
+	Title = "Buy To Select Bost",
+	callback = function()
+		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBoat",_G.SelectBoat)
+	end,
+})
 
 if World2 then
 	Page_Shop.Label({Title = "Legendary Sword"})
