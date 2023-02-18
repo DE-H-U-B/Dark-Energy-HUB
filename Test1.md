@@ -605,7 +605,7 @@ Title.BackgroundTransparency = 1.000
 Title.Position = UDim2.new(0.5, 0, 0.280000001, 0)
 Title.Size = UDim2.new(0, 384, 0, 30)
 Title.Font = Enum.Font.GothamBold
-Title.Text = "BLOX FRUIT PREMIUM EDITION"
+Title.Text = "BLOX FRUIT FREE BATA"
 Title.TextTransparency = 1
 Title.TextColor3 = Color3.fromRGB(153, 51, 255)
 Title.TextSize = 14.000
@@ -717,7 +717,7 @@ function LoadFunction()
 					TweenInfo.new(.5, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut),
 					{TextTransparency = 0.2}
 				):Play()
-				TitleLoad.Text = "Get Patch Dark-Energy Script Version : 1.0.0"
+				TitleLoad.Text = "Get Patch Dark-Energy Script Version : 2.0.0"
 				wait(0.35)
 				TweenService:Create(
 					TitleLoad,
@@ -730,7 +730,7 @@ function LoadFunction()
 					TweenInfo.new(.45, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut),
 					{TextTransparency = 0.2}
 				):Play()
-				TitleLoad.Text = "Welcome to Dark-Energy Script | Premium Edition"
+				TitleLoad.Text = "Welcome to Dark-Energy Script | Free Bata"
 				TitleLoad.Font = Enum.Font.GothamBold
 				TitleLoad.TextTransparency = 0
 				wait(3)
@@ -10511,6 +10511,33 @@ Page_Configs.Toggle({
 		_G.Settings.Configs["Bring Mob"] = value
 	end,
 })
+
+    function bring2()
+        local plr = game.Players.LocalPlayer
+        pcall(function()
+        for i, v in pairs(game.workspace.Enemies:GetChildren()) do
+            for k, x in pairs (game.workspace.Enemies:GetChildren()) do
+            if x.Name == Name then
+                if v.Name == Name then
+                    x.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame
+                    v.Head.CanCollide = false
+                    v.Humanoid:ChangeState(14)
+                    v.HumanoidRootPart.CanCollide = false
+                    v.HumanoidRootPart.Size = Vector3.new(60,60,60)
+                    sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius", math.huge)
+                end
+            end
+            end
+        end
+        end)
+    end
+    spawn(function()
+        while wait() do
+            if _G.Settings.Configs["Bring Mob"] then
+                bring2()
+            end
+        end
+    end)
 
 Page_Configs.Toggle({
 	Title = "Show Hitbox",
