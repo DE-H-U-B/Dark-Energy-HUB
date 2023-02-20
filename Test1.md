@@ -10368,18 +10368,6 @@ Page_Configs.Toggle({
 	end,
 })
 
-local plr = game.Players.LocalPlayer
-local CbFw = debug.getupvalues(require(plr.PlayerScripts.CombatFramework))
-local CbFw2 = CbFw[2]
-
-function GetCurrentBlade() 
-    local p13 = CbFw2.activeController
-    local ret = p13.blades[1]
-    if not ret then return end
-    while ret.Parent~=game.Players.LocalPlayer.Character do ret=ret.Parent end
-    return ret
-end
-
 local CameraShakerR = require(game.ReplicatedStorage.Util.CameraShaker)
 spawn(function()
 	while true do
@@ -10399,62 +10387,12 @@ spawn(function()
 		task.wait()
 	end
 	end)
-    
-
-function getAllBladeHits(Sizes)
-	local Hits = {}
-	local Client = game.Players.LocalPlayer
-	local Enemies = game:GetService("Workspace").Enemies:GetChildren()
-	for i=1,#Enemies do local v = Enemies[i]
-		local Human = v:FindFirstChildOfClass("Humanoid")
-		if Human and Human.RootPart and Human.Health > 0 and Client:DistanceFromCharacter(Human.RootPart.Position) < Sizes+5 then
-			table.insert(Hits,Human.RootPart)
-		end
-	end
-	return Hits
-end
-
-function AttackNoCD() 
-    local AC = CbFw2.activeController
-    for i = 1, 1 do 
-        local bladehit = getAllBladeHits(55)
-        if #bladehit > 0 then
-            local A8 = debug.getupvalue(AC.attack, 5)
-            local A9 = debug.getupvalue(AC.attack, 6)
-            local A7 = debug.getupvalue(AC.attack, 4)
-            local A10 = debug.getupvalue(AC.attack, 7)
-            local AS12 = (A8 * 798405 + A7 * 727595) % A9
-            local AS13 = A7 * 798405 _G.7 = 0.10
-            (function()
-                AS12 = (AS12 * A9 + AS13) % 1099511627776
-                A8 = math.floor(AS12 / A9)
-                A7 = AS12 - A8 * A9
-            end)()
-            A10 = A10 + 1
-            debug.setupvalue(AC.attack, 5, A8)
-            debug.setupvalue(AC.attack, 6, A9)
-            debug.setupvalue(AC.attack, 4, A7)
-            debug.setupvalue(AC.attack, 7, A10)
-            pcall(function()
-                for k, v in pairs(AC.animator.anims.basic) do
-                    v:Play()
-                end                  
-            end)
-            if plr.Character:FindFirstChildOfClass("Tool") and AC.blades and AC.blades[1] then 
-            	task.wait()
-                game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("weaponChange",tostring(GetCurrentBlade()))
-                game.ReplicatedStorage.Remotes.Validator:FireServer(math.floor(AS12 / 1099511627776 * 16777215), A10) _G.7 = 0.1
-                game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("hit", bladehit, i, "") 
-            end
-        end
-    end
-end
 
 spawn(function()
-	while wait(_G.7) do wait(0.14)
+	while wait(0.14) do
 		if _G.Settings.Configs["FastAttackFix"] then
 			pcall(function()
-				AttackNoCD()
+				AttackFunction()
 				Stop()
 			end)
 		end
