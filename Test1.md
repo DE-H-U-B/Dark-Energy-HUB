@@ -452,7 +452,7 @@ local SoundClick = Instance.new("Sound")
 
 SoundClick.Name = "Sound Effect"
 SoundClick.Parent = Load
-SoundClick.SoundId = "rbxassetid://130785805"
+SoundClick.SoundId = "rbxassetid://558993260"
 SoundClick.Volume = 1
 
 local Blur = Instance.new("BlurEffect")
@@ -1045,7 +1045,7 @@ function Library.new()
 
 		local Logo = options.Logo or 6034687957
 		local ColorUI = options.ColorUI or _G.Settings.ConfigsUI.Color
-		local Sound = options.SoundEffect or 130785805
+		local Sound = options.SoundEffect or 558993260
 
 		PageOrder = PageOrder + 1
 
@@ -10368,25 +10368,38 @@ Page_Configs.Toggle({
 	end,
 })
 
-local CameraShakerR = require(game.ReplicatedStorage.Util.CameraShaker)
 spawn(function()
-	while true do
-		if _G.Settings.Configs["FastAttackFix"] then
-			pcall(function()
-				CameraShakerR:Stop()
-				CombatFramework.activeController.attacking = false
-				CombatFramework.activeController.timeToNextAttack = 0
-				CombatFramework.activeController.increment = 3
-				CombatFramework.activeController.hitboxMagnitude = 55
-				CombatFramework.activeController.blocking = false
-				CombatFramework.activeController.timeToNextBlock = 0
-				CombatFramework.activeController.focusStart = 0
-				CombatFramework.activeController.humanoid.AutoRotate = true
-			end)
-		end
-		task.wait()
-	end
-	end)
+    while wait() do
+        if setscriptable then
+            setscriptable(game.Players.LocalPlayer, "SimulationRadius", true)
+            game.Players.LocalPlayer.SimulationRadius = math.huge * math.huge, math.huge * math.huge * 1 / 0 * 1 / 0 * 1 / 0 * 1 / 0 * 1 / 0
+        end
+    end
+end)local b= require(game.ReplicatedStorage.Util.CameraShaker)for a,a in pairs(getreg())do if typeof(a)=="function"and getfenv(a).script==game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework then for a,a in pairs(debug.getupvalues(a))do if typeof(a)=="table"then spawn(function()
+                        game:GetService("RunService").RenderStepped:Connect(function()
+                            if _G.Settings.Configs["FastAttackFix"] then
+                                pcall(function()
+                                    if game.Players.LocalPlayer.Character:FindFirstChild("Combat") or game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") or game.Players.LocalPlayer.Character:FindFirstChild("Electro") or game.Players.LocalPlayer.Character:FindFirstChild("Fishman Karate") or game.Players.LocalPlayer.Character:FindFirstChild("Dragon Claw") or game.Players.LocalPlayer.Character:FindFirstChild("Superhuman") or game.Players.LocalPlayer.Character:FindFirstChild("Sharkman Karate") then
+                                        a.activeController.increment = 3
+                                    else
+                                        a.activeController.increment = 4
+                                    end             
+                                    b:Stop()
+                                    a.activeController.timeToNextAttack = -(math.huge^math.huge)
+                                    a.activeController.attacking = false
+                                    a.activeController.timeToNextBlock = 0
+                                    a.activeController.blocking = false                            
+                                    a.activeController.hitboxMagnitude = 55
+                                    a.activeController.humanoid.AutoRotate = true
+                                    a.activeController.blocking = false
+                                    a.activeController.timeToNextBlock = 0
+                                    game.Players.LocalPlayer.Character.Stun.Value = 0
+                                    game.Players.LocalPlayer.Character.Humanoid.Sit = false
+                                      a.activeController.focusStart = 0
+                                end)
+                            end
+                        end)
+                    end)end end end end
 
 Page_Configs.Line()
 
