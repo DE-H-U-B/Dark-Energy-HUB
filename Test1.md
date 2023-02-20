@@ -10376,7 +10376,7 @@ spawn(function()
 				CameraShakerR:Stop()
 				CombatFramework.activeController.attacking = false
 				CombatFramework.activeController.timeToNextAttack = 0
-				CombatFramework.activeController.increment = 4
+				CombatFramework.activeController.increment = 3
 				CombatFramework.activeController.hitboxMagnitude = 55
 				CombatFramework.activeController.blocking = false
 				CombatFramework.activeController.timeToNextBlock = 0
@@ -10387,17 +10387,6 @@ spawn(function()
 		task.wait()
 	end
 	end)
-
-spawn(function()
-	while wait(0.14) do
-		if _G.Settings.Configs["FastAttackFix"] then
-			pcall(function()
-				AttackFunction()
-				Stop()
-			end)
-		end
-	end
-end)
 
 Page_Configs.Line()
 
