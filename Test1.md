@@ -10363,8 +10363,8 @@ Page_Configs.Line()
 Page_Configs.Toggle({
 	Title = "Fast Attack",
 	Default = false,
-	callback = function(a)
-		_G.Settings.Configs["FastAttackFix"] = a
+	callback = function(value)
+		_G.Settings.Configs["FastAttackFix"] = value
 	end,
 })
 
@@ -10379,6 +10379,7 @@ function GetCurrentBlade()
     while ret.Parent~=game.Players.LocalPlayer.Character do ret=ret.Parent end
     return ret
 end
+
 local CameraShakerR = require(game.ReplicatedStorage.Util.CameraShaker)
 spawn(function()
 	while true do
@@ -10386,11 +10387,11 @@ spawn(function()
 			pcall(function()
 				CameraShakerR:Stop()
 				CombatFramework.activeController.attacking = false
-				CombatFramework.activeController.timeToNextAttack = 0 --0
-				CombatFramework.activeController.increment = 4  --3
+				CombatFramework.activeController.timeToNextAttack = 0
+				CombatFramework.activeController.increment = 4
 				CombatFramework.activeController.hitboxMagnitude = 55
 				CombatFramework.activeController.blocking = false
-				CombatFramework.activeController.timeToNextBlock = 0  --0
+				CombatFramework.activeController.timeToNextBlock = 0
 				CombatFramework.activeController.focusStart = 0
 				CombatFramework.activeController.humanoid.AutoRotate = true
 			end)
@@ -10448,8 +10449,9 @@ function AttackNoCD()
         end
     end
 end
+
 spawn(function()
-	while wait(_G.7) do wait(0.14) --15
+	while wait(_G.7) do wait(0.14)
 		if _G.Settings.Configs["FastAttackFix"] then
 			pcall(function()
 				AttackNoCD()
@@ -10458,8 +10460,6 @@ spawn(function()
 		end
 	end
 end)
-
-_G.FastAttack = true
 
 Page_Configs.Line()
 
