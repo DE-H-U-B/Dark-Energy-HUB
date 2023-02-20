@@ -10363,8 +10363,8 @@ Page_Configs.Line()
 Page_Configs.Toggle({
 	Title = "Fast Attack",
 	Default = false,
-	callback = function(value)
-		_G.Settings.Configs["FastAttackFix"] = value
+	callback = function(a)
+		_G.Settings.Configs["FastAttackFix"] = a
 	end,
 })
 
