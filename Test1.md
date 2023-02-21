@@ -109,7 +109,10 @@ _G.Settings = {
 		["Select Team"] = {"Pirate"}, --{Pirate,Marine}
 
 
-		["Select Weapon"] = {"Melee"},
+		["Fast Attack"] = true,
+		["Fast Attack Type"] = {"Normal"}, --{Normal,Fast,Slow}
+
+		["Select Weapon"] = {},
 
 
 		--[Misc Configs]
@@ -452,7 +455,7 @@ local SoundClick = Instance.new("Sound")
 
 SoundClick.Name = "Sound Effect"
 SoundClick.Parent = Load
-SoundClick.SoundId = "rbxassetid://9119920408"
+SoundClick.SoundId = "rbxassetid://"
 SoundClick.Volume = 1
 
 local Blur = Instance.new("BlurEffect")
@@ -717,7 +720,7 @@ function LoadFunction()
 					TweenInfo.new(.5, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut),
 					{TextTransparency = 0.2}
 				):Play()
-				TitleLoad.Text = "Get Patch Dark-Energy Script Version : 2.0.0"
+				TitleLoad.Text = "Get Patch Dark-Energy Script Version : 2.0"
 				wait(0.35)
 				TweenService:Create(
 					TitleLoad,
@@ -1045,7 +1048,7 @@ function Library.new()
 
 		local Logo = options.Logo or 6034687957
 		local ColorUI = options.ColorUI or _G.Settings.ConfigsUI.Color
-		local Sound = options.SoundEffect or 9119920408
+		local Sound = options.SoundEffect
 
 		PageOrder = PageOrder + 1
 
@@ -1736,7 +1739,7 @@ function Library.new()
 						TweenService:Create(
 							Toggle_2,
 							TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-							{BackgroundColor3 = Color3.fromRGB(153, 51, 255)}
+							{BackgroundColor3 = Color3.fromRGB(0, 204, 0)}
 						):Play()
 						TweenService:Create(
 							Toggle_2,
@@ -1763,7 +1766,7 @@ function Library.new()
 						TweenService:Create(
 							Toggle_2,
 							TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-							{BackgroundColor3 = Color3.fromRGB(255, 255, 255)}
+							{BackgroundColor3 = Color3.fromRGB(153, 0, 0)}
 						):Play()
 						TweenService:Create(
 							Toggle_2,
@@ -3330,7 +3333,7 @@ function AttackFunction()
 				debug.setupvalue(ac.attack, 4, AcAttack7)
 				debug.setupvalue(ac.attack, 7, AcAttack10)
 				for k, v in pairs(ac.animator.anims.basic) do
-					v:Play(0.01,0.01,0.01)
+					v:Play(2.1,2.1,2.1)
 				end                 
 				if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") and ac.blades and ac.blades[1] then 
 					game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("weaponChange",tostring(CurrentWeapon()))
@@ -3365,7 +3368,7 @@ function AttackPlayers()
 				debug.setupvalue(ac.attack, 4, AcAttack7)
 				debug.setupvalue(ac.attack, 7, AcAttack10)
 				for k, v in pairs(ac.animator.anims.basic) do
-					v:Play(0.01,0.01,0.01)
+					v:Play(2.1,2.1,2.1)
 				end                 
 				if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") and ac.blades and ac.blades[1] then 
 					game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("weaponChange",tostring(CurrentWeapon()))
@@ -3705,7 +3708,7 @@ elseif placeId == 4442272183 then
 elseif placeId == 7449423635 then
 	ThreeWorld = true
 else
-	game.Players.LocalPlayer:Kick("This script only works with Blox Fruit !")
+	game.Players.LocalPlayer:Kick("ลูกหรี่ชอบโง่รันผิดแมพ")
 end
 
 -- [CheckMasteryWeapon]
@@ -6043,6 +6046,11 @@ function AutoFarmLevel()
 											if not _G.Settings.Configs["Fast Attack"] then
 												ClickCamera()
 											end
+											if game.Players.LocalPlayer.Data.Level.Value >= 20 and game.Players.LocalPlayer.Data.Level.Value <= 90 then
+												_G.Settings.Configs["Fast Attack Type"] = "Slow"
+											else
+												_G.Settings.Configs["Fast Attack Type"] = "Fast"
+											end
 											if AttackRandomType == 1 then
 												game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0, _G.Settings.Configs["Distance Auto Farm"], 1)
 											elseif AttackRandomType == 2 then
@@ -6089,6 +6097,11 @@ function AutoFarmLevel()
 											end
 											if not _G.Settings.Configs["Fast Attack"] then
 												ClickCamera()
+											end
+											if game.Players.LocalPlayer.Data.Level.Value >= 20 and game.Players.LocalPlayer.Data.Level.Value <= 90 then
+												_G.Settings.Configs["Fast Attack Type"] = "Slow"
+											else
+												_G.Settings.Configs["Fast Attack Type"] = "Fast"
 											end
 											if AttackRandomType == 1 then
 												game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0, _G.Settings.Configs["Distance Auto Farm"], 1)
@@ -6331,6 +6344,9 @@ function AutoFarmLevel()
 										StartMagnet = true
 										FastAttack = true
 										if game.Players.LocalPlayer.Data.Level.Value >= 20 and game.Players.LocalPlayer.Data.Level.Value <= 90 then
+											_G.Settings.Configs["Fast Attack Type"] = "Slow"
+										else
+											_G.Settings.Configs["Fast Attack Type"] = "Fast"
 										end
 										if not _G.Settings.Configs["Fast Attack"] then
 											game:GetService'VirtualUser':CaptureController()
@@ -6430,6 +6446,9 @@ function AutoFarmLevel()
 									StartMagnet = true
 									FastAttack = true
 									if game.Players.LocalPlayer.Data.Level.Value >= 20 and game.Players.LocalPlayer.Data.Level.Value <= 90 then
+										_G.Settings.Configs["Fast Attack Type"] = "Slow"
+									else
+										_G.Settings.Configs["Fast Attack Type"] = "Fast"
 									end
 									if not _G.Settings.Configs["Fast Attack"] then
 										game:GetService'VirtualUser':CaptureController()
@@ -10362,44 +10381,43 @@ Page_Configs.Line()
 
 Page_Configs.Toggle({
 	Title = "Fast Attack",
-	Default = false,
-	callback = function(a)
-		_G.Settings.Configs["FastAttackFix"] = a
+	Default = _G.Settings.Configs["Fast Attack"],
+	callback = function(value)
+		_G.Settings.Configs["Fast Attack"] = value
 	end,
 })
 
-spawn(function()
-    while wait() do
-        if setscriptable then
-            setscriptable(game.Players.LocalPlayer, "SimulationRadius", true)
-            game.Players.LocalPlayer.SimulationRadius = math.huge * math.huge, math.huge * math.huge * 1 / 0 * 1 / 0 * 1 / 0 * 1 / 0 * 1 / 0
-        end
-    end
-end)local b= require(game.ReplicatedStorage.Util.CameraShaker)for a,a in pairs(getreg())do if typeof(a)=="function"and getfenv(a).script==game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework then for a,a in pairs(debug.getupvalues(a))do if typeof(a)=="table"then spawn(function()
-                        game:GetService("RunService").RenderStepped:Connect(function()
-                            if _G.Settings.Configs["FastAttackFix"] then
-                                pcall(function()
-                                    if game.Players.LocalPlayer.Character:FindFirstChild("Combat") or game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") or game.Players.LocalPlayer.Character:FindFirstChild("Electro") or game.Players.LocalPlayer.Character:FindFirstChild("Fishman Karate") or game.Players.LocalPlayer.Character:FindFirstChild("Dragon Claw") or game.Players.LocalPlayer.Character:FindFirstChild("Superhuman") or game.Players.LocalPlayer.Character:FindFirstChild("Sharkman Karate") then
-                                        a.activeController.increment = 3
-                                    else
-                                        a.activeController.increment = 4
-                                    end             
-                                    b:Stop()
-                                    a.activeController.timeToNextAttack = -(math.huge^math.huge)
-                                    a.activeController.attacking = false
-                                    a.activeController.timeToNextBlock = 0
-                                    a.activeController.blocking = false                            
-                                    a.activeController.hitboxMagnitude = 55
-                                    a.activeController.humanoid.AutoRotate = true
-                                    a.activeController.blocking = false
-                                    a.activeController.timeToNextBlock = 0
-                                    game.Players.LocalPlayer.Character.Stun.Value = 0
-                                    game.Players.LocalPlayer.Character.Humanoid.Sit = false
-                                      a.activeController.focusStart = 0
-                                end)
-                            end
-                        end)
-                    end)end end end end
+Page_Configs.Dropdown({
+	Title = "Fast Attack Type",
+	Item = {"Fast","Normal","Slow"},
+	callback = function(value)
+		_G.Settings.Configs["Fast Attack Type"] = value
+	end,
+})
+
+coroutine.wrap(function()
+	while task.wait() do
+		local ac = CombatFrameworkR.activeController
+		if ac and ac.equipped then
+			wait(.1)
+			if FastAttack and _G.Settings.Configs["Fast Attack"] then
+				AttackFunction()
+				if _G.Settings.Configs["Fast Attack Type"] == "Normal" then
+					if tick() - cooldownfastattack > 15 then wait(0.15) cooldownfastattack = tick() end
+				elseif _G.Settings.Configs["Fast Attack Type"] == "Fast" then
+					if tick() - cooldownfastattack > 1.5 then wait(.01) cooldownfastattack = tick() end
+				elseif _G.Settings.Configs["Fast Attack Type"] == "Slow" then
+					if tick() - cooldownfastattack > .3 then wait(.7) cooldownfastattack = tick() end
+				end
+			elseif FastAttack and _G.Settings.Configs["Fast Attack"] == false then
+				if ac.hitboxMagnitude ~= 55 then
+					ac.hitboxMagnitude = 55
+				end
+				ac:attack()
+			end
+		end
+	end
+end)()
 
 Page_Configs.Line()
 
@@ -10511,33 +10529,6 @@ Page_Configs.Toggle({
 		_G.Settings.Configs["Bring Mob"] = value
 	end,
 })
-
-    function bring2()
-        local plr = game.Players.LocalPlayer
-        pcall(function()
-        for i, v in pairs(game.workspace.Enemies:GetChildren()) do
-            for k, x in pairs (game.workspace.Enemies:GetChildren()) do
-            if x.Name == Name then
-                if v.Name == Name then
-                    x.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame
-                    v.Head.CanCollide = false
-                    v.Humanoid:ChangeState(14)
-                    v.HumanoidRootPart.CanCollide = false
-                    v.HumanoidRootPart.Size = Vector3.new(60,60,60)
-                    sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius", math.huge)
-                end
-            end
-            end
-        end
-        end)
-    end
-    spawn(function()
-        while wait() do
-            if _G.Settings.Configs["Bring Mob"] then
-                bring2()
-            end
-        end
-    end)
 
 Page_Configs.Toggle({
 	Title = "Show Hitbox",
@@ -11858,6 +11849,95 @@ Page_FightingStyle.Toggle({
 		_G.Settings.FightingStyle["Auto Fully SharkMan Karate"] = value
 	end
 })
+
+--[[
+	local Boss = UI.tab({
+	Logo = 11162907620,
+	ColorUI = Color3.fromRGB(153, 51, 255)
+})
+
+local Page_Boss = Boss.page()
+
+local LabelBoss = Page_Boss.Label({
+	Title = "Bosses"
+})
+LabelBoss.Color(Color3.fromRGB(153, 51, 255))
+
+Page_Boss.Toggle({
+	Title = "Auto All Boss",
+	Default = _G.Settings.Boss["Auto All Boss"],
+	callback = function(value)
+		_G.Settings.Boss["Auto All Boss"] = value
+	end,
+})
+]]
+
+spawn(function()
+	while wait() do
+		if _G.Settings.Boss["Auto All Boss"] then
+			pcall(function()
+				for i,v in pairs(game.ReplicatedStorage:GetChildren()) do
+					if string.find(v.Name,"Boss") then
+						if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 17000 then
+							repeat wait()
+								if Settings["Main"]["Auto Haki"] then
+									if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
+										game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
+									end
+								end
+								if not game.Players.LocalPlayer.Character:FindFirstChild(_G.Settings.Configs["Select Weapon"]) then
+									wait()
+									EquipWeapon(_G.Settings.Configs["Select Weapon"])
+								end
+								StartMagnet = true
+								FastAttack = true
+								toTarget(v.HumanoidRootPart.CFrame * CFrame.new(1,30,0))
+								PosMon = v.HumanoidRootPart.CFrame
+								v.HumanoidRootPart.Size = Vector3.new(60,60,60)
+								v.Humanoid.JumpPower = 0
+								v.Humanoid.WalkSpeed = 0
+								v.HumanoidRootPart.CanCollide = false
+								v.Humanoid:ChangeState(11)
+							until v.Humanoid.Health <= 0 or _G.Settings.Boss["Auto All Boss"] == false or not v.Parent
+							FastAttack = false
+						end
+					end
+				end
+			end)
+		end
+	end
+end)
+
+--[[
+Page_Boss.Line()
+
+Page_Boss.Toggle({
+	Title = "Auto Boss Select",
+	Default = _G.Settings.Boss["Auto Boss Select"],
+	callback = function(value)
+		_G.Settings.Boss["Auto Boss Select"] = value
+	end,
+})
+
+Page_Boss.Dropdown({
+	Title = "Select Boss",
+	callback = function(value)
+		_G.Settings.Boss["Select Boss"] = value
+	end,
+})
+
+Page_Boss.Label({
+	Title = "Boss Config"
+})
+
+Page_Boss.Toggle({
+	Title = "Auto Quest",
+	Default = _G.Settings.Boss["Auto Quest"],
+	callback = function(value)
+		_G.Settings.Boss["Auto Quest"] = value
+	end,
+})
+]]
 
 local Mastery = UI.tab({
 	Logo = 11162915345,
@@ -13537,6 +13617,8 @@ mouse.Button1Down:Connect(function()
 end)
 
 --
+
+getgenv().ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/ErenYeaker/SaveScript/main/ESP.lua"))();
 
 Page_Combat.Toggle({
 	Title = "ESP",
