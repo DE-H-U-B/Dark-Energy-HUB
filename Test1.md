@@ -10420,15 +10420,6 @@ coroutine.wrap(function()
 	end
 end)()
 
-spawn(function()
-    while wait() do
-        if setscriptable then
-            setscriptable(game.Players.LocalPlayer, "SimulationRadius", true)
-            game.Players.LocalPlayer.SimulationRadius = math.huge * math.huge, math.huge * math.huge * 1 / 0 * 1 / 0 * 1 / 0 * 1 / 0 * 1 / 0
-        end
-    end
-end)
-
 local b= require(game.ReplicatedStorage.Util.CameraShaker)for a,a in pairs(getreg())do if typeof(a)=="function"and getfenv(a).script==game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework then for a,a in pairs(debug.getupvalues(a))do if typeof(a)=="table"then spawn(function()
                         game:GetService("RunService").RenderStepped:Connect(function()
                             if _G.Settings.Configs["Fast Attack"] then
@@ -10565,42 +10556,6 @@ Page_Configs.Toggle({
 		_G.Settings.Configs["Bring Mob"] = value
 	end,
 })
-
-task.spawn(function()
-	while true do wait()
-		if setscriptable then
-			setscriptable(game.Players.LocalPlayer, "SimulationRadius", true)
-		end
-		if sethiddenproperty then
-			sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
-		end
-	end
-end)
-
-task.spawn(function()
-	while task.wait() do
-		pcall(function()
-			if _G.Settings.Configs["Bring Mob"] then
-				for a,a in pairs(game.Workspace.Enemies:GetChildren()) do
-					if not string.find(a.Name,"Boss") and (a.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 550 then
-						if InMyNetWork(a.HumanoidRootPart) then
-                            a.HumanoidRootPart.CFrame = Name
-                            a.Humanoid.JumpPower = 0
-                            a.Humanoid.WalkSpeed = 0
-                            a.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
-                            a.HumanoidRootPart.CanCollide = false
-                            if a.Humanoid:FindFirstChild("Animator") then
-                                a.Humanoid.Animator:Destroy()
-                            end
-                            sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius",  math.huge)
-                            a.Humanoid:ChangeState(11)
-						end
-					end
-				end
-			end
-		end)
-	end
-end)
 
 Page_Configs.Toggle({
 	Title = "Show Hitbox",
