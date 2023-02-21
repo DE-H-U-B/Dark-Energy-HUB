@@ -10420,15 +10420,6 @@ coroutine.wrap(function()
 	end
 end)()
 
-spawn(function()
-    while wait() do
-        if setscriptable then
-            setscriptable(game.Players.LocalPlayer, "SimulationRadius", true)
-            game.Players.LocalPlayer.SimulationRadius = math.huge * math.huge, math.huge * math.huge * 1 / 0 * 1 / 0 * 1 / 0 * 1 / 0 * 1 / 0
-        end
-    end
-end)
-
 local b= require(game.ReplicatedStorage.Util.CameraShaker)for a,a in pairs(getreg())do if typeof(a)=="function"and getfenv(a).script==game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework then for a,a in pairs(debug.getupvalues(a))do if typeof(a)=="table"then spawn(function()
                         game:GetService("RunService").RenderStepped:Connect(function()
                             if _G.Settings.Configs["Fast Attack"] then
@@ -11921,95 +11912,6 @@ Page_FightingStyle.Toggle({
 		_G.Settings.FightingStyle["Auto Fully SharkMan Karate"] = value
 	end
 })
-
---[[
-	local Boss = UI.tab({
-	Logo = 11162907620,
-	ColorUI = Color3.fromRGB(153, 51, 255)
-})
-
-local Page_Boss = Boss.page()
-
-local LabelBoss = Page_Boss.Label({
-	Title = "Bosses"
-})
-LabelBoss.Color(Color3.fromRGB(153, 51, 255))
-
-Page_Boss.Toggle({
-	Title = "Auto All Boss",
-	Default = _G.Settings.Boss["Auto All Boss"],
-	callback = function(value)
-		_G.Settings.Boss["Auto All Boss"] = value
-	end,
-})
-]]
-
-spawn(function()
-	while wait() do
-		if _G.Settings.Boss["Auto All Boss"] then
-			pcall(function()
-				for i,v in pairs(game.ReplicatedStorage:GetChildren()) do
-					if string.find(v.Name,"Boss") then
-						if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 17000 then
-							repeat wait()
-								if Settings["Main"]["Auto Haki"] then
-									if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
-										game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
-									end
-								end
-								if not game.Players.LocalPlayer.Character:FindFirstChild(_G.Settings.Configs["Select Weapon"]) then
-									wait()
-									EquipWeapon(_G.Settings.Configs["Select Weapon"])
-								end
-								StartMagnet = true
-								FastAttack = true
-								toTarget(v.HumanoidRootPart.CFrame * CFrame.new(1,30,0))
-								PosMon = v.HumanoidRootPart.CFrame
-								v.HumanoidRootPart.Size = Vector3.new(60,60,60)
-								v.Humanoid.JumpPower = 0
-								v.Humanoid.WalkSpeed = 0
-								v.HumanoidRootPart.CanCollide = false
-								v.Humanoid:ChangeState(11)
-							until v.Humanoid.Health <= 0 or _G.Settings.Boss["Auto All Boss"] == false or not v.Parent
-							FastAttack = false
-						end
-					end
-				end
-			end)
-		end
-	end
-end)
-
---[[
-Page_Boss.Line()
-
-Page_Boss.Toggle({
-	Title = "Auto Boss Select",
-	Default = _G.Settings.Boss["Auto Boss Select"],
-	callback = function(value)
-		_G.Settings.Boss["Auto Boss Select"] = value
-	end,
-})
-
-Page_Boss.Dropdown({
-	Title = "Select Boss",
-	callback = function(value)
-		_G.Settings.Boss["Select Boss"] = value
-	end,
-})
-
-Page_Boss.Label({
-	Title = "Boss Config"
-})
-
-Page_Boss.Toggle({
-	Title = "Auto Quest",
-	Default = _G.Settings.Boss["Auto Quest"],
-	callback = function(value)
-		_G.Settings.Boss["Auto Quest"] = value
-	end,
-})
-]]
 
 local Mastery = UI.tab({
 	Logo = 11162915345,
