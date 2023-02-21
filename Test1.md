@@ -35,7 +35,7 @@ _G.Settings = {
 		["Auto Saber"] = false,
 		["Auto Pole"] = false,
 
-		["Auto Buy Ablility"] = false,
+		["Auto Buy Ablility"] = true,
 
 		--[World 2]
 		["Auto Third Sea"] = false,
@@ -81,7 +81,7 @@ _G.Settings = {
 	},
 	FightingStyle = {
 		["Auto God Human"] = false,
-		["Auto Superhuman"] = false,
+		["Auto Superhuman"] = true,
 		["Auto Electric Claw"] = false,
 		["Auto Death Step"] = false,
 		["Auto Fully Death Step"] = false,
@@ -104,13 +104,10 @@ _G.Settings = {
 		["Mob Health (%)"] = 15,
 	},
 	Configs = {
-		["Double Quest"] = false,
+		["Double Quest"] = true,
 		["Bypass TP"] = false,
 		["Select Team"] = {"Pirate"}, --{Pirate,Marine}
 
-
-		["Fast Attack"] = true,
-		["Fast Attack Type"] = {"Normal"}, --{Normal,Fast,Slow}
 
 		["Select Weapon"] = {},
 
@@ -129,13 +126,13 @@ _G.Settings = {
 		--[Mob Configs]
 		["Show Hitbox"] = false,
 		["Bring Mob"] = true,
-		["Disabled Damage"] = false,
+		["Disabled Damage"] = true,
 
 	},
 	Stat = {
 		--[Auto Stats]
 		["Enabled Auto Stats"] = false,
-		["Auto Stats Kaitun"] = false,
+		["Auto Stats Kaitun"] = true,
 
 		["Select Stats"] = {"Melee"}, --{Max Stats,Melee,Defense,Sword,Devil Fruit,Gun}
 		["Point Select"] = 3, --{Recommended , Max : 9}
@@ -5964,6 +5961,12 @@ local MainLabel =Page_Main.Label({
 })
 MainLabel.Color(Color3.fromRGB(153, 51, 255))
 
+Page_Main.Button({Title = "Link Discord Server",callback = function()
+	setclipboard("https://discord.gg/Cw8pWS659x")
+end})
+
+Page_Main.Line()
+
 Page_Main.Toggle({
 	Title = "Auto Farm Level",
 	Default = _G.Settings.Main["Auto Farm Level"],
@@ -10389,7 +10392,7 @@ Page_Configs.Toggle({
 
 Page_Configs.Dropdown({
 	Title = "Fast Attack Type",
-	Item = {"Fast","Normal","Slow"},
+	Item = {"Mobile","Pc"},
 	callback = function(value)
 		_G.Settings.Configs["Fast Attack Type"] = value
 	end,
@@ -10402,11 +10405,9 @@ coroutine.wrap(function()
 			wait(.1)
 			if FastAttack and _G.Settings.Configs["Fast Attack"] then
 				AttackFunction()
-				if _G.Settings.Configs["Fast Attack Type"] == "Normal" then
-					if tick() - cooldownfastattack > 15 then wait(0.15) cooldownfastattack = tick() end
-				elseif _G.Settings.Configs["Fast Attack Type"] == "Fast" then
+				if _G.Settings.Configs["Fast Attack Type"] == "Pc" then
 					if tick() - cooldownfastattack > 1.5 then wait(.01) cooldownfastattack = tick() end
-				elseif _G.Settings.Configs["Fast Attack Type"] == "Slow" then
+				elseif _G.Settings.Configs["Fast Attack Type"] == "Mobile" then
 					if tick() - cooldownfastattack > .3 then wait(.7) cooldownfastattack = tick() end
 				end
 			elseif FastAttack and _G.Settings.Configs["Fast Attack"] == false then
