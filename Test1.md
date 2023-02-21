@@ -10408,7 +10408,7 @@ coroutine.wrap(function()
 				if _G.Settings.Configs["Fast Attack Type"] == "Pc" then
 					if tick() - cooldownfastattack > 1.5 then wait(.01) cooldownfastattack = tick() end
 				elseif _G.Settings.Configs["Fast Attack Type"] == "Mobile" then
-					if tick() - cooldownfastattack > .3 then wait(.7) cooldownfastattack = tick() end
+					if tick() - cooldownfastattack > .3 then wait(.17) cooldownfastattack = tick() end
 				end
 			elseif FastAttack and _G.Settings.Configs["Fast Attack"] == false then
 				if ac.hitboxMagnitude ~= 55 then
@@ -10419,6 +10419,41 @@ coroutine.wrap(function()
 		end
 	end
 end)()
+
+spawn(function()
+    while wait() do
+        if setscriptable then
+            setscriptable(game.Players.LocalPlayer, "SimulationRadius", true)
+            game.Players.LocalPlayer.SimulationRadius = math.huge * math.huge, math.huge * math.huge * 1 / 0 * 1 / 0 * 1 / 0 * 1 / 0 * 1 / 0
+        end
+    end
+end)
+
+local b= require(game.ReplicatedStorage.Util.CameraShaker)for a,a in pairs(getreg())do if typeof(a)=="function"and getfenv(a).script==game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework then for a,a in pairs(debug.getupvalues(a))do if typeof(a)=="table"then spawn(function()
+                        game:GetService("RunService").RenderStepped:Connect(function()
+                            if _G.Settings.Configs["Fast Attack"] then
+                                pcall(function()
+                                    if game.Players.LocalPlayer.Character:FindFirstChild("Combat") or game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") or game.Players.LocalPlayer.Character:FindFirstChild("Electro") or game.Players.LocalPlayer.Character:FindFirstChild("Fishman Karate") or game.Players.LocalPlayer.Character:FindFirstChild("Dragon Claw") or game.Players.LocalPlayer.Character:FindFirstChild("Superhuman") or game.Players.LocalPlayer.Character:FindFirstChild("Sharkman Karate") then
+                                        a.activeController.increment = 3
+                                    else
+                                        a.activeController.increment = 4
+                                    end             
+                                    b:Stop()
+                                    a.activeController.timeToNextAttack = -(math.huge^math.huge)
+                                    a.activeController.attacking = false
+                                    a.activeController.timeToNextBlock = 0
+                                    a.activeController.blocking = false                            
+                                    a.activeController.hitboxMagnitude = 55
+                                    a.activeController.humanoid.AutoRotate = true
+                                    a.activeController.blocking = false
+                                    a.activeController.timeToNextBlock = 0
+                                    game.Players.LocalPlayer.Character.Stun.Value = 0
+                                    game.Players.LocalPlayer.Character.Humanoid.Sit = false
+                                      a.activeController.focusStart = 0
+                                end)
+                            end
+                        end)
+                    end)end end end end
 
 Page_Configs.Line()
 
@@ -10530,6 +10565,42 @@ Page_Configs.Toggle({
 		_G.Settings.Configs["Bring Mob"] = value
 	end,
 })
+
+task.spawn(function()
+	while true do wait()
+		if setscriptable then
+			setscriptable(game.Players.LocalPlayer, "SimulationRadius", true)
+		end
+		if sethiddenproperty then
+			sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
+		end
+	end
+end)
+
+task.spawn(function()
+	while task.wait() do
+		pcall(function()
+			if _G.Settings.Configs["Bring Mob"] then
+				for a,a in pairs(game.Workspace.Enemies:GetChildren()) do
+					if not string.find(a.Name,"Boss") and (a.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 550 then
+						if InMyNetWork(a.HumanoidRootPart) then
+                            a.HumanoidRootPart.CFrame = Name
+                            a.Humanoid.JumpPower = 0
+                            a.Humanoid.WalkSpeed = 0
+                            a.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
+                            a.HumanoidRootPart.CanCollide = false
+                            if a.Humanoid:FindFirstChild("Animator") then
+                                a.Humanoid.Animator:Destroy()
+                            end
+                            sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius",  math.huge)
+                            a.Humanoid:ChangeState(11)
+						end
+					end
+				end
+			end
+		end)
+	end
+end)
 
 Page_Configs.Toggle({
 	Title = "Show Hitbox",
@@ -13617,19 +13688,61 @@ mouse.Button1Down:Connect(function()
 	end 
 end)
 
---
-
-getgenv().ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/ErenYeaker/SaveScript/main/ESP.lua"))();
-
 Page_Combat.Toggle({
-	Title = "ESP",
+	Title = "ESP PLAYER",
 	Default = false,
 	callback = function(value)
-		getgenv().ESP:Toggle(value);
+		ESPPlayer = value
+        while ESPPlayer do wait()
+            UpdateEspPlayer()
 	end,
 })
 
---
+    	function isnil(thing)
+		return (thing == nil)
+	end
+	local function round(n)
+		return math.floor(tonumber(n) + 0.5)
+	end
+	Number = math.random(1, 1000000)
+	function UpdateEspPlayer()
+		for i,v in pairs(game:GetService'Players':GetChildren()) do
+			pcall(function()
+				if not isnil(v.Character) then
+					if ESPPlayer then
+						if not isnil(v.Character.Head) and not v.Character.Head:FindFirstChild('NameEsp'..Number) then
+							local bill = Instance.new('BillboardGui',v.Character.Head)
+							bill.Name = 'NameEsp'..Number
+							bill.ExtentsOffset = Vector3.new(0, 1, 0)
+							bill.Size = UDim2.new(1,100,1,20)
+							bill.Adornee = v.Character.Head
+							bill.AlwaysOnTop = true
+							local name = Instance.new('TextLabel',bill)
+							name.Font = "GothamBold"
+							name.FontSize = "Size14"
+							name.TextWrapped = true
+							name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M')
+							name.Size = UDim2.new(1,0,1,0)
+							name.TextYAlignment = 'Top'
+							name.BackgroundTransparency = 1
+							name.TextStrokeTransparency = 0.5
+							if v.Team == game.Players.LocalPlayer.Team then
+								name.TextColor3 = Color3.new(0,255,0)
+							else
+								name.TextColor3 = Color3.new(255,0,0)
+							end
+						else
+							v.Character.Head['NameEsp'..Number].TextLabel.Text = (v.Name ..' | '.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M\nHealth : ' .. round(v.Character.Humanoid.Health*100/v.Character.Humanoid.MaxHealth) .. '%')
+						end
+					else
+						if v.Character.Head:FindFirstChild('NameEsp'..Number) then
+							v.Character.Head:FindFirstChild('NameEsp'..Number):Destroy()
+						end
+					end
+				end
+			end)
+		end
+	end
 
 local Misc = UI.tab({
 	Logo = 11156061121,
@@ -15139,7 +15252,7 @@ spawn(function()
 		if _G.Settings.Misc['Auto Rejoin'] then
 			_G.Settings.Misc['Auto Rejoin'] = game:GetService("CoreGui").RobloxPromptGui.promptOverlay.ChildAdded:Connect(function(child)
 				if child.Name == 'ErrorPrompt' and child:FindFirstChild('MessageArea') and child.MessageArea:FindFirstChild("ErrorFrame") then
-					print("Unique | Rejoin!")
+					print("Dark-Energy | Rejoin!")
 					game:GetService("TeleportService"):Teleport(game.PlaceId)
 				end
 			end)
