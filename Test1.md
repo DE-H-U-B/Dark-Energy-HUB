@@ -452,7 +452,7 @@ local SoundClick = Instance.new("Sound")
 
 SoundClick.Name = "Sound Effect"
 SoundClick.Parent = Load
-SoundClick.SoundId = "rbxassetid://1837678087"
+SoundClick.SoundId = "rbxassetid://1673280232"
 SoundClick.Volume = 1
 
 local Blur = Instance.new("BlurEffect")
@@ -1045,7 +1045,7 @@ function Library.new()
 
 		local Logo = options.Logo or 6034687957
 		local ColorUI = options.ColorUI or _G.Settings.ConfigsUI.Color
-		local Sound = options.SoundEffect or 1837678087
+		local Sound = options.SoundEffect or 1673280232
 
 		PageOrder = PageOrder + 1
 
