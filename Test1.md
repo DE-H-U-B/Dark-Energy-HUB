@@ -1726,7 +1726,7 @@ function Library.new()
 				end)
 
 				ButtonToggle.MouseButton1Down:Connect(function()
-					CircleAnim(ButtonToggle,Color3.fromRGB(255, 255, 255),Color3.fromRGB(255, 255, 255))
+					CircleAnim(ButtonToggle,Color3.fromRGB(153, 0, 0),Color3.fromRGB(153, 0, 0))
 					if visual.toggle == false and visual.lock == true then
 						TweenService:Create(
 							Toggle_2,
@@ -1736,7 +1736,7 @@ function Library.new()
 						TweenService:Create(
 							Toggle_2,
 							TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-							{BackgroundColor3 = Color3.fromRGB(255, 0, 127)}
+							{BackgroundColor3 = Color3.fromRGB(0, 153, 0)}
 						):Play()
 						TweenService:Create(
 							Toggle_2,
@@ -1763,7 +1763,7 @@ function Library.new()
 						TweenService:Create(
 							Toggle_2,
 							TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-							{BackgroundColor3 = Color3.fromRGB(255, 255, 255)}
+							{BackgroundColor3 = Color3.fromRGB(153, 0, 0)}
 						):Play()
 						TweenService:Create(
 							Toggle_2,
@@ -1802,7 +1802,7 @@ function Library.new()
 					TweenService:Create(
 						Toggle_2,
 						TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-						{BackgroundColor3 = Color3.fromRGB(255, 0, 127)}
+						{BackgroundColor3 = Color3.fromRGB(0, 153, 0)}
 					):Play()
 					TweenService:Create(
 						Toggle_2,
@@ -2112,7 +2112,7 @@ function Library.new()
 					Logo.BackgroundTransparency = 1.000
 					Logo.Position = UDim2.new(0.0500000007, 0, 0.5, 0)
 					Logo.Size = UDim2.new(0, 25, 0, 25)
-					Logo.Image = "http://www.roblox.com/asset/?id=6034509994"
+					Logo.Image = "http://www.roblox.com/asset/?id=7566388691"
 					Logo.ImageTransparency = 0.450
 
 					TextButtonBar.Name = "TextButtonBar"
@@ -2296,7 +2296,7 @@ function Library.new()
 					Logo.BackgroundTransparency = 1.000
 					Logo.Position = UDim2.new(0.0500000007, 0, 0.5, 0)
 					Logo.Size = UDim2.new(0, 25, 0, 25)
-					Logo.Image = "http://www.roblox.com/asset/?id=6034509994"
+					Logo.Image = "http://www.roblox.com/asset/?id=7566388691"
 					Logo.ImageTransparency = 0.450
 
 					TextButtonBar.Name = "TextButtonBar"
@@ -2493,7 +2493,7 @@ function Library.new()
 					Logo.BackgroundTransparency = 1.000
 					Logo.Position = UDim2.new(0.0500000007, 0, 0.5, 0)
 					Logo.Size = UDim2.new(0, 25, 0, 25)
-					Logo.Image = "http://www.roblox.com/asset/?id=6034509994"
+					Logo.Image = "http://www.roblox.com/asset/?id=7566388691"
 					Logo.ImageTransparency = 0.450
 
 					TextButtonBar.Name = "TextButtonBar"
@@ -2674,7 +2674,7 @@ function Library.new()
 					Logo.BackgroundTransparency = 1.000
 					Logo.Position = UDim2.new(0.0500000007, 0, 0.5, 0)
 					Logo.Size = UDim2.new(0, 25, 0, 25)
-					Logo.Image = "http://www.roblox.com/asset/?id=6034509994"
+					Logo.Image = "http://www.roblox.com/asset/?id=7566388691"
 					Logo.ImageTransparency = 0.450
 
 					TextButtonBar.Name = "TextButtonBar"
@@ -10512,7 +10512,7 @@ Page_Configs.Toggle({
                             cdnormal = tick()
                         else
                              Animation.AnimationId = ac.anims.basic[2]
-                            ac.humanoid:LoadAnimation(Animation):Play(100, 99) --à¸—à¹ˆà¸²à¹„à¸¡à¹ˆà¸—à¸³à¸‡à¸²à¸™à¹à¸à¹‰à¹€à¸›à¹‡à¸™ (1,1)
+                            ac.humanoid:LoadAnimation(Animation):Play(1, 1) --à¸—à¹ˆà¸²à¹„à¸¡à¹ˆà¸—à¸³à¸‡à¸²à¸™à¹à¸à¹‰à¹€à¸›à¹‡à¸™ (1,1)
                             game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("hit", getHits(120), 2, "")
                         end
                     end)
