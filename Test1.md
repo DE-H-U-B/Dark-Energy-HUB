@@ -114,7 +114,7 @@ _G.Settings = {
 
 		--[Misc Configs]
 		["Auto Haki"] = true,
-		["Distance Auto Farm"] = 20, --{Max : 50}
+		["Distance Auto Farm"] = 25, --{Max : 50}
 		["Camera Shaker"] = false,
 
 		--[Skill Configs]
