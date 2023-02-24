@@ -4517,7 +4517,7 @@ function CheckQuest()
 
 			CFrameQuest = CFrame.new(5835, 52, -1105)
 			VectorQuest = Vector3.new(5835, 52, -1105)
-		elseif MyLevel == 1625 or MyLevel <= 1649 then
+		elseif MyLevel == 1625 or MyLevel <= 1699 then
 			LevelFarm = 5
 
 			Name = "Female Islander [Lv. 1625]"
@@ -4528,20 +4528,6 @@ function CheckQuest()
 
 			CFrameMon = CFrame.new(5308, 819, 1047)
 			VectorMon = Vector3.new(5308, 819, 1047)
-
-			CFrameQuest = CFrame.new(5443, 602, 751)
-			VectorQuest = Vector3.new(5443, 602, 751)
-		elseif MyLevel == 1650 or MyLevel <= 1699 then
-			LevelFarm = 6
-
-			Name = "Giant Islander [Lv. 1650]"
-			QuestName = "AmazonQuest2"
-
-			LevelQuest = 2
-			NameMon = "Giant Islanders"
-
-			CFrameMon = CFrame.new(4951, 602, -68)
-			VectorMon = Vector3.new(4951, 602, -68)
 
 			CFrameQuest = CFrame.new(5443, 602, 751)
 			VectorQuest = Vector3.new(5443, 602, 751)
@@ -10333,7 +10319,7 @@ Page_Configs.Toggle({
             
             function SeraphFuckWeapon() 
                 local p13 = SeraphFrame.activeController
-                local wea = p13.blades[1]
+                local wea = p13.blades[2]
                 if not wea then return end
                 while wea.Parent~=game.Players.LocalPlayer.Character do wea=wea.Parent end
                 return wea
