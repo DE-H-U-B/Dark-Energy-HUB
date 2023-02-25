@@ -33,7 +33,7 @@ local ThunderImageUI = Instance.new("ImageLabel")
         ThunderImageUI.BorderSizePixel = 0
         ThunderImageUI.Position = UDim2.new(0.0, 0, 0.0, 0)
         ThunderImageUI.Size = UDim2.new(0, 50, 0, 50)
-        ThunderImageUI.Image = "http://www.roblox.com/asset/?id=7566388691"
+        ThunderImageUI.Image = "http://www.roblox.com/asset/?id=12511245920"
 
 local SOMEXHUB = {}
 local UserInputService = game:GetService("UserInputService")
@@ -122,7 +122,7 @@ local pfp = "https://www.roblox.com/headshot-thumbnail/image?userId=".. game.Pla
 function Update:Window(text,logo,keybind)
 	local uihide = false
 	local abc = false
-	local logo = logo or 7566388691
+	local logo = logo or 12511245920
 	local currentpage = ""
 	local keybind = keybind or Enum.KeyCode.RightControl
 	local yoo = string.gsub(tostring(keybind),"Enum.KeyCode.","")
@@ -164,7 +164,7 @@ function Update:Window(text,logo,keybind)
  Logo.BackgroundTransparency = 1.000
  Logo.Position = UDim2.new(-0.01, 0,-0.170, 0)
  Logo.Size = UDim2.new(0, 55,0, 45)
-Logo.Image = "rbxassetid://7566388691"
+Logo.Image = "rbxassetid://12511245920"
 
 	local Name = Instance.new("TextLabel")
 	Name.Name = "Name"
@@ -804,7 +804,7 @@ local postog12 = Instance.new("UIStroke")
  ImageLabel.BorderSizePixel = 0
  ImageLabel.Position = UDim2.new(-0.018, 0,-0.252, 0)
  ImageLabel.Size = UDim2.new(0, 45,0, 45)
- ImageLabel.Image = "rbxassetid://7566388691"
+ ImageLabel.Image = "rbxassetid://12511245920"
  ImageLabel.ImageColor3 = Color3.fromRGB(224,224,224)
  
  Space.Name = "Space"
@@ -865,7 +865,7 @@ local postog12 = Instance.new("UIStroke")
   else
    game.TweenService:Create(ImageButton, TweenInfo.new(0.08, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),
    {
-    ImageColor3 = Color3.fromRGB(0,153,0)}
+    ImageColor3 = Color3.fromRGB(224,224,224)}
   ):Play()
   ImageButton.ImageRectOffset = Vector2.new(940, 784)
   end
@@ -1155,7 +1155,7 @@ ImageLabel.BackgroundTransparency = 1.000
 ImageLabel.BorderSizePixel = 0
 ImageLabel.Position = UDim2.new(0, -5, 0, -5)
 ImageLabel.Size = UDim2.new(0, 45, 0, 45)
-ImageLabel.Image = "rbxassetid://7566388691"
+ImageLabel.Image = "rbxassetid://12511245920"
 ImageLabel.ImageColor3 = Color3.fromRGB(224,224,224)
 
 Space.Name = "Space"
@@ -3801,7 +3801,7 @@ end)
 
  
 --------------------------------------------------------------------
-local Library = Update:Window("BOOK HUB","")
+local Library = Update:Window("BOOK","")
 ------------------------------------------
 
 spawn(function()
@@ -4268,8 +4268,8 @@ Setting:Slider("Farm Distance",1,100,20,function(value)
  _G.DistanceMob = value
  end)
 else
- _G.DistanceMob = 20
-Setting:Slider1("Farm Distance",1,100,20,function(value)
+ _G.DistanceMob = 25
+Setting:Slider1("Farm Distance",1,100,25,function(value)
  _G.DistanceMob = value
  end)
 end
@@ -4465,7 +4465,6 @@ spawn(function()
    end)
 end)
 
-
 		spawn(function()
 			while task.wait() do
 				pcall(function()
@@ -4481,10 +4480,6 @@ end)
 Setting:Toggle("Fast Attack [New]",true,function(value)
  _G.FastAttack = value
 end)
-
--- [[ Fast Attack Fixed / Shadow Hub / Dont edit , or ur will be messed up! ]]
-
--- [[ Properties ]]
 
 require(game.ReplicatedStorage.Util.CameraShaker):Stop()
 
